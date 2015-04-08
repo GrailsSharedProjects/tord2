@@ -3,6 +3,12 @@
 # suggested that you use the "grails integrate-with --git" command
 # to generate your .gitignore file.
 
+Dekor_Package_9_10
+target
+eclipse-target
+target-eclipse
+
+
 # web application files
 /web-app/WEB-INF/classes
 
