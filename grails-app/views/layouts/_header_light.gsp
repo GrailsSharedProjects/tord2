@@ -1,7 +1,7 @@
     <header class="tz-header tz-header3">
         <div class="container">
             <h3 class="tz-logo pull-left">
-                <a href="${createLinkTo(uri: '/')}">
+                <a href="${createLink(controller: 'home')}">
                     <img src="${assetPath(src: 'logo2.png')}" alt="LOGO">
                 </a>
             </h3>
@@ -158,7 +158,7 @@
                                                     <a href="#">Single Style</a>
                                                     <ul class="mega-nav level1">
                                                         <li>
-                                                            <a href="single-portfolio-full-width-slider.html">Slider Style</a>
+                                                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Slider Style</a>
                                                         </li>
                                                         <li>
                                                             <a href="single-portfolio-small-slider.html">Slider Small</a>

@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js.
+// This is a manifest file that'll be compiled into home.js.
 //
 // Any JavaScript file within this directory can be referenced here using a relative path.
 //

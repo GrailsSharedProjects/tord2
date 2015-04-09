@@ -11,8 +11,8 @@
 		<title><g:layoutTitle default="Tord"/></title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-		<meta name="description" content="拓德是互联网领先的一站式家装O2O平台"/>
-		<meta name="keywords" content="装修，成都装修，一站式装修平台，一站式家装O2O平台，家装O2O，拓德装饰，拓德进出口贸易有限公司"/>
+		<meta name="description" content="拓德是行业领先的一站式家装O2O平台"/>
+		<meta name="keywords" content="装修,成都装修,一站式装修平台,一站式家装O2O平台,家装O2O,拓德装饰,拓德进出口贸易有限公司,家装建材,瓷砖,墙面砖,瓷砖批发"/>
 		
 		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.jpg')}">

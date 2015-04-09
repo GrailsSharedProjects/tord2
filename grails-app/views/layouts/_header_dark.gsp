@@ -1,7 +1,7 @@
     <header class="tz-header tz-header2">
         <div class="container">
             <h3 class="tz-logo pull-left">
-                <a href="${createLinkTo(uri: '/')}">
+                <a href="${createLink(controller: 'home')}">
                     <img src="${assetPath(src: 'logo.png')}" alt="LOGO">
                 </a>
             </h3>
@@ -109,27 +109,6 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div data-width="3" class="col-md-3 mega-col-nav">
-                                        <div class="mega-inner">
-                                            <ul class="mega-nav level1">
-                                                <li>
-                                                    <a href="about-us.html">About us</a>
-                                                </li>
-                                                <li>
-                                                    <a href="contact.html">Contact</a>
-                                                </li>
-                                                <li>
-                                                    <a href="404-page.html">404 Page</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shortcode.html">Shortcode</a>
-                                                </li>
-                                                <li>
-                                                    <a href="features-typo.html">Typhography</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +137,7 @@
                                                     <a href="#">Single Style</a>
                                                     <ul class="mega-nav level1">
                                                         <li>
-                                                            <a href="single-portfolio-full-width-slider.html">Slider Style</a>
+                                                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Slider Style</a>
                                                         </li>
                                                         <li>
                                                             <a href="single-portfolio-small-slider.html">Slider Small</a>
