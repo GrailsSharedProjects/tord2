@@ -15,7 +15,7 @@
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
-                             data-endeasing="Quad.easeOut">take an
+                             data-endeasing="Quad.easeOut">现在购买卫浴系列
                         </div>
 
                         <div class="tp-caption large_bold_white sfr str tp-resizeme  tz-title-large"
@@ -29,12 +29,12 @@
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
-                             data-endeasing="Quad.easeOut">Additional
+                             data-endeasing="Quad.easeOut">享受
                         </div>
 
                         <div class="tp-caption large_bold_white randomrotate randomrotateout tp-resizeme  title-slider-big"
                              data-x="center" data-hoffset="0"
-                             data-y="center" data-voffset="80"
+                             data-y="center" data-voffset="85"
                              data-speed="900"
                              data-start="1500"
                              data-easing="Quad.easeOut"
@@ -43,7 +43,7 @@
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="900"
-                             data-endeasing="Quad.easeOut">10%OFF
+                             data-endeasing="Quad.easeOut">10%的
                         </div>
 
                         <!-- LAYER NR. 4 -->
@@ -58,7 +58,7 @@
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
-                             data-endeasing="Quad.easeOut">already discounted items!
+                             data-endeasing="Quad.easeOut">额外优惠！
                         </div>
                     </li>
                     <!-- SLIDE  -->

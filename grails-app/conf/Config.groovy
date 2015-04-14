@@ -149,6 +149,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll'],
+	'/**' : ['permitAll'],
 ]
 
 // global settings
@@ -192,3 +193,5 @@ Tord Inc.'''
 grails.plugin.springsecurity.ui.forgotPassword.emailFrom = emailFrom
 grails.plugin.springsecurity.ui.forgotPassword.emailSubject = 'Reset Password - Tord'
 grails.plugin.springsecurity.ui.forgotPassword.postResetUrl = '/'
+
+grails.gorm.failOnError = true;
