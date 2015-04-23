@@ -1,8 +1,8 @@
 package com.tord
 
-class Slider {
+class Slider implements TDomainOperations{
 	Integer style
-	String bgImgUrl
+	Photo bgImage
 	String row1
 	String row2
 	String row3
@@ -11,7 +11,7 @@ class Slider {
 	
     static constraints = {
 		style blank: false
-		bgImgUrl nullable: true
+		bgImage nullable: true
 		row1 nullable: true
 		row2 nullable: true
 		row3 nullable: true

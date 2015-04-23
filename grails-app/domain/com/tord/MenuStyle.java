@@ -1,5 +1,5 @@
 package com.tord;
 
 public enum MenuStyle {
-	SINGLE, GRID3, GRID4, GRID2
+	SINGLE, FOUR_GROUPS, FOUR_GRID_GROUPS, TWO_GROUPS
 }

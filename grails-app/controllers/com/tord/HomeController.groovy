@@ -9,6 +9,9 @@ import grails.plugin.springsecurity.annotation.Secured
 class HomeController {
 	
 	@Secured(['permitAll'])
-	def index() {}
+	def index() {
+		def homePage = Page.findByName("HOME_PAGE");
+		model:[pageData:homePage]
+	}
 	
 }

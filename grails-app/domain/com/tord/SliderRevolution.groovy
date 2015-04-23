@@ -1,11 +1,10 @@
 package com.tord
 
-class SliderRevolution {
+class SliderRevolution implements TDomainOperations{
 	
 	String desc
 	
-	List sliders
-	
+	List<Slider> sliders
 	static hasMany = [sliders:Slider]
 	
     static constraints = {

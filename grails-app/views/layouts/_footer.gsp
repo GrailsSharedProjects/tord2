@@ -113,6 +113,6 @@
             </div>
         </div>
         <div class="tz-copyright theme-white">
-            <p>Copy 2014 Dekor Design, INC. All Rights Reserved.</p>
+            <p><%= com.tord.SiteProperties.getIt("CopyRight") %> All Rights Reserved.</p>
         </div>
     </footer><!--end class tz-footer-->

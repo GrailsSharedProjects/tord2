@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="Ladmin"/>
+		<meta name="layout" content="L${pageData.layout.name}"/>
 		<title>Welcome to Grails</title>
 	</head>
 	<body>

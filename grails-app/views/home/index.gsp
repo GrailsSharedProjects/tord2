@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="layout" content="Lhome"/>
-    <title>成都装修_成都家装公司_拓德官网_拓德一站式O2O平台_四川拓德进出口贸易有限公司_建材_瓷砖</title>
+	<meta name="layout" content="L${pageData.layout.name}"/>
+    <title>${pageData.title }</title>
 </head>
 <body>
 
-	<g:render template="rev_slider"/>
+	<g:render template="rev_slider" model="[rev:pageData.sliderRevolution]" />
 
     <section class="tz-about tz-about2 theme-white">
         <div class="container">

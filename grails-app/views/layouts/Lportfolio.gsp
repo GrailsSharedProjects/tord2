@@ -45,7 +45,7 @@
 				</div>
 			</div>
 		</div>
-    	<g:render template="header_light" contextPath="/layouts" />
+    	<g:render template="${pageData.header.style.template }" contextPath="/layouts" />
 		<g:layoutBody/>
     	<g:render template="footer" contextPath="/layouts" />
     	

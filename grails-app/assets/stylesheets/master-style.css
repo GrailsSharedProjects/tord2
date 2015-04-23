@@ -1061,7 +1061,7 @@ body .tz-header ul li ul.menu-item-shop{
 }
 /*---muti mega-----*/
 body header .mega-dropdown-center{
-    left: 0;
+    left: 100%;
     transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
