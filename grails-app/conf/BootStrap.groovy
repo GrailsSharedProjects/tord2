@@ -1,6 +1,7 @@
 import org.springframework.context.i18n.LocaleContextHolder
 
 import com.tord.Header
+import com.tord.HeaderStyle
 import com.tord.MenuStyle
 import com.tord.Page
 import com.tord.PageLayout
