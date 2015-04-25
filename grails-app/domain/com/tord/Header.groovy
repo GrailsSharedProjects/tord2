@@ -1,6 +1,6 @@
 package com.tord
 
-class Header {
+class Header implements TDomainOperations{
 	String name
 	HeaderStyle style = HeaderStyle.LIGHT
 	

@@ -30,3 +30,5 @@
             </div>
         </div><!--end class tz-form-search-->
     </header><!--end class tz-header-->
+    
+    <g:render template="rev_slider" contextPath="/templates"/>

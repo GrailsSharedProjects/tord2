@@ -11,12 +11,8 @@
             <button class="pull-right tz-search"> <i class="fa fa-search"></i></button>
             <nav class="pull-right">
                 <ul class="nav-collapse">
-                	<g:each in="${pageData.header.menu}" var="menu">
                 	<li>
-                        <a href="${createLink(controller: menu.controller, action: menu.action, url: menu.url)}">${menu.title }</a>
-                        <g:renderMenu menu="${menu}"/>
                     </li>
-                	</g:each>
                 </ul>
             </nav>
         </div><!--end class container-->

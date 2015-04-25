@@ -7,45 +7,50 @@ class PortfolioController {
 	}
 	
     def mansory() {
-		
-    	render view: "portfolio-mansory", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+    	render view: "portfolio-mansory", model: [pfId:params.id, pageData: pageData];
 	}
 	
     def grid4() {
-		
-    	render view: "portfolio-grid-4", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+    	render view: "portfolio-grid-4", model: [pfId:params.id, pageData: pageData];
 	}
 	
     def grid3() {
-		
-    	render view: "portfolio-grid-3", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+    	render view: "portfolio-grid-3", model: [pfId:params.id, pageData: pageData];
 	}
 	
     def grid2() {
-		
-    	render view: "portfolio-grid-2", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+    	render view: "portfolio-grid-2", model: [pfId:params.id, pageData: pageData];
 	}
 	
 	////////////SINGLE VIEWS//////////////
 	
 	def gallery() {
-		render view: "single-portfolio-gallery", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+		render view: "single-portfolio-gallery", model: [pfId:params.id, pageData: pageData];
 	}
 	
 	def video() {
-		render view: "single-portfolio-video", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+		render view: "single-portfolio-video", model: [pfId:params.id, pageData: pageData];
 	}
 	
 	def slider() {
-		render view: "single-portfolio-full-width-slider", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+		render view: "single-portfolio-full-width-slider", model: [pfId:params.id, pageData: pageData];
 	}
 	
 	def "slider-small"() {
-		render view: "single-portfolio-small-slider", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+		render view: "single-portfolio-small-slider", model: [pfId:params.id, pageData: pageData];
 	}
 	
 	def sidebar() {
-		render view: "single-portfolio-floating-sidebar", model: [pfId:params.id];
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
+		render view: "single-portfolio-floating-sidebar", model: [pfId:params.id, pageData: pageData];
 	}
 	
 }

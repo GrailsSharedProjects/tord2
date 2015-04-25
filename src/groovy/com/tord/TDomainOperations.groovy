@@ -6,7 +6,7 @@ public trait TDomainOperations {
 		if(found && found.size > 0) {
 			def obj = found.get(0);
 			println "[${obj.class.name}] Delete All Rows: " + found
-			found*.delete();
+			found*.delete(flush: true);
 		}
 	}
 }

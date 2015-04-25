@@ -6,7 +6,6 @@ class Page implements TDomainOperations{
 	String desc
 	
 	PageLayout layout
-	
 	Header header
 	SliderRevolution sliderRevolution
 	
@@ -15,5 +14,7 @@ class Page implements TDomainOperations{
 		title blank: false
 		desc nullable: true
 		sliderRevolution nullable: true
+		layout blank: false, nullable: true
+		header blank: false, nullable: true
     }
 }

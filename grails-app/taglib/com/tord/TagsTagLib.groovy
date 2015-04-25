@@ -75,4 +75,10 @@ class TagsTagLib {
 		}
 		out << '</ul>'
 	}
+	
+	def copyRight = { attrs, body ->
+		def str = SiteProperties.getIt("CopyRight");
+		out << str
+	}
+	
 }

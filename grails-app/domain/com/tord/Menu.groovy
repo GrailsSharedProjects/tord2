@@ -1,6 +1,6 @@
 package com.tord
 
-class Menu implements Serializable{
+class Menu implements Serializable, TDomainOperations{
 	Header header
 	Menu parent
 	MenuStyle style = MenuStyle.SINGLE

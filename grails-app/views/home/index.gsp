@@ -5,9 +5,6 @@
     <title>${pageData.title }</title>
 </head>
 <body>
-
-	<g:render template="rev_slider" model="[rev:pageData.sliderRevolution]" />
-
     <section class="tz-about tz-about2 theme-white">
         <div class="container">
             <h3 class="tz-title-bold-3">

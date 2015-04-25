@@ -10,7 +10,9 @@
 	            <h1 class="tz-title-bold-3">Admin Page</h1>
 	            <article class="blog-item blog-item-first">
 	            	<h2>Avaliable Functions</h2>
-					<div><g:remoteLink controller="admin" action="refresh" class="btn" >重置数据库</g:remoteLink></div>
+					<div><g:remoteLink controller="admin" action="refresh" id="site" class="btn" >重置网站环境变量</g:remoteLink></div>
+					<div><g:remoteLink controller="admin" action="refresh" id="page" class="btn" >重置页面数据</g:remoteLink></div>
+					<div><g:remoteLink controller="admin" action="refresh" id="meta" class="btn" >重置基础数据</g:remoteLink></div>
 	            </article>
 	            <article class="blog-item">
 	                <h2>Application Status</h2>

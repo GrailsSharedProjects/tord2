@@ -45,9 +45,9 @@
 			</div>
 		</div>
 		
-    	<g:render template="${pageData.header.style.template }" contextPath="/layouts" />
+    	<g:render template="${pageData.header.style.template }" contextPath="/templates" />
 		<g:layoutBody/>
-    	<g:render template="footer" contextPath="/layouts" />
+    	<g:render template="footer" contextPath="/templates" />
     	
     	<asset:javascript src="home.js"/>
 	</body>

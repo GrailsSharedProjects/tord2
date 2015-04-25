@@ -1,121 +1,60 @@
 <html>
 <head>
-	<meta name='layout' content='Ladmin'/>
+	<meta name='layout' content='Lsecurity'/>
 	<title><g:message code="springSecurity.login.title"/></title>
-	<style type='text/css' media='screen'>
-	#login {
-		margin: 15px 0px;
-		padding: 0px;
-		text-align: center;
-	}
-
-	#login .inner {
-		width: 340px;
-		padding-bottom: 6px;
-		margin: 60px auto;
-		text-align: left;
-		border: 1px solid #aab;
-		background-color: #f0f0fa;
-		-moz-box-shadow: 2px 2px 2px #eee;
-		-webkit-box-shadow: 2px 2px 2px #eee;
-		-khtml-box-shadow: 2px 2px 2px #eee;
-		box-shadow: 2px 2px 2px #eee;
-	}
-
-	#login .inner .fheader {
-		padding: 18px 26px 14px 26px;
-		background-color: #f7f7ff;
-		margin: 0px 0 14px 0;
-		color: #2e3741;
-		font-size: 18px;
-		font-weight: bold;
-	}
-
-	#login .inner .cssform p {
-		clear: left;
-		margin: 0;
-		padding: 4px 0 3px 0;
-		padding-left: 105px;
-		margin-bottom: 20px;
-		height: 1%;
-	}
-
-	#login .inner .cssform input[type='text'] {
-		width: 120px;
-	}
-
-	#login .inner .cssform label {
-		font-weight: bold;
-		float: left;
-		text-align: right;
-		margin-left: -105px;
-		width: 110px;
-		padding-top: 3px;
-		padding-right: 10px;
-	}
-
-	#login #remember_me_holder {
-		padding-left: 120px;
-	}
-
-	#login #submit {
-		margin-left: 15px;
-	}
-
-	#login #remember_me_holder label {
-		float: none;
-		margin-left: 0;
-		text-align: left;
-		width: 200px
-	}
-
-	#login .inner .login_message {
-		padding: 6px 25px 20px 25px;
-		color: #c33;
-	}
-
-	#login .inner .text_ {
-		width: 120px;
-	}
-
-	#login .inner .chk {
-		height: 12px;
-	}
-	</style>
 </head>
 
 <body>
-<section class="tz-about tz-about2 theme-white">
-<div id='login'>
-	<div class='inner'>
-		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
-
-		<g:if test='${flash.message}'>
-			<div class='login_message'>${flash.message}</div>
-		</g:if>
-
-		<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
-			<p>
-				<label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
-				<input type='text' class='text_' name='j_username' id='username'/>
-			</p>
-
-			<p>
-				<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
-				<input type='password' class='text_' name='j_password' id='password'/>
-			</p>
-
-			<p id="remember_me_holder">
-				<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
-			</p>
-
-			<p>
-				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
-			</p>
-		</form>
-	</div>
-</div>
+<section class="tzpage-default">
+		<h3 class="tz-title-bold-3">登陆</h3>
+		<div></div>
+		<div id='login' class="container">
+            <div class="joom-login">
+                <h4 class="joom-title">请输入账户信息</h4>
+                <g:if test='${flash.message}'>
+					<p class='login_message'>${flash.message}</p>
+				</g:if>
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                        <form class="form-horizontal" action='${postUrl}' method='POST' id='loginForm' autocomplete='off'>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label>用户名：</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <input type='text' class='text_' name='j_username' id='username'/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label>密码：</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <input type='password' class='text_' name='j_password' id='password'/>
+                                </div>
+                            </div>
+                            <div class="row">
+                            	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+                            	<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            		<input type='checkbox' class='chk' style="display: inline; width: 20px;" name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
+									<label for='remember_me' style="display: inline;">记住我</label>
+                            	</div>
+                            </div>
+                            <div class="controls">
+                                <input class="btn btn-primary" style="width: 80px;" type='submit' id="submit" value='登陆'/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
+                        <ul class="joom-form-meta">
+                            <li><a href="#">忘记密码？</a></li>
+                            <li><a href="#">忘记用户名？</a></li>
+                            <li><a href="#">还没有注册账户？</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 <script type='text/javascript'>
 	<!--
 	(function() {
