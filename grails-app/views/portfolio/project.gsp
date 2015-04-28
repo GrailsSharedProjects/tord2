@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="layout" content="Lportfolio"/>
-    <title>我们的案例</title>
+	<meta name="layout" content="L${pageData.layout.name}"/>
+    <title>${pageData.title }</title>
 </head>
 <body>
 
     <section class="tzportfolio-wrap">
         <div class="container">
             <h3 class="tz-title-portfolio">
-                	成功案例
+                	${pageData.title }
             </h3>
             <div data-option-key="filter" class="tzfilter">
                 <a class="selected" data-option-value="*" href="#show-all">全部</a>
@@ -23,10 +23,10 @@
                     <div class="tz-inner">
                         <div class="tz-image-item">
                             <img alt="Aliquam a sollicitudin" src="http://placehold.it/270x270">
-                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+                            <a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                             <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                         </div>
-                        <h6><a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Aliquam a sollicitudin</a></h6>
+                        <h6><a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}">Aliquam a sollicitudin</a></h6>
                         <span>ACCESSORIES</span>
                     </div>
                 </div>
@@ -34,10 +34,10 @@
                     <div class="tz-inner">
                         <div class="tz-image-item">
                             <img alt="Phasellus blandit enim" src="http://placehold.it/270x270">
-                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+                            <a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                             <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                         </div>
-                        <h6><a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Phasellus blandit enim</a></h6>
+                        <h6><a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}">Phasellus blandit enim</a></h6>
                         <span>ACCESSORIES</span>
                     </div>
                 </div>
@@ -45,10 +45,10 @@
                     <div class="tz-inner">
                         <div class="tz-image-item">
                             <img alt="Curabitur in fermentum" src="http://placehold.it/270x270">
-                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+                            <a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                             <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                         </div>
-                        <h6><a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Curabitur in fermentum</a></h6>
+                        <h6><a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}">Curabitur in fermentum</a></h6>
                         <span>ACCESSORIES</span>
                     </div>
                 </div>
@@ -56,10 +56,10 @@
                     <div class="tz-inner">
                         <div class="tz-image-item">
                             <img alt="Nullam viverra enim" src="http://placehold.it/270x270">
-                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+                            <a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                             <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                         </div>
-                        <h6><a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Nullam viverra enim </a></h6>
+                        <h6><a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}">Nullam viverra enim </a></h6>
                         <span>ACCESSORIES</span>
                     </div>
                 </div>
@@ -67,10 +67,10 @@
                     <div class="tz-inner">
                         <div class="tz-image-item">
                             <img alt="Nulla maximus est" src="http://placehold.it/270x270">
-                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+                            <a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                             <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                         </div>
-                        <h6><a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Nulla maximus est </a></h6>
+                        <h6><a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}">Nulla maximus est </a></h6>
                         <span>ACCESSORIES</span>
                     </div>
                 </div>
@@ -78,10 +78,10 @@
                     <div class="tz-inner">
                         <div class="tz-image-item">
                             <img alt="Etiam consequat luctus" src="http://placehold.it/270x270">
-                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+                            <a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                             <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                         </div>
-                        <h6><a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Etiam consequat luctus</a></h6>
+                        <h6><a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}">Etiam consequat luctus</a></h6>
                         <span>ACCESSORIES</span>
                     </div>
                 </div>
@@ -89,10 +89,10 @@
                     <div class="tz-inner">
                         <div class="tz-image-item">
                             <img alt="Curabitur dictum erat" src="http://placehold.it/270x270">
-                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+                            <a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                             <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                         </div>
-                        <h6><a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Curabitur dictum erat</a></h6>
+                        <h6><a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}">Curabitur dictum erat</a></h6>
                         <span>ACCESSORIES</span>
                     </div>
                 </div>
@@ -100,10 +100,10 @@
                     <div class="tz-inner">
                         <div class="tz-image-item">
                             <img alt="Cheese Shop" src="http://placehold.it/270x270">
-                            <a href="${createLink(controller:'portfolio', action:'gallery', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+                            <a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                             <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                         </div>
-                        <h6><a href="${createLink(controller:'portfolio', action:'gallery', id:1)}">Harper & Blohm - Cheese Shop</a></h6>
+                        <h6><a href="${createLink(controller:'portfolio', action:'slider-small', id:1)}">Harper & Blohm - Cheese Shop</a></h6>
                         <span>ACCESSORIES</span>
                     </div>
                 </div>

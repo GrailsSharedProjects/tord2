@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="layout" content="Lportfolio"/>
-    <title>我们的案例</title>
+	<meta name="layout" content="L${pageData.layout.name}"/>
+    <title>${pageData.title }</title>
 </head>
 <body>
 
     <section class="tzportfolio-wrap">
         <div class="container">
             <h3 class="tz-title-portfolio">
-                新品发布
+                ${pageData.title }
             </h3>
             <div data-option-key="filter" class="tzfilter">
                 <a class="selected" data-option-value="*" href="#show-all">全部</a>

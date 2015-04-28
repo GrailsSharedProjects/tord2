@@ -1,15 +1,15 @@
-package com.tord
+package com.tord.admin
+
+import com.tord.admin.SliderController;
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
-import com.tord.AdminController
-
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(AdminController)
-class AdminControllerSpec extends Specification {
+@TestFor(SliderController)
+class SliderControllerSpec extends Specification {
 
     def setup() {
     }

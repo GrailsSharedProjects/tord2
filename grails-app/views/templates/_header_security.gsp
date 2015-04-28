@@ -12,6 +12,7 @@
             <nav class="pull-right">
                 <ul class="nav-collapse">
                 	<li>
+                		<a href="${createLink(controller: 'home', action: 'index')}">首页</a>
                     </li>
                 </ul>
             </nav>

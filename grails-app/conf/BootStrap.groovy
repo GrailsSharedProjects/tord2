@@ -31,16 +31,24 @@ class BootStrap {
 		PageLayout.findOrSaveByName("home");
 		PageLayout.findOrSaveByName("admin");
 		PageLayout.findOrSaveByName("portfolio");
+		PageLayout.findOrSaveByName("blog");
+		PageLayout.findOrSaveByName("shop");
 		PageLayout.findOrSaveByName("uploader");
 	}
 	
 	def setupUsers() {
 		// debug users
-		def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
-		def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
-		def testUser = new User(username: 'me', password: 'password')
-		testUser.save(flush: true)
-		UserRole.create testUser, adminRole, true
+		def adminRole = Role.findOrSaveByAuthority('ROLE_ADMIN');
+		def userRole = Role.findOrSaveByAuthority('ROLE_USER');
+		def testUser = User.findByUsername('me');
+		if(!testUser) {
+			testUser = new User(username: 'me', password: 'password');
+			testUser.save(flush: true);
+		}
+		def userRoleInst = UserRole.findByUserAndRole(testUser, adminRole);
+		if(!userRoleInst) {
+			UserRole.create testUser, adminRole, true
+		}
 		assert User.count() == 1
 		assert Role.count() == 2
 		assert UserRole.count() == 1
@@ -104,38 +112,46 @@ class BootStrap {
 		////////////////////////////////////
 		def pageHeader = createHeader("PAGE_HEADER", HeaderStyle.LIGHT);
 		
-		def portfPage = new Page(name: "PORTFOLIO_PAGE", title: "成功案例", header: pageHeader, layout: PageLayout.findByName("portfolio"));
-		portfPage.save(flush: true);
+		def showPortfolioPage = new Page(name: "SHOW_PORTFOLIO_PAGE", title: "查看详情", header: pageHeader, layout: PageLayout.findByName("portfolio"));
+		showPortfolioPage.save(flush: true);
+		
+		def newProductPage = new Page(name: "NEW_PRODUCT_PAGE", title: "新品发布", header: pageHeader, layout: PageLayout.findByName("portfolio"));
+		newProductPage.save(flush: true);
+		
+		def sucessProjectPage = new Page(name: "SUCCESS_PROJECT_PAGE", title: "成功案例", header: pageHeader, layout: PageLayout.findByName("portfolio"));
+		sucessProjectPage.save(flush: true);
+		
+		def blogPage = new Page(name: "BLOG_PAGE", title: "产品培训", header: pageHeader, layout: PageLayout.findByName("blog"));
+		blogPage.save(flush: true);
+		
+		def shopPage = new Page(name: "SHOP_PAGE", title: "建材超市", header: pageHeader, layout: PageLayout.findByName("shop"));
+		shopPage.save(flush: true);
 		
 	}
 
 	private Header createHeader(String name, HeaderStyle headerStyle) {
 		def homeHeader = new Header(name: name, style: headerStyle, );
 		def menu1 = homeHeader.createMenu("首页", "home", "index");
-		def menu2 = homeHeader.createMenu("新品发布", "home", "index", MenuStyle.FOUR_GROUPS);
-		menu2.createSubMenu("釉面砖1", "home", "index", 0)
-		menu2.createSubMenu("釉面砖2", "home", "index", 0)
-		menu2.createSubMenu("釉面砖3", "home", "index", 0)
-		menu2.createSubMenu("釉面砖4", "home", "index", 0)
-		menu2.createSubMenu("釉面砖5", "home", "index", 1)
-		menu2.createSubMenu("釉面砖6", "home", "index", 1)
-		menu2.createSubMenu("釉面砖7", "home", "index", 1)
-		menu2.createSubMenu("釉面砖8", "home", "index", 1)
-		menu2.createSubMenu("釉面砖9", "home", "index", 2)
-		menu2.createSubMenu("釉面砖0", "home", "index", 2)
-		menu2.createSubMenu("釉面砖1", "home", "index", 2)
-		menu2.createSubMenu("釉面砖2", "home", "index", 2)
-		menu2.createSubMenu("釉面砖3", "home", "index", 3)
-		menu2.createSubMenu("釉面砖4", "home", "index", 3)
-		menu2.createSubMenu("釉面砖5", "home", "index", 3)
-		menu2.createSubMenu("釉面砖6", "home", "index", 3)
-		def menu3 = homeHeader.createMenu("产品培训", "home", "index");
-		def sub1 = menu3.createSubMenu("瓷砖", "home", "index");
-		def sub2 = menu3.createSubMenu("墙面砖", "home", "index");
-		def subsub1 = sub2.createSubMenu("墙面砖1", "home", "index");
-		def subsub2 = sub2.createSubMenu("墙面砖2", "home", "index");
-		def menu4 = homeHeader.createMenu("成功案例", "portfolio", "index");
-		def menu5 = homeHeader.createMenu("建材超市", "home", "index");
+		def menu2 = homeHeader.createMenu("新品发布", "portfolio", "index", MenuStyle.FOUR_GROUPS);
+		menu2.createSubMenu("釉面砖1", "portfolio", "index", 0)
+		menu2.createSubMenu("釉面砖2", "portfolio", "index", 0)
+		menu2.createSubMenu("釉面砖3", "portfolio", "index", 0)
+		menu2.createSubMenu("釉面砖4", "portfolio", "index", 0)
+		menu2.createSubMenu("釉面砖5", "portfolio", "index", 1)
+		menu2.createSubMenu("釉面砖6", "portfolio", "index", 1)
+		menu2.createSubMenu("釉面砖7", "portfolio", "index", 1)
+		menu2.createSubMenu("釉面砖8", "portfolio", "index", 1)
+		menu2.createSubMenu("釉面砖9", "portfolio", "index", 2)
+		menu2.createSubMenu("釉面砖0", "portfolio", "index", 2)
+		menu2.createSubMenu("釉面砖1", "portfolio", "index", 2)
+		menu2.createSubMenu("釉面砖2", "portfolio", "index", 2)
+		menu2.createSubMenu("釉面砖3", "portfolio", "index", 3)
+		menu2.createSubMenu("釉面砖4", "portfolio", "index", 3)
+		menu2.createSubMenu("釉面砖5", "portfolio", "index", 3)
+		menu2.createSubMenu("釉面砖6", "portfolio", "index", 3)
+		def menu3 = homeHeader.createMenu("产品培训", "blog", "index");
+		def menu4 = homeHeader.createMenu("成功案例", "portfolio", "project");
+		def menu5 = homeHeader.createMenu("建材超市", "shop", "index");
 		homeHeader.save()
 		return homeHeader
 	}

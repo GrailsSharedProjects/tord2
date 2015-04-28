@@ -1,4 +1,6 @@
-package com.tord
+package com.tord.admin
+
+import com.tord.Page;
 
 class AdminController {
 	

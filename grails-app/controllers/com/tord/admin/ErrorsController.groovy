@@ -1,4 +1,4 @@
-package com.tord
+package com.tord.admin
 
 class ErrorsController {
 

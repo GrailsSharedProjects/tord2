@@ -2,7 +2,7 @@
         <div class="container">
             <h3 class="tz-logo pull-left">
                 <a href="${createLink(controller: 'home')}">
-                    <img src="${assetPath(src: 'logo.png')}" alt="LOGO">
+                    <img src="${assetPath(src: 'tord_small.png')}" alt="LOGO">
                 </a>
             </h3>
             <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu pull-right" type="button">

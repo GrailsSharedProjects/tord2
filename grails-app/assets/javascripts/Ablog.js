@@ -11,7 +11,7 @@
 //= require resize.js
 //= require off-canvas.js
 //= require jquery.isotope.min.js
-//= require portfolio.js
+//= require blog.js
 //= require master.js
 //= require_self
 
