@@ -15,13 +15,13 @@
                     <button class="tz_slider_next"><i class="fa fa-angle-right"></i></button>
                     <ul class="tzblog-slider-content">
                         <li>
-                            <img src="http://placehold.it/1170x500" alt="Standard post with photo">
+                            <img src="${assetPath(src: 'demos/blog1.jpg') }" alt="Standard post with photo">
                         </li>
                         <li>
-                            <img src="http://placehold.it/1170x500" alt="Standard post with photo">
+                            <img src="${assetPath(src: 'demos/blog1.jpg') }" alt="Standard post with photo">
                         </li>
                         <li>
-                            <img src="http://placehold.it/1170x500" alt="Standard post with photo">
+                            <img src="${assetPath(src: 'demos/blog1.jpg') }" alt="Standard post with photo">
                         </li>
                     </ul>
                 </div>
@@ -79,9 +79,9 @@
                         <button class="tzpause"><i class="fa fa-pause"></i></button>
                         <div class="bg-video"></div>
                         <video class="videoID">
-                            <source type="video/mp4" src="video/video.mp4" />
-                            <source type="video/mp4" src="video/video.ogv" />
-                            <source type="video/mp4" src="video/video.webm" />
+                            <source type="video/mp4" src="${assetPath(src: 'video.mp4') }" />
+                            <source type="video/mp4" src="${assetPath(src: 'video.ogv') }" />
+                            <source type="video/mp4" src="${assetPath(src: 'video.webm') }" />
                         </video>
                     </div>
                 </div>

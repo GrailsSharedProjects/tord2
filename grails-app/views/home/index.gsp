@@ -134,15 +134,15 @@
     <section class="tz-our-team theme-white">
         <div class="container">
             <h3 class="tz-title-bold-3">
-                MEET OUR TEAM
+            	名师设计
             </h3>
             <ul class="tz-team-slider">
                 <li>
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="http://placehold.it/600x600" alt="Jordan Henrion">
-                                <img class="img-hover" src="http://placehold.it/600x600" alt="Jordan Henrion">
+                                <img src="${assetPath(src: 'demos/team1.jpg') }" alt="Jordan Henrion">
+                                <img class="img-hover" src="${assetPath(src: 'demos/team1.jpg') }" alt="Jordan Henrion">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
                         </div>
@@ -156,8 +156,8 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="http://placehold.it/600x600" alt="Catherine Doe">
-                                <img class="img-hover" src="http://placehold.it/600x600" alt="Catherine Doe">
+                                <img src="${assetPath(src: 'demos/team2.jpg') }" alt="Catherine Doe">
+                                <img class="img-hover" src="${assetPath(src: 'demos/team2.jpg') }" alt="Catherine Doe">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
                         </div>
@@ -171,8 +171,8 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="http://placehold.it/600x600" alt="Marion Doe">
-                                <img class="img-hover" src="http://placehold.it/600x600" alt="Marion Doe">
+                                <img src="${assetPath(src: 'demos/team3.jpg') }" alt="Marion Doe">
+                                <img class="img-hover" src="${assetPath(src: 'demos/team3.jpg') }" alt="Marion Doe">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
                         </div>
@@ -186,8 +186,8 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="http://placehold.it/600x600" alt="Mary Jane Doe">
-                                <img class="img-hover" src="http://placehold.it/600x600" alt="Mary Jane Doe">
+                                <img src="${assetPath(src: 'demos/team4.jpg') }" alt="Mary Jane Doe">
+                                <img class="img-hover" src="${assetPath(src: 'demos/team4.jpg') }" alt="Mary Jane Doe">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
                         </div>
@@ -201,8 +201,8 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="http://placehold.it/600x600" alt="Jordan Henrion">
-                                <img class="img-hover" src="http://placehold.it/600x600" alt="Jordan Henrion">
+                                <img src="${assetPath(src: 'demos/team5.jpg') }" alt="Jordan Henrion">
+                                <img class="img-hover" src="${assetPath(src: 'demos/team5.jpg') }" alt="Jordan Henrion">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
                         </div>
@@ -216,31 +216,6 @@
         </div><!--end class container-->
     </section><!--end class tz-our-team-->
 
-    <div class="parallax tz-simple">
-        <button class="simple_prev"><i class="fa fa-angle-left"></i></button>
-        <button class="simple_next"><i class="fa fa-angle-right "></i></button>
-        <div class="container">
-            <ul class="tz-simple-product">
-                <li>
-                    <p>AMAZING LIGHT BOX</p>
-                    <a href="#">BUY ITEM</a>
-                </li>
-                <li>
-                    <p>AMAZING LIGHT BOX</p>
-                    <a href="#">BUY ITEM</a>
-                </li>
-                <li>
-                    <p>AMAZING LIGHT BOX</p>
-                    <a href="#">BUY ITEM</a>
-                </li>
-                <li>
-                    <p>AMAZING LIGHT BOX</p>
-                    <a href="#">BUY ITEM</a>
-                </li>
-            </ul>
-        </div><!--end class container-->
-    </div><!--end class parallax -->
-
     <section class="tz-free-shipping theme-orange">
         <div class="container">
             <div class="row">
@@ -249,13 +224,13 @@
                         <i class="fa fa-shopping-cart"></i>
                     </span>
                     <div class="tz-shipping-content">
-                    <h6>FREE SHIPPING & RETURN</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu dolor felis. Duis in tristique enim.</p>
+                    <h6>全场包邮，七天包退</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <a href="#" class="learn-more pull-right">
-                        <span>LEARN MORE</span>
+                        <span>了解更多售后保障</span>
                     </a>
                 </div>
             </div><!--end class row-->
@@ -264,13 +239,13 @@
 
     <section class="tz-lastest-shop theme-white shop-style2">
         <h3 class="tz-title-bold-3">
-            LASTEST FROM SHOP
+            热卖单品
         </h3>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 laster-shop-item">
                     <div class="laster-thumb">
-                        <img src="http://placehold.it/270x270" alt="Linen Shirt With Mao Color">
+                        <img src="${assetPath(src: 'demos/shop1.jpg') }" alt="Linen Shirt With Mao Color">
                         <span class="tz-shop-meta">
                             <a href="#" class="tzshopping">
                                 <i class="fa fa-shopping-cart"></i>
@@ -288,7 +263,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 laster-shop-item">
                     <div class="laster-thumb">
-                        <img src="http://placehold.it/270x270" alt="Superdry Shirt With Wash">
+                        <img src="${assetPath(src: 'demos/shop2.jpg') }" alt="Superdry Shirt With Wash">
                         <span class="tz-shop-meta">
                             <a href="#" class="tzshopping">
                                 <i class="fa fa-shopping-cart"></i>
@@ -306,7 +281,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 laster-shop-item">
                     <div class="laster-thumb">
-                        <img src="http://placehold.it/270x270" alt="Arvust Shirt In Washed Blue">
+                        <img src="${assetPath(src: 'demos/shop3.jpg') }" alt="Arvust Shirt In Washed Blue">
                         <span class="tz-shop-meta">
                             <a href="#" class="tzshopping">
                                 <i class="fa fa-shopping-cart"></i>
@@ -324,7 +299,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 laster-shop-item">
                     <div class="laster-thumb">
-                        <img src="http://placehold.it/270x270" alt="Selected Premium Formal Shirt">
+                        <img src="${assetPath(src: 'demos/shop4.jpg') }" alt="Selected Premium Formal Shirt">
                         <span class="tz-shop-meta">
                             <a href="#" class="tzshopping">
                                 <i class="fa fa-shopping-cart"></i>
@@ -348,52 +323,52 @@
         <div class="container">
             <ul class="partner-slider">
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler4">
+                    <img src="${assetPath(src: 'demos/partler1.png') }" alt="partler4">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler3">
+                    <img src="${assetPath(src: 'demos/partler2.png') }" alt="partler3">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler1">
+                    <img src="${assetPath(src: 'demos/partler3.png') }" alt="partler1">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler2">
+                    <img src="${assetPath(src: 'demos/partler4.png') }" alt="partler2">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler5">
+                    <img src="${assetPath(src: 'demos/partler5.png') }" alt="partler5">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler6">
+                    <img src="${assetPath(src: 'demos/partler6.png') }" alt="partler6">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler3">
+                    <img src="${assetPath(src: 'demos/partler1.png') }" alt="partler3">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler4">
+                    <img src="${assetPath(src: 'demos/partler2.png') }" alt="partler4">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler4">
+                    <img src="${assetPath(src: 'demos/partler3.png') }" alt="partler4">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler3">
+                    <img src="${assetPath(src: 'demos/partler4.png') }" alt="partler3">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler1">
+                    <img src="${assetPath(src: 'demos/partler5.png') }" alt="partler1">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler2">
+                    <img src="${assetPath(src: 'demos/partler6.png') }" alt="partler2">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler5">
+                    <img src="${assetPath(src: 'demos/partler1.png') }" alt="partler5">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler6">
+                    <img src="${assetPath(src: 'demos/partler2.png') }" alt="partler6">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler3">
+                    <img src="${assetPath(src: 'demos/partler3.png') }" alt="partler3">
                 </li>
                 <li>
-                    <img src="http://placehold.it/160x100" alt="partler4">
+                    <img src="${assetPath(src: 'demos/partler4.png') }" alt="partler4">
                 </li>
             </ul>
         </div><!--end class container-->

@@ -5,7 +5,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="tz-tzrelated">
                             <div class="tz-tzrelated-img">
-                                <img alt="Praesent vulputate ultrices" src="http://placehold.it/370x370">
+                                <img alt="Praesent vulputate ultrices" src="${assetPath(src: 'demos/p-related1.jpg') }">
                                 <a href="#" class="tzfa-search"><i class="fa fa-search"></i></a>
                                 <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                             </div>
@@ -16,7 +16,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="tz-tzrelated">
                             <div class="tz-tzrelated-img">
-                                <img alt="Nulla tortor nulla" src="http://placehold.it/370x370">
+                                <img alt="Nulla tortor nulla" src="${assetPath(src: 'demos/p-related2.jpg') }">
                                 <a href="#" class="tzfa-search"><i class="fa fa-search"></i></a>
                                 <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                             </div>
@@ -27,7 +27,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="tz-tzrelated">
                             <div class="tz-tzrelated-img">
-                                <img alt="Cheese Shop" src="http://placehold.it/370x370">
+                                <img alt="Cheese Shop" src="${assetPath(src: 'demos/p-related3.jpg') }">
                                 <a href="#" class="tzfa-search"><i class="fa fa-search"></i></a>
                                 <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                             </div>

@@ -17,7 +17,7 @@
             </g:if>
             <g:if test="${articleType == 'image' }">
             <div class="tzpost-image">
-                <img src="http://placehold.it/1170x500" alt="Standard post with photo">
+                <img src="${assetPath(src: 'demos/blog1.jpg') }" alt="Standard post with photo">
             </div>
             </g:if>
             <g:if test="${articleType == 'video' }">
@@ -27,9 +27,9 @@
                     <button class="tzpause"><i class="fa fa-pause"></i></button>
                     <div class="bg-video"></div>
                     <video class="videoID">
-                        <source type="video/mp4" src="video/video.mp4" />
-                        <source type="video/mp4" src="video/video.ogv" />
-                        <source type="video/mp4" src="video/video.webm" />
+                   		<source type="video/mp4" src="${assetPath(src: 'video.mp4') }" />
+                        <source type="video/mp4" src="${assetPath(src: 'video.ogv') }" />
+                        <source type="video/mp4" src="${assetPath(src: 'video.webm') }" />
                     </video>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="tzpost-author">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <img class="tzpost-avata" src="http://placehold.it/300x300" alt="avata">
+                        <img class="tzpost-avata" src="${assetPath(src: 'demos/team3.jpg') }" alt="avata">
                         <h6>JOHNNY IGGY</h6>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra mauris eget tortor.</p>
                     </div>
@@ -84,7 +84,7 @@
                     <li>
                         <div class="comment-body">
                             <div class="comment-author">
-                                <img src="http://placehold.it/300x300" alt="JOHNNY">
+                                <img src="${assetPath(src: 'demos/team3.jpg') }" alt="JOHNNY">
                             </div>
                             <div class="comment-content">
                                 <strong>JOHNNY IGGY</strong>
@@ -99,7 +99,7 @@
                             <li>
                                 <div class="comment-body">
                                     <div class="comment-author">
-                                        <img src="http://placehold.it/300x300" alt="LILY ESSE">
+                                        <img src="${assetPath(src: 'demos/team2.jpg') }" alt="LILY ESSE">
                                     </div>
                                     <div class="comment-content">
                                         <strong>LILY ESSE</strong>
@@ -116,7 +116,7 @@
                     <li>
                         <div class="comment-body">
                             <div class="comment-author">
-                                <img src="http://placehold.it/300x300" alt="JEFF ALAN">
+                                <img src="${assetPath(src: 'demos/team1.jpg') }" alt="JEFF ALAN">
                             </div>
                             <div class="comment-content">
                                 <strong>JEFF ALAN</strong>
@@ -165,7 +165,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <article class="blog-gird-item blog-item">
                         <div class="pageblog-thumb">
-                            <img src="http://placehold.it/270x270" alt="Nullam viverra enim">
+                            <img src="${assetPath(src: 'demos/blog/blog1.jpg') }" alt="Nullam viverra enim">
                             <a href="#" class="tzblog-view"><i class="fa fa-search"></i></a>
                         </div>
                         <h4><a href="#">Nullam viverra enim </a></h4>
@@ -182,7 +182,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <article class="blog-gird-item blog-item">
                         <div class="pageblog-thumb">
-                            <img src="http://placehold.it/270x270" alt="Morbi faucibus non">
+                            <img src="${assetPath(src: 'demos/blog/blog2.jpg') }" alt="Morbi faucibus non">
                             <a href="#" class="tzblog-view"><i class="fa fa-search"></i></a>
                         </div>
                         <h4><a href="#">Morbi faucibus non</a></h4>
@@ -199,7 +199,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <article class="blog-gird-item blog-item">
                         <div class="pageblog-thumb">
-                            <img src="http://placehold.it/270x270" alt="Duis vitae tellus at">
+                            <img src="${assetPath(src: 'demos/blog/blog3.jpg') }" alt="Duis vitae tellus at">
                             <a href="#" class="tzblog-view"><i class="fa fa-search"></i></a>
                         </div>
                         <h4><a href="#">Duis vitae tellus at</a></h4>
@@ -216,7 +216,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <article class="blog-gird-item blog-item">
                         <div class="pageblog-thumb">
-                            <img src="http://placehold.it/270x270" alt="Cheese Shop">
+                            <img src="${assetPath(src: 'demos/blog/blog4.jpg') }" alt="Cheese Shop">
                             <a href="#" class="tzblog-view"><i class="fa fa-search"></i></a>
                         </div>
                         <h4><a href="#">Cheese Shop</a></h4>

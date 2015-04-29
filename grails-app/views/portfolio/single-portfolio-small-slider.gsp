@@ -24,13 +24,13 @@
                 <button class="tz_slider_next"><i class="fa fa-angle-right"></i></button>
                 <ul class="tz-slider-full">
                     <li>
-                        <img src="http://placehold.it/1920x700" alt="single page small slider">
+                        <img src="${assetPath(src: 'demos/single-slider.jpg') }" alt="single page small slider">
                     </li>
                     <li>
-                        <img src="http://placehold.it/1920x700" alt="single page small slider">
+                        <img src="${assetPath(src: 'demos/single-slider1.jpg') }" alt="single page small slider">
                     </li>
                     <li>
-                        <img src="http://placehold.it/1920x700" alt="single page small slider">
+                        <img src="${assetPath(src: 'demos/single-slider.jpg') }" alt="single page small slider">
                     </li>
                 </ul>
             </div>

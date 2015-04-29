@@ -69,7 +69,7 @@
                         <ul>
                             <li>
                                 <div class="as_bestsellers_thumb">
-                                    <img src="http://placehold.it/80x80" alt="Dress With Back Bow">
+                                    <img src="${assetPath(src: 'demos/aside_1.jpg') }" alt="Dress With Back Bow">
                                 </div>
                                 <div class="as_bestsellers_content">
                                     <a href="${createLink(controller:'shop', action:'show', id:'')}">Dress With Back Bow</a>
@@ -78,7 +78,7 @@
                             </li>
                             <li>
                                 <div class="as_bestsellers_thumb">
-                                    <img src="http://placehold.it/80x80" alt="Vintage Bikini">
+                                    <img src="${assetPath(src: 'demos/aside_2.jpg') }" alt="Vintage Bikini">
                                 </div>
                                 <div class="as_bestsellers_content">
                                     <a href="${createLink(controller:'shop', action:'show', id:'')}">Vintage Bikini</a>
@@ -87,7 +87,7 @@
                             </li>
                             <li>
                                 <div class="as_bestsellers_thumb">
-                                    <img src="http://placehold.it/80x80" alt="Dress With Pastel Color">
+                                    <img src="${assetPath(src: 'demos/aside_3.jpg') }" alt="Dress With Pastel Color">
                                 </div>
                                 <div class="as_bestsellers_content">
                                     <a href="${createLink(controller:'shop', action:'show', id:'')}">Dress With Pastel Color</a>
@@ -96,7 +96,7 @@
                             </li>
                             <li>
                                 <div class="as_bestsellers_thumb">
-                                    <img src="http://placehold.it/80x80" alt="Dress With Back Bow">
+                                    <img src="${assetPath(src: 'demos/aside_4.jpg') }" alt="Dress With Back Bow">
                                 </div>
                                 <div class="as_bestsellers_content">
                                     <a href="${createLink(controller:'shop', action:'show', id:'')}">Dress With Back Bow</a>
@@ -105,7 +105,7 @@
                             </li>
                             <li>
                                 <div class="as_bestsellers_thumb">
-                                    <img src="http://placehold.it/80x80" alt="Dress With Back Bow">
+                                    <img src="${assetPath(src: 'demos/aside_5.jpg') }" alt="Dress With Back Bow">
                                 </div>
                                 <div class="as_bestsellers_content">
                                     <a href="${createLink(controller:'shop', action:'show', id:'')}'shop', action:'show', id:'')}">Dress With Back Bow</a>
@@ -118,7 +118,7 @@
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="tzshopcat-description">
                         <h1 class="tz-title-bold-3">CHAIRS</h1>
-                        <img src="http://placehold.it/870x400" alt="Chairs">
+                        <img src="${assetPath(src: 'demos/category-img.jpg') }" alt="Chairs">
                         <p>
                             Vestibulum viverra pellentesque nisl non adipiscing. Sed vel auctor purus. Sed semper non dui id congue. Vivamus laoreet arcu scelerisque, consectetur orci ut, lacinia justo. Sed diam ipsum, aliquet et vulputate ut, semper ut mi. Fusce tempor ultrices massa, dapibus sagittis elit consectetur at. Praesent vitae arcu mauris.
                         </p>
@@ -130,9 +130,9 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 laster-shop-item">
                             <div class="laster-thumb">
                                 <div class="shop-icon-data">
-                                    <img src="http://placehold.it/38x38" alt="hosts">
+                                    <img src="${assetPath(src: 'demos/hots.png') }" alt="hosts">
                                 </div>
-                                <img src="http://placehold.it/270x270" alt="Linen Shirt With Mao Color">
+                                <img src="${assetPath(src: 'demos/shop1.jpg') }" alt="Linen Shirt With Mao Color">
                                 <span class="tz-shop-meta">
                                     <a href="#" class="tzshopping">
                                         <i class="fa fa-shopping-cart"></i>
@@ -150,7 +150,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 laster-shop-item">
                             <div class="laster-thumb">
-                                <img src="http://placehold.it/270x270" alt="Superdry Shirt With Wash">
+                                <img src="${assetPath(src: 'demos/shop2.jpg') }" alt="Superdry Shirt With Wash">
                                 <span class="tz-shop-meta">
                                     <a href="#" class="tzshopping">
                                         <i class="fa fa-shopping-cart"></i>
@@ -168,7 +168,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 laster-shop-item">
                             <div class="laster-thumb">
-                                <img src="http://placehold.it/270x270" alt="Arvust Shirt In Washed Blue">
+                                <img src="${assetPath(src: 'demos/shop3.jpg') }" alt="Arvust Shirt In Washed Blue">
                                 <span class="tz-shop-meta">
                                     <a href="#" class="tzshopping">
                                         <i class="fa fa-shopping-cart"></i>
@@ -187,7 +187,7 @@
 
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 laster-shop-item">
                             <div class="laster-thumb">
-                                <img src="http://placehold.it/270x270" alt="Phasellus mattis eros">
+                                <img src="${assetPath(src: 'demos/shop4.jpg') }" alt="Phasellus mattis eros">
                             <span class="tz-shop-meta">
                                 <a href="#" class="tzshopping">
                                     <i class="fa fa-shopping-cart"></i>
@@ -205,10 +205,10 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 laster-shop-item">
                             <div class="laster-thumb">
-                                <img src="http://placehold.it/270x270" alt="Proin sit amet ultrices">
+                                <img src="${assetPath(src: 'demos/shop5.jpg') }" alt="Proin sit amet ultrices">
                                 <div class="shop-icon-data">
-                                    <img src="http://placehold.it/38x38" alt="new">
-                                    <img  src="http://placehold.it/38x38" alt="sale">
+                                    <img src="${assetPath(src: 'demos/new.png') }" alt="new">
+                                    <img  src="${assetPath(src: 'demos/sale.png') }" alt="sale">
                                 </div>
                                 <span class="tz-shop-meta">
                                     <a href="#" class="tzshopping">
@@ -227,7 +227,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 laster-shop-item">
                             <div class="laster-thumb">
-                                <img src="http://placehold.it/270x270" alt="Aenean magna lorem">
+                                <img src="${assetPath(src: 'demos/shop6.jpg') }" alt="Aenean magna lorem">
                                 <span class="tz-shop-meta">
                                     <a href="#" class="tzshopping">
                                         <i class="fa fa-shopping-cart"></i>

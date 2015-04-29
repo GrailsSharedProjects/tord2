@@ -42,7 +42,7 @@
                         </h3>
                         <ul class="tz-recent-post">
                             <li>
-                                <img src="http://placehold.it/70x70" alt="Lorem ipsum dolor sit amet">
+                                <img src="${assetPath(src: 'demos/last-1.jpg') }" alt="Lorem ipsum dolor sit amet">
                                 <div class="tz-recent-content">
                                     <a href="singlePost-image.html">Lorem ipsum dolor sit amet.</a>
                                     <span>
@@ -51,7 +51,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="http://placehold.it/70x70" alt="Donec quam eros, bibendum sed egestas">
+                                <img src="${assetPath(src: 'demos/last-3.jpg') }" alt="Donec quam eros, bibendum sed egestas">
                                 <div class="tz-recent-content">
                                     <a href="singlePost-image.html">Donec quam eros, bibendum sed egestas ...</a>
                                     <span>
@@ -60,7 +60,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="http://placehold.it/70x70" alt="Sit amet varius quam">
+                                <img src="${assetPath(src: 'demos/last-12.jpg') }" alt="Sit amet varius quam">
                                 <div class="tz-recent-content">
                                     <a href="singlePost-image.html">Sit amet varius quam.</a>
                                     <span>
@@ -79,32 +79,32 @@
                         <ul class="tz-recent-porjects">
                             <li>
                                 <a href="single-portfolio-gallery.html">
-                                    <img src="http://placehold.it/70x70" alt="projects">
+                                    <img src="${assetPath(src: 'demos/pro1.jpg') }" alt="projects">
                                 </a>
                             </li>
                             <li>
                                 <a href="single-portfolio-gallery.html">
-                                    <img src="http://placehold.it/70x70" alt="projects 2">
+                                    <img src="${assetPath(src: 'demos/pro2.jpg') }" alt="projects 2">
                                 </a>
                             </li>
                             <li>
                                 <a href="single-portfolio-gallery.html">
-                                    <img src="http://placehold.it/70x70" alt="projects 3">
+                                    <img src="${assetPath(src: 'demos/pro3.jpg') }" alt="projects 3">
                                 </a>
                             </li>
                             <li>
                                 <a href="single-portfolio-gallery.html">
-                                    <img src="http://placehold.it/70x70" alt="projects 4">
+                                    <img src="${assetPath(src: 'demos/pro4.jpg') }" alt="projects 4">
                                 </a>
                             </li>
                             <li>
                                 <a href="single-portfolio-gallery.html">
-                                    <img src="http://placehold.it/70x70" alt="projects 5">
+                                    <img src="${assetPath(src: 'demos/pro5.jpg') }" alt="projects 5">
                                 </a>
                             </li>
                             <li>
                                 <a href="single-portfolio-gallery.html">
-                                    <img src="http://placehold.it/70x70" alt="projects 6">
+                                    <img src="${assetPath(src: 'demos/pro6.jpg') }" alt="projects 6">
                                 </a>
                             </li>
                         </ul>

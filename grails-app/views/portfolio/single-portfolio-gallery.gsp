@@ -21,28 +21,28 @@
         <div class="single-gallery-full">
             <ul class="tz-gallery-full">
                 <li>
-                    <img src="http://placehold.it/480x320" alt="single page gallery">
+                    <img src="${assetPath(src: 'demos/p_gallery1.jpg') }" alt="single page gallery">
                 </li>
                 <li>
-                    <img src="http://placehold.it/480x320" alt="single page gallery">
+                    <img src="${assetPath(src: 'demos/p_gallery2.jpg') }" alt="single page gallery">
                 </li>
                 <li>
-                    <img src="http://placehold.it/480x320" alt="single page gallery">
+                    <img src="${assetPath(src: 'demos/p_gallery3.jpg') }" alt="single page gallery">
                 </li>
                 <li>
-                    <img src="http://placehold.it/480x320" alt="single page gallery">
+                    <img src="${assetPath(src: 'demos/p_gallery4.jpg') }" alt="single page gallery">
                 </li>
                 <li>
-                    <img src="http://placehold.it/480x320" alt="single page gallery">
+                    <img src="${assetPath(src: 'demos/p_gallery1.jpg') }" alt="single page gallery">
                 </li>
                 <li>
-                    <img src="http://placehold.it/480x320" alt="single page gallery">
+                    <img src="${assetPath(src: 'demos/p_gallery2.jpg') }" alt="single page gallery">
                 </li>
                 <li>
-                    <img src="http://placehold.it/480x320" alt="single page gallery">
+                    <img src="${assetPath(src: 'demos/p_gallery3.jpg') }" alt="single page gallery">
                 </li>
                 <li>
-                    <img src="http://placehold.it/480x320" alt="single page gallery">
+                    <img src="${assetPath(src: 'demos/p_gallery4.jpg') }" alt="single page gallery">
                 </li>
             </ul>
         </div><!--end class single-slider-full-->
