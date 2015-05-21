@@ -7,7 +7,7 @@ themes
 target
 eclipse-target
 target-eclipse
-
+work/.slcache
 
 # web application files
 /web-app/WEB-INF/classes
