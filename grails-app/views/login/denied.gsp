@@ -1,5 +1,5 @@
 <head>
-<meta name='layout' content='Lsecurity' />
+<meta name='layout' content='security' />
 <title><g:message code="springSecurity.denied.title" /></title>
 </head>
 

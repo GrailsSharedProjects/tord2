@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into Aportfolio.js.
+// This is a manifest file that'll be compiled into admin.js.
 //
 // Any JavaScript file within this directory can be referenced here using a relative path.
 //
@@ -7,12 +7,13 @@
 //
 //= require jquery.min.js
 //= require bootstrap.js
+//= require jquery.parallax-1.1.3.js
 //= require owl.carousel.js
 //= require resize.js
 //= require off-canvas.js
 //= require jquery.isotope.min.js
-//= require portfolio.js
-//= require master.js
+//= require jquery.easypiechart.min.js
+//= require global.js
 //= require_self
 
 jQuery.noConflict();

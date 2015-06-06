@@ -1,5 +1,5 @@
 /*
-* This is a manifest file that'll be compiled into Aportfolio.css, which will include all the files
+* This is a manifest file that'll be compiled into home.css, which will include all the files
 * listed below.
 *
 * Any CSS file within this directory can be referenced here using a relative path.
@@ -11,6 +11,6 @@
 *= require owl.carousel.css
 *= require owl.theme.css
 *= require font-awesome.min.css
-*= require master-style.css
+*= require global.css
 *= require_self
 */

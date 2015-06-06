@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" sizes="114x114"
 	href="${assetPath(src: 'apple-touch-icon-114x114.jpg')}" />
 
-<asset:stylesheet src="admin.css" />
+<asset:stylesheet src="site.css" />
 
 <!-- Support for HTML5 -->
 <!--[if lt IE 9]>
@@ -55,8 +55,8 @@
 
 	<g:render template="header_security" contextPath="/templates" />
 	<g:layoutBody />
-	<g:render template="footer" contextPath="/templates" />
+<%--	<g:render template="footer" contextPath="/templates" />--%>
 
-	<asset:javascript src="admin.js" />
+	<asset:javascript src="site.js" />
 </body>
 </html>

@@ -5,7 +5,6 @@ import com.tord.HeaderStyle
 import com.tord.Menu
 import com.tord.MenuStyle
 import com.tord.Page
-import com.tord.PageLayout
 import com.tord.Photo
 import com.tord.SiteSettings
 import com.tord.Slider
@@ -17,7 +16,6 @@ import com.tord.auth.UserRole
 class BootStrap {
 
     def init = { servletContext ->
-		setupMetaData();
 		setupUsers();
 		setupSiteSettings();
 		setupPagesAndSliders();
@@ -26,15 +24,6 @@ class BootStrap {
     def destroy = {
 		
     }
-	
-	def setupMetaData() {
-		PageLayout.findOrSaveByName("home");
-		PageLayout.findOrSaveByName("admin");
-		PageLayout.findOrSaveByName("portfolio");
-		PageLayout.findOrSaveByName("blog");
-		PageLayout.findOrSaveByName("shop");
-		PageLayout.findOrSaveByName("uploader");
-	}
 	
 	def setupUsers() {
 		// debug users
@@ -100,31 +89,31 @@ class BootStrap {
 		revSliders.save()
 		
 		def homePage = new Page(name: "HOME_PAGE", title: "成都装修_成都家装公司_拓德官网_拓德一站式O2O平台_四川拓德进出口贸易有限公司_建材_瓷砖", 
-			sliderRevolution: revSliders, header: homeHeader, layout: PageLayout.findByName("home"));
+			sliderRevolution: revSliders, header: homeHeader, layoutName: 'site', customJavaScript: 'home.js', );
 		homePage.save(flush:true);
 		
 		////////////////////////////////////
 		def adminHeader = new Header(name: "ADMIN_PAGE_HEADER").save();
 		
-		def adminPage = new Page(name: "ADMIN_PAGE", title: "后台管理", header: adminHeader, layout: PageLayout.findByName("admin"));
+		def adminPage = new Page(name: "ADMIN_PAGE", title: "后台管理", header: adminHeader, layoutName: 'admin', customJavaScript: 'admin.js');
 		adminPage.save(flush:true);
 		
 		////////////////////////////////////
-		def pageHeader = createHeader("PAGE_HEADER", HeaderStyle.LIGHT);
+		def siteHeader = createHeader("PAGE_HEADER", HeaderStyle.LIGHT);
 		
-		def showPortfolioPage = new Page(name: "SHOW_PORTFOLIO_PAGE", title: "查看详情", header: pageHeader, layout: PageLayout.findByName("portfolio"));
+		def showPortfolioPage = new Page(name: "SHOW_PORTFOLIO_PAGE", title: "查看详情", header: siteHeader, layoutName: 'site', customJavaScript: 'portfolio.js');
 		showPortfolioPage.save(flush: true);
 		
-		def newProductPage = new Page(name: "NEW_PRODUCT_PAGE", title: "新品发布", header: pageHeader, layout: PageLayout.findByName("portfolio"));
+		def newProductPage = new Page(name: "NEW_PRODUCT_PAGE", title: "新品发布", header: siteHeader, layoutName: 'site', customJavaScript: 'portfolio.js');
 		newProductPage.save(flush: true);
 		
-		def sucessProjectPage = new Page(name: "SUCCESS_PROJECT_PAGE", title: "成功案例", header: pageHeader, layout: PageLayout.findByName("portfolio"));
+		def sucessProjectPage = new Page(name: "SUCCESS_PROJECT_PAGE", title: "成功案例", header: siteHeader, layoutName: 'site', customJavaScript: 'portfolio.js');
 		sucessProjectPage.save(flush: true);
 		
-		def blogPage = new Page(name: "BLOG_PAGE", title: "产品培训", header: pageHeader, layout: PageLayout.findByName("blog"));
+		def blogPage = new Page(name: "BLOG_PAGE", title: "产品培训", header: siteHeader, layoutName: 'site', customJavaScript: 'blog.js');
 		blogPage.save(flush: true);
 		
-		def shopPage = new Page(name: "SHOP_PAGE", title: "建材超市", header: pageHeader, layout: PageLayout.findByName("shop"));
+		def shopPage = new Page(name: "SHOP_PAGE", title: "建材超市", header: siteHeader, layoutName: 'site', customJavaScript: 'shop.js');
 		shopPage.save(flush: true);
 		
 	}
