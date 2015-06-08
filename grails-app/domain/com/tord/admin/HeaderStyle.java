@@ -1,4 +1,4 @@
-package com.tord;
+package com.tord.admin;
 
 public enum HeaderStyle {
 	DARK, FIXED_DARK, LIGHT, HIDDEN_ON_LEFT, TOP_CENTER;

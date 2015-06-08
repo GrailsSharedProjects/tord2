@@ -29,7 +29,7 @@
   		
   		<!-- Custom CSS -->
     	<g:if test="${pageData.customCss }">
-    		<asset:stylesheet src="${pageData.customCss }"/>
+    		<link type="text/css" href="${resource(dir: 'css', file: pageData.customCss)}" />
     	</g:if>
   		
 	    <!-- Support for HTML5 -->
@@ -56,8 +56,15 @@
 			</div>
 		</div>
 		
-    	<g:render template="${pageData.header.style.template }" contextPath="/templates" />
+		<!-- Header  -->
+    	<g:render template="header" contextPath="/templates" model="['style':pageData.header.style]" />
+    	<!-- Revolution Slider  -->
+		<g:if test="${pageData.sliderRevolution }">
+    		<g:render template="rev_slider" contextPath="/templates"/>
+    	</g:if>
+    	<!-- Body  -->
 		<g:layoutBody/>
+		<!-- Footer  -->
     	<g:render template="footer" contextPath="/templates" />
     	
     	<!-- Global JavaScript -->
@@ -65,11 +72,10 @@
     	
     	<!-- Custom JavaScript -->
     	<g:if test="${pageData.customJavaScript }">
-    		<asset:javascript src="${pageData.customJavaScript }"/>
+    		<script src="${resource(dir:'js', file:pageData.customJavaScript) }" type="text/javascript"></script>
     	</g:if>
     	
     	<!-- Revolution Slider  -->
-    	!!${pageData.sliderRevolution }!!
     	<g:if test="${pageData.sliderRevolution }">
     		<asset:javascript src="jquery.themepunch.revolution.js"/>
     		<asset:javascript src="jquery.themepunch.tools.min.js"/>

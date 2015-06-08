@@ -1,5 +1,7 @@
 package com.tord
 
+import com.tord.admin.Page;
+
 class BlogController {
 
     def index() { 

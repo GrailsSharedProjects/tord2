@@ -1,6 +1,10 @@
-package com.tord
+package com.tord.admin
+
+import com.tord.Photo;
+import com.tord.TDomainOperations;
 
 class Slider implements TDomainOperations{
+	String desc
 	Integer style
 	Photo bgImage
 	String row1
@@ -10,7 +14,8 @@ class Slider implements TDomainOperations{
 	String row5
 	
     static constraints = {
-		style blank: false
+		desc()
+		style blank: false, inList:[1,2,3]
 		bgImage nullable: true
 		row1 nullable: true
 		row2 nullable: true
@@ -23,4 +28,8 @@ class Slider implements TDomainOperations{
 		
 	}
 	
+	@Override
+	public String toString() {
+		"$desc[$style]"
+	}
 }

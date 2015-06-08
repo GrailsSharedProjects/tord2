@@ -46,9 +46,12 @@
 			</div>
 		</div>
 		
-    	<g:render template="${pageData.header.style.template }" contextPath="/templates" />
+		<!-- Header  -->
+    	<g:render template="header" contextPath="/templates" model="['style':pageData.header.style]" />
+    	<!-- Body  -->
 		<g:layoutBody/>
-    	<g:render template="footer" contextPath="/templates" />
+		<!-- Footer  -->
+<%--    	<g:render template="footer" contextPath="/templates" />--%>
     	
     	<asset:javascript src="admin.js"/>
 	</body>

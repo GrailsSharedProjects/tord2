@@ -1,4 +1,6 @@
-package com.tord
+package com.tord.admin
+
+import com.tord.admin.Slider;
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

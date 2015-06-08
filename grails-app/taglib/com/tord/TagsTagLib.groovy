@@ -1,5 +1,9 @@
 package com.tord
 
+import com.tord.admin.Menu;
+import com.tord.admin.MenuStyle;
+import com.tord.admin.SiteProperties;
+
 class TagsTagLib {
 //    static defaultEncodeAs = [taglib:'html']
     //static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
@@ -67,7 +71,9 @@ class TagsTagLib {
 		out << '<ul class="mega-nav level1">'
 		subMenuList.each{sub->
 			out << '<li>'
-			out << "<a href='${createLink(controller: sub.controller, action: sub.action, url: sub.url)}'>${sub.title }</a>"
+			out << "<a href='${createLink(controller: sub.controller, action: sub.action, url: sub.url)}'>"
+			out << (sub.icon)?"<span><i class='fa ${sub.icon}'></i></span> ":""
+			out << "${sub.title }</a>"
 			if(sub.subMenus){
 				renderListRecursively(sub.subMenus);
 			}

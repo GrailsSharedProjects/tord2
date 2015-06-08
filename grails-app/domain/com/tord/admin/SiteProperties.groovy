@@ -1,5 +1,6 @@
-package com.tord
+package com.tord.admin
 
+import com.tord.TDomainOperations;
 import com.wicky.common.Base64
 
 class SiteProperties implements TDomainOperations {

@@ -8903,7 +8903,7 @@ body .kfrontstats .kcol-mid{
     color: #000000;
     font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 33.6px;
     margin: 0;
     padding: 0;
@@ -11449,4 +11449,35 @@ body.home-rtl header .mega-dropdown-center{
         left: 100%;
         visibility: visible;
     }
+}
+
+span.required-indicator{
+	color: red;
+}
+
+.pagination > a, .pagination > span {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #428bca;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.pagination > a.active, .currentStep, .pagination > span, .pagination a:hover, .pagination span:hover, .pagination a:focus, .pagination span:focus {
+    background-color: #428bca;
+    border-color: #428bca;
+    color: #fff;
+    cursor: default;
+    z-index: 2;
+}
+
+.pagination > a:hover {
+    cursor: pointer;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    color: #428bca;
 }

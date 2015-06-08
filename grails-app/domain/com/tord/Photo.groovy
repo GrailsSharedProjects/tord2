@@ -2,12 +2,12 @@ package com.tord
 import org.grails.taggable.*
 
 class Photo implements Taggable, Serializable{
-	String url;
 	String alt;
+	String url;
 	
     static constraints = {
-		url blank: false
-		alt nullable: true
+    	alt()
+		url()
     }
 	
 	static mapping = {
@@ -15,6 +15,6 @@ class Photo implements Taggable, Serializable{
 	
 	@Override
 	public String toString() {
-		"$alt[$id]"
+		"$alt"
 	}
 }

@@ -1,4 +1,6 @@
-package com.tord
+package com.tord.admin
+
+import com.tord.TDomainOperations;
 
 class SliderRevolution implements TDomainOperations{
 	
@@ -8,7 +10,12 @@ class SliderRevolution implements TDomainOperations{
 	static hasMany = [sliders:Slider]
 	
     static constraints = {
-		desc nullable: true
+		desc()
 		sliders nullable: true
     }
+	
+	@Override
+	public String toString() {
+		desc
+	}
 }

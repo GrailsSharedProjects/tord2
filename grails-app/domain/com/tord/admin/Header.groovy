@@ -1,4 +1,6 @@
-package com.tord
+package com.tord.admin
+
+import com.tord.TDomainOperations;
 
 class Header implements TDomainOperations{
 	String name
@@ -9,6 +11,17 @@ class Header implements TDomainOperations{
 	
     static constraints = {
     }
+	
+	@Override
+	public String toString() {
+		"${name} (${style})"
+	}
+	
+	Menu createMenu(Map map) {
+		def newMenu = new Menu(map);
+		this.addToMenu(newMenu);
+		newMenu
+	}
 	
 	Menu createMenu(String title, String url) {
 		def newMenu = new Menu(title: title, url: url);

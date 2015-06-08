@@ -28,9 +28,9 @@
                             </span>
                             <a href="#">info@templaza.com</a>
                             <span class="tzwidget-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-weixin"></i></a>
+                                <a href="#"><i class="fa fa-weibo"></i></a>
+                                <a href="#"><i class="fa fa-qq"></i></a>
                             </span>
                         </div>
                     </div>

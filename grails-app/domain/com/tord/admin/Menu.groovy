@@ -1,4 +1,6 @@
-package com.tord
+package com.tord.admin
+
+import com.tord.TDomainOperations;
 
 class Menu implements Serializable, TDomainOperations{
 	Header header
@@ -7,6 +9,7 @@ class Menu implements Serializable, TDomainOperations{
 	Integer groupId = 0
 	
 	String title
+	String icon
 	String url
 	String controller
 	String action
@@ -16,13 +19,22 @@ class Menu implements Serializable, TDomainOperations{
 	static mappedBy = [subMenus: 'parent']
 	
     static constraints = {
-		header nullable: true
+		title()
+		groupId()
 		parent nullable: true
+		subMenus nullable: true
+		style()
+		icon nullable: true
 		url nullable: true
 		controller nullable: true
 		action nullable: true
-		subMenus nullable: true
+		header nullable: true
     }
+	
+	@Override
+	public String toString() {
+		title
+	}
 	
 	Menu createSubMenu(String title, String url) {
 		def newMenu = new Menu(title: title, url: url)

@@ -1,21 +1,23 @@
 package com.tord
 
+import com.tord.admin.Page;
+
 class PortfolioController {
 
     def index() { 
-		def pageData = Page.findByName("NEW_PRODUCT_PAGE");
+		def pageData = Page.findByName("PORTFOLIO_PAGE");
     	render view: "index", model: [pfId:params.id, pageData: pageData];
 	}
 	
-    def project() {
-    	def pageData = Page.findByName("SUCCESS_PROJECT_PAGE");
-    	render view: "project", model: [pfId:params.id, pageData: pageData];
-    }
+	def show() {
+		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
+		render view: "show", model: [pfId:params.id, pageData: pageData];
+	}
 	
 	/////////////////////////////////////////////
 	
     def mansory() {
-		def pageData = Page.findByName("SHOW_SHOW_PORTFOLIO_PAGE");
+		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
     	render view: "portfolio-mansory", model: [pfId:params.id, pageData: pageData];
 	}
 	
@@ -36,11 +38,6 @@ class PortfolioController {
 	
 	////////////SINGLE VIEWS//////////////
 	
-	def gallery() {
-		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
-		render view: "single-portfolio-gallery", model: [pfId:params.id, pageData: pageData];
-	}
-	
 	def video() {
 		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
 		render view: "single-portfolio-video", model: [pfId:params.id, pageData: pageData];
@@ -49,11 +46,6 @@ class PortfolioController {
 	def slider() {
 		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
 		render view: "single-portfolio-full-width-slider", model: [pfId:params.id, pageData: pageData];
-	}
-	
-	def "slider-small"() {
-		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
-		render view: "single-portfolio-small-slider", model: [pfId:params.id, pageData: pageData];
 	}
 	
 	def sidebar() {
