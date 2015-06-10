@@ -132,15 +132,22 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.tord.auth.Use
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.tord.auth.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.tord.auth.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/dbconsole/**':                ['permitAll'],
-	'/user/**':                ['permitAll'],
-	'/role/**':                ['permitAll'],
-	'/register/**':                ['permitAll'],
-	'/registrationCode/**':                ['permitAll'],
-	'/securityInfo/**':                ['permitAll'],
-	'/admin/**':                ['permitAll'],
-	'/uploader/**':                ['permitAll'],
+	'/dbconsole/**':                ['ROLE_ADMIN'],
+	'/user/**':                ['ROLE_ADMIN'],
+	'/role/**':                ['ROLE_ADMIN'],
+	'/registrationCode/**':                ['ROLE_ADMIN'],
+	'/securityInfo/**':                ['ROLE_ADMIN'],
+	'/admin/**':                ['ROLE_ADMIN'],
+	'/uploader/**':                ['ROLE_ADMIN'],
+	
+	'/photo/**':                ['ROLE_USER', 'ROLE_ADMIN'],
+	
+	'/product/**':                ['permitAll'],
+	'/shop/**':                ['permitAll'],
+	'/project/**':                ['permitAll'],
+	'/blog/**':                ['permitAll'],
 	'/portfolio/**':                ['permitAll'],
+	
 	'/uploaded/*.jpg':                ['permitAll'],
 	'/uploaded/*.png':                ['permitAll'],
 	'/uploaded/*.gif':                ['permitAll'],
@@ -152,8 +159,15 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll'],
-	'/**' : ['permitAll'],
+	
+	'/register/**':                ['permitAll'],
+	'/logout/**':                ['permitAll'],
+	'/login/**':                ['permitAll'],
+	'/**' : ['ROLE_ADMIN'],
 ]
+grails.plugin.springsecurity.logout.handlerNames = [
+	'rememberMeServices', 'securityContextLogoutHandler' //, 'myLogoutHandler'
+ ]
 
 // global settings
 def emailSmtp = "smtp.163.com";

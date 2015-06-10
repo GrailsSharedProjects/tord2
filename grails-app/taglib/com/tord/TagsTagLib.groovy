@@ -1,8 +1,8 @@
 package com.tord
 
-import com.tord.admin.Menu;
-import com.tord.admin.MenuStyle;
-import com.tord.admin.SiteProperties;
+import com.tord.admin.Menu
+import com.tord.admin.MenuStyle
+import com.tord.admin.SiteSettings
 
 class TagsTagLib {
 //    static defaultEncodeAs = [taglib:'html']
@@ -92,7 +92,7 @@ class TagsTagLib {
 	}
 	
 	def copyRight = { attrs, body ->
-		def str = SiteProperties.getIt("CopyRight");
+		def str = SiteSettings.getIt("CopyRight");
 		out << str
 	}
 	

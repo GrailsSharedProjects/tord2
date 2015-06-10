@@ -47,9 +47,8 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
                         <ul class="joom-form-meta">
-                            <li><a href="#">忘记密码？</a></li>
-                            <li><a href="#">忘记用户名？</a></li>
-                            <li><a href="#">还没有注册账户？</a></li>
+                            <li><g:link controller="register" action="forgotPassword">忘记密码？</g:link></li>
+                            <li><g:link controller="register">还没有注册账户？</g:link></li>
                         </ul>
                     </div>
                 </div>

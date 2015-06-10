@@ -24,12 +24,6 @@ class AdminController {
 			case "meta":
 			bootstrap.setupMetaData();
 			break;
-			case "article":
-			Article a = new Article(title: "ART1").save(flush: true);
-			a.addTag("red")
-			.addTag("green")
-			.addTag("blue")
-			break;
 		}
 		render "Refreshing $id ...."
 	}

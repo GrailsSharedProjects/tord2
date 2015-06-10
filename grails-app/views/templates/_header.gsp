@@ -50,6 +50,18 @@
                         <g:if test="menu.icon"><span><i class='fa ${menu.icon}'></i></span></g:if> ${menu.title }</a>
                     </li>
                 	</g:each>
+                	<li>
+                    	<sec:ifLoggedIn>
+                        <g:form method="post" controller="logout">
+							<a><sec:username/>
+							<input type="submit" value="登出"/></a>
+						</g:form>
+                    	</sec:ifLoggedIn>
+						<sec:ifNotLoggedIn>
+                    	<g:link controller="login">
+                        <span><i class="fa fa-sign-in"></i></span> 登录</g:link>
+                        </sec:ifNotLoggedIn>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -74,6 +86,18 @@
                         <g:renderMenu menu="${menu}"/>
                     </li>
                 	</g:each>
+                    <li>
+                    	<sec:ifLoggedIn>
+                        <g:form method="post" controller="logout">
+							<a><sec:username/>
+							<input type="submit" value="登出"/></a>
+						</g:form>
+                    	</sec:ifLoggedIn>
+						<sec:ifNotLoggedIn>
+                    	<g:link controller="login">
+                        <span><i class="fa fa-sign-in"></i></span> 登录</g:link>
+                        </sec:ifNotLoggedIn>
+                    </li>
                 </ul>
             </nav>
         </div><!--end class container-->

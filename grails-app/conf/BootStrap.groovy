@@ -52,19 +52,15 @@ class BootStrap {
 		//// reset
 		SiteSettings.deleteAllRows();
 		
-		def settings = new SiteSettings();
-		
-		settings.putIt("SiteName", "拓德");
-		settings.putIt("SiteEnglishName", "Tord");
-		settings.putIt("CurrentVersion", "v1.0");
-		settings.putIt("ICP", "京ICP证0000000号 ");
+		SiteSettings.putIt("SiteName", "拓德");
+		SiteSettings.putIt("SiteEnglishName", "Tord");
+		SiteSettings.putIt("CurrentVersion", "v1.0");
+		SiteSettings.putIt("ICP", "蜀ICP备15015799号");
 		def locale = new Locale("zh", "CN");
 		LocaleContextHolder.setLocale(locale);
-		settings.putIt("DefaultLocale", locale);
+		SiteSettings.putIt("DefaultLocale", locale.toString());
 		def thisYear = Calendar.getInstance().get(Calendar.YEAR);
-		settings.putIt("CopyRight", "©${thisYear} ${settings.getIt('SiteEnglishName')} ${settings.getIt('ICP')} ");
-		
-		settings.save(flush: true, insert: true);
+		SiteSettings.putIt("CopyRight", "©${thisYear} ${SiteSettings.getIt('SiteEnglishName')} ${SiteSettings.getIt('ICP')} ");
 		
 	}
 	
@@ -87,7 +83,7 @@ class BootStrap {
 		def adminHeader = createAdminHeader();
 		
 		////////////////////////////////////
-		def homePage = new Page(name: "HOME_PAGE", title: "成都装修_成都家装公司_拓德官网_拓德一站式O2O平台_四川拓德进出口贸易有限公司_建材_瓷砖", 
+		def homePage = new Page(name: "HOME_PAGE", title: "成都装修_成都家装公司_拓德_拓德官网_拓德一站式O2O平台_四川拓德进出口贸易有限公司_建材_瓷砖_tord_Tord_TORD", 
 			sliderRevolution: createHomeRevSlider(), header: homeHeader, customJavaScript: 'home.js', );
 		homePage.save(flush:true);
 		
@@ -157,7 +153,7 @@ class BootStrap {
 		def menu3 = homeHeader.createMenu("${name}_${++i}", "产品培训", "blog", "index");
 		def menu4 = homeHeader.createMenu("${name}_${++i}", "成功案例", "project", "index");
 		def menu5 = homeHeader.createMenu("${name}_${++i}", "建材超市", "shop", "index");
-		def menu6 = homeHeader.createMenu([name: "${name}_${++i}", title: "登录", icon: "fa-sign-in", controller:"login", action:""]);
+//		def menu6 = homeHeader.createMenu([name: "${name}_${++i}", title: "登录", icon: "fa-sign-in", controller:"login", action:""]);
 		homeHeader.save()
 		return homeHeader
 	}
@@ -165,19 +161,25 @@ class BootStrap {
 	private Header createAdminHeader() {
 		def homeHeader = new Header(name: "ADMIN_HEADER", style: HeaderStyle.HIDDEN_ON_LEFT);
 		int i = 0;
-		def menu1 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "控制面板", "admin", "index");
-		def menu2 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "菜单管理", "menu", "index");
-		def menu3 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "页面管理", "page", "index");
-		def menu4 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "页眉管理", "header", "index");
-		def menu5 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "页脚管理", "footer", "index");
-		def menu6 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯片管理", "sliderRevolution", "index");
-		def menu7 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯页管理", "slider", "index");
-		def menu8 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "新品管理", "work", "index");
-		def menu9 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "示例项目管理", "project", "index");
-		def menu10 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "商店管理", "product", "index");
-		def menu11 = homeHeader.createMenu("ADMIN_HEADER_${++i}", "文章管理", "article", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "控制面板", "admin", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "展品管理", "work", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "商品管理", "product", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "文章管理", "article", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "图片管理", "photo", "index");
 		
-		def menuLogin = homeHeader.createMenu([name: "ADMIN_HEADER_${++i}", title: "登录", icon: "fa-sign-in", controller:"login", action:""]);
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "菜单管理", "menu", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页面管理", "page", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页眉管理", "header", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页脚管理", "footer", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯片管理", "sliderRevolution", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯页管理", "slider", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "全局设置管理", "siteSettings", "index");
+
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "用户管理", "user", "");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "角色管理", "role", "");
+		
+//		homeHeader.createMenu([name: "ADMIN_HEADER_${++i}", title: "登录", icon: "fa-sign-in", controller:"login", action:""]);
+		
 		homeHeader.save()
 		return homeHeader
 	}
