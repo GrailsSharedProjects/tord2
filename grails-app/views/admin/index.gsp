@@ -5,7 +5,7 @@
 		<title>Welcome to Grails</title>
 	</head>
 	<body>
-		<section class="tzblog-wrap">
+		<section class="tzpage-default">
 	        <div class="container">
 	            <h1 class="tz-title-bold-3">Admin Page</h1>
 	            <article class="blog-item blog-item-first">
@@ -13,6 +13,7 @@
 					<div><g:remoteLink controller="admin" action="refresh" id="site" class="btn" >重置网站环境变量</g:remoteLink></div>
 					<div><g:remoteLink controller="admin" action="refresh" id="page" class="btn" >重置页面数据</g:remoteLink></div>
 					<div><g:remoteLink controller="admin" action="refresh" id="meta" class="btn" >重置基础数据</g:remoteLink></div>
+					<div><g:remoteLink controller="admin" action="refresh" id="article" class="btn" >重置article数据</g:remoteLink></div>
 	            </article>
 	            <article class="blog-item">
 	                <h2>Application Status</h2>

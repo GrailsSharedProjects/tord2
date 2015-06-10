@@ -10,6 +10,8 @@ class Header implements TDomainOperations{
 	static hasMany = [menu: Menu]
 	
     static constraints = {
+		name unique: true
+		style()
     }
 	
 	@Override
@@ -23,26 +25,26 @@ class Header implements TDomainOperations{
 		newMenu
 	}
 	
-	Menu createMenu(String title, String url) {
-		def newMenu = new Menu(title: title, url: url);
+	Menu createMenu(String name, String title, String url) {
+		def newMenu = new Menu(name: name, title: title, url: url);
 		this.addToMenu(newMenu);
 		newMenu
 	}
 	
-	Menu createMenu(String title, String controller, String action) {
-		def newMenu = new Menu(title: title, controller: controller, action: action);
+	Menu createMenu(String name, String title, String controller, String action) {
+		def newMenu = new Menu(name: name, title: title, controller: controller, action: action);
 		this.addToMenu(newMenu);
 		newMenu
 	}
 	
-	Menu createMenu(String title, String url, MenuStyle style) {
-		def newMenu = new Menu(parent: null, title: title, url: url, style: style);
+	Menu createMenu(String name, String title, String url, MenuStyle style) {
+		def newMenu = new Menu(parent: null, name: name, title: title, url: url, style: style);
 		this.addToMenu(newMenu);
 		newMenu
 	}
 	
-	Menu createMenu(String title, String controller, String action, MenuStyle style) {
-		def newMenu = new Menu(parent: null, title: title, controller: controller, action: action, style: style);
+	Menu createMenu(String name, String title, String controller, String action, MenuStyle style) {
+		def newMenu = new Menu(parent: null, name: name, title: title, controller: controller, action: action, style: style);
 		this.addToMenu(newMenu);
 		newMenu
 	}

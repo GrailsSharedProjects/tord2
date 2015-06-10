@@ -4,18 +4,18 @@ import com.tord.TDomainOperations;
 
 class SliderRevolution implements TDomainOperations{
 	
-	String desc
+	String name
 	
 	List<Slider> sliders
 	static hasMany = [sliders:Slider]
 	
     static constraints = {
-		desc()
+		name unique: true
 		sliders nullable: true
     }
 	
 	@Override
 	public String toString() {
-		desc
+		name
 	}
 }

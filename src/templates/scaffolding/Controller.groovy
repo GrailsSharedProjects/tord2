@@ -2,6 +2,7 @@
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import com.tord.admin.Page 
 
 @Transactional(readOnly = true)
 class ${className}Controller {

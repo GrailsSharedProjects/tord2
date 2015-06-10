@@ -8,6 +8,15 @@ class TagsTagLib {
 //    static defaultEncodeAs = [taglib:'html']
     //static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
 	
+	
+	def renderLogo = { attrs, body ->
+		out << """
+		<a href="${createLink(controller: 'home')}">
+			<img src="${assetPath(src: 'tord_small.png')}" alt="LOGO">
+		</a>
+		"""
+	}
+	
 	/**
 	 * Renders the sub-menus recursively
 	 *

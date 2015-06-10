@@ -721,6 +721,7 @@ body .tz-header3 ul.nav-collapse li a{
 }
 .tz-header4 .tz-logo{
     text-align: center;
+    color: white;
 }
 .tz-header4 .tz-logo{
     margin: 11px 0;
@@ -8233,7 +8234,7 @@ body #carousel li {
 * -----------------------------------------------------------------------------
 */
 .tzpage-default{
-    background: #eeeeee;
+    background: #8F8F8F;
     padding: 82px 0;
 }
 .page-content{

@@ -1,6 +1,8 @@
-@artifact.package@import com.tord.TDomainOperations;
+package com.tord
 
-class @artifact.name@ implements TDomainOperations{
+import com.tord.TDomainOperations;
+
+class WorkCategory implements TDomainOperations{
 	String name
 
 	static constraints = {

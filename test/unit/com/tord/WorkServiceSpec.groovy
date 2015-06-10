@@ -3,13 +3,11 @@ package com.tord
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
-import com.tord.Work
-
 /**
- * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
+ * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
  */
-@TestFor(Work)
-class WorkSpec extends Specification {
+@TestFor(WorkService)
+class WorkServiceSpec extends Specification {
 
     def setup() {
     }

@@ -3,15 +3,19 @@ package com.tord
 import com.tord.admin.Page;
 
 class PortfolioController {
+	def workService
 
     def index() { 
 		def pageData = Page.findByName("PORTFOLIO_PAGE");
-    	render view: "index", model: [pfId:params.id, pageData: pageData];
+		def works = workService.findAllByCategory("portfolio");
+    	render view: "index", model: [pageData: pageData, works: works];
 	}
 	
 	def show() {
+		println "ID: " + params.id
 		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
-		render view: "show", model: [pfId:params.id, pageData: pageData];
+		def work = workService.findByNameAndCategory(params.id, "portfolio");
+		render view: "show", model: [work: work, pageData: pageData];
 	}
 	
 	/////////////////////////////////////////////

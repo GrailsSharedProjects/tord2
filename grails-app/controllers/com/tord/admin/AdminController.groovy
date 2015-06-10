@@ -1,5 +1,7 @@
 package com.tord.admin
 
+import com.tord.Article
+
 
 class AdminController {
 	
@@ -12,12 +14,22 @@ class AdminController {
 	
 	def refresh() {
 		def id = params.id
-		if(id == "site") {
+		switch(id) {
+			case "site":
 			bootstrap.setupSiteSettings();
-		}else if(id == 'page') {
+			break;
+			case "page":
 			bootstrap.setupPagesAndSliders()
-		}else if(id == 'meta'){
+			break;
+			case "meta":
 			bootstrap.setupMetaData();
+			break;
+			case "article":
+			Article a = new Article(title: "ART1").save(flush: true);
+			a.addTag("red")
+			.addTag("green")
+			.addTag("blue")
+			break;
 		}
 		render "Refreshing $id ...."
 	}

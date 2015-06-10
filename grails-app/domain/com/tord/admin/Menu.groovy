@@ -8,6 +8,7 @@ class Menu implements Serializable, TDomainOperations{
 	MenuStyle style = MenuStyle.SINGLE
 	Integer groupId = 0
 	
+	String name
 	String title
 	String icon
 	String url
@@ -19,6 +20,7 @@ class Menu implements Serializable, TDomainOperations{
 	static mappedBy = [subMenus: 'parent']
 	
     static constraints = {
+		name unique: true
 		title()
 		groupId()
 		parent nullable: true
@@ -33,53 +35,53 @@ class Menu implements Serializable, TDomainOperations{
 	
 	@Override
 	public String toString() {
-		title
+		name
 	}
 	
-	Menu createSubMenu(String title, String url) {
-		def newMenu = new Menu(title: title, url: url)
+	Menu createSubMenu(String name, String title, String url) {
+		def newMenu = new Menu(name: name, title: title, url: url)
 		this.addToSubMenus(newMenu);
 		newMenu
 	}
 	
-	Menu createSubMenu(String title, String url, MenuStyle style) {
-		def newMenu = new Menu(title: title, url: url, style: style)
+	Menu createSubMenu(String name, String title, String url, MenuStyle style) {
+		def newMenu = new Menu(name: name, title: title, yle: style)
 		this.addToSubMenus(newMenu);
 		newMenu
 	}
 	
-	Menu createSubMenu(String title, String url, Integer groupId) {
-		def newMenu = new Menu(title: title, url: url, groupId: groupId)
+	Menu createSubMenu(String name, String title, String url, Integer groupId) {
+		def newMenu = new Menu(name: name, title: title, url: url, groupId: groupId)
 		this.addToSubMenus(newMenu);
 		newMenu
 	}
 	
-	Menu createSubMenu(String title, String url, MenuStyle style, Integer groupId) {
-		def newMenu = new Menu(title: title, url: url, style: style, groupId: groupId)
+	Menu createSubMenu(String name, String title, String url, MenuStyle style, Integer groupId) {
+		def newMenu = new Menu(name: name, title: title, url: url, style: style, groupId: groupId)
 		this.addToSubMenus(newMenu);
 		newMenu
 	}
 	
-	Menu createSubMenu(String title, String controller, String action) {
-		def newMenu = new Menu(title: title, controller: controller, action: action)
+	Menu createSubMenu(String name, String title, String controller, String action) {
+		def newMenu = new Menu(name: name, title: title, controller: controller, action: action)
 		this.addToSubMenus(newMenu);
 		newMenu
 	}
 	
-	Menu createSubMenu(String title, String controller, String action, MenuStyle style) {
-		def newMenu = new Menu(title: title, controller: controller, action: action, style: style)
+	Menu createSubMenu(String name, String title, String controller, String action, MenuStyle style) {
+		def newMenu = new Menu(name: name, title: title, controller: controller, action: action, style: style)
 		this.addToSubMenus(newMenu);
 		newMenu
 	}
 	
-	Menu createSubMenu(String title, String controller, String action, Integer groupId) {
-		def newMenu = new Menu(title: title, controller: controller, action: action, groupId: groupId)
+	Menu createSubMenu(String name, String title, String controller, String action, Integer groupId) {
+		def newMenu = new Menu(name: name, title: title, controller: controller, action: action, groupId: groupId)
 		this.addToSubMenus(newMenu);
 		newMenu
 	}
 	
-	Menu createSubMenu(String title, String controller, String action, MenuStyle style, Integer groupId) {
-		def newMenu = new Menu(title: title, controller: controller, action: action, style: style, groupId: groupId)
+	Menu createSubMenu(String name, String title, String controller, String action, MenuStyle style, Integer groupId) {
+		def newMenu = new Menu(name: name, title: title, controller: controller, action: action, style: style, groupId: groupId)
 		this.addToSubMenus(newMenu);
 		newMenu
 	}

@@ -15,7 +15,7 @@ class Page implements TDomainOperations{
 	String customJavaScript
 	
     static constraints = {
-		name blank:false
+		name unique:true
 		title blank: false
 		desc nullable: true
 		sliderRevolution nullable: true
