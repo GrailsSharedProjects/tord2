@@ -3,6 +3,7 @@
 # suggested that you use the "grails integrate-with --git" command
 # to generate your .gitignore file.
 
+/web-app/uploaded
 themes
 target
 eclipse-target

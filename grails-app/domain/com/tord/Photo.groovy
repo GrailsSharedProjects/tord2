@@ -7,7 +7,7 @@ class Photo implements Taggable, Serializable{
 	
     static constraints = {
     	alt()
-		url()
+		url widget: 'uploader'
     }
 	
 	static mapping = {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="layout" content="Luploader"/>
+	<meta name="layout" content="uploader"/>
     <title>simple upload</title>
 </head>
 <body>

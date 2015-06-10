@@ -51,7 +51,10 @@
             return "<g:textField name=\"${property.name}\" value=\"\${${domainInstance}?.${property.name}}\" />"
         } else {
 			def sb = new StringBuilder("")
-            if ("textarea" == cp.widget || (cp.maxSize > 250 && !cp.password && !cp.inList)) {
+			if("uploader" == cp.widget){
+				sb << "<g:textField name=\"${property.name}\" value=\"\${${domainInstance}?.${property.name}}\" />"
+				sb << "<a>"
+			}else if ("textarea" == cp.widget || (cp.maxSize > 250 && !cp.password && !cp.inList)) {
                 sb << '<g:textArea name="' << property.name << '"'
  				sb << ' cols="40" rows="5"'
 				if (cp.maxSize) sb << ' maxlength="' << cp.maxSize << '"'

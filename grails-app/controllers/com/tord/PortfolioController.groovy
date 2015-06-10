@@ -15,6 +15,11 @@ class PortfolioController {
 		println "ID: " + params.id
 		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
 		def work = workService.findByNameAndCategory(params.id, "portfolio");
+		if(!work) {
+			flash.message = "找不到你所请求的页面！"
+			redirect action: "index"
+			return
+		}
 		render view: "show", model: [work: work, pageData: pageData];
 	}
 	

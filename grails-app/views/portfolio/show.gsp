@@ -8,7 +8,7 @@
 
     <section class="tzsingle-wrap">
         <h1 class="tz-title-bold-3">
-            ${work.title }
+            ${work?.title }
         </h1>
 <%--        <div class="tzpagenavi-single">--%>
 <%--            <button class="tzpage-left">--%>
@@ -18,7 +18,7 @@
 <%--                <i class="fa fa-angle-right"></i>--%>
 <%--            </button>--%>
 <%--        </div><!--end class tzpagenavi-->--%>
-        <g:if test="${work.picList }">
+        <g:if test="${work?.picList }">
         <div class="single-gallery-full">
             <ul class="tz-gallery-full">
             	<g:each in="${work.picList }" var="pic">
@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="row">
                     <div id="contentHTML" class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p-content-left">
-${raw(work.contentHTML)}
+${raw(work?.contentHTML)}
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p-content-right">
                         <h3 class="p-title">ABOUT</h3>

@@ -19,6 +19,19 @@
                 <a data-option-value=".accessories" href="#">卫生间</a>
             </div>
             <div class="tzportfolio-pages tz-no-mansory">
+	            <g:each in="${works }" var="work">
+	            <div class="element ${work.tags.join(' ')?.toLowerCase() }">
+	                <div class="tz-inner">
+	                    <div class="tz-image-item">
+	                        <img alt="${work.titlePic.alt }" src="${assetPath(src: work.titlePic.url) }">
+	                        <a href="${createLink(controller:'project', action:'show', id:work.name)}" class="tzfa-search"><i class="fa fa-search"></i></a>
+	                        <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
+	                    </div>
+	                    <h6><a href="${createLink(controller:'project', action:'show', id:work.name)}">${work.title }</a></h6>
+	                    <span>${work.tags.join(' ')?.toUpperCase() }</span>
+	                </div>
+	            </div>
+	            </g:each>
                 <div class="element chair lounge">
                     <div class="tz-inner">
                         <div class="tz-image-item">
