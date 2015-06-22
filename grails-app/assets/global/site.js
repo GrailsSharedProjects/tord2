@@ -11,7 +11,9 @@
 //= require resize.js
 //= require off-canvas.js
 //= require jquery.isotope.min.js
+//= require jquery.lazyload.min.js
 //= require global.js
 //= require_self
 
 jQuery.noConflict();
+jQuery("img").lazyload(); 

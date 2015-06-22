@@ -95,5 +95,18 @@ class TagsTagLib {
 		def str = SiteSettings.getIt("CopyRight");
 		out << str
 	}
-	
+
+	/*
+	 * @attr bean
+	 * @attr field
+	 * 
+	 */
+	def fieldErrors = { attrs ->
+		def bean = attrs.remove('bean')
+		if (bean) {
+			out << eachError(attrs, {
+				out << "<span class='s2ui_error'>${message(error:it)}</span>"
+			})
+		}
+	}
 }

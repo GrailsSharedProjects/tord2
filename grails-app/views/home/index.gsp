@@ -15,7 +15,7 @@
                     <div class="tz-about-item">
                         <i class="fa fa-flask color-darkturquoise"></i>
                         <div class="tz-about-bk">
-                            <img src="${assetPath(src : 'demos/about-bk.jpg') }" alt="Professional">
+                            <img data-original="${assetPath(src : 'demos/about-bk.jpg') }" alt="Professional">
                             <div class="tz-about-overlay">
                                 <div class="tz-about-overlay-bk"></div>
                             </div>
@@ -30,7 +30,7 @@
                     <div class="tz-about-item">
                         <i class="fa fa-thumbs-up color-orange"></i>
                         <div class="tz-about-bk">
-                            <img src="${assetPath(src : 'demos/about-bk.jpg') }" alt="Passionate">
+                            <img data-original="${assetPath(src : 'demos/about-bk.jpg') }" alt="Passionate">
                             <div class="tz-about-overlay">
                                 <div class="tz-about-overlay-bk"></div>
                             </div>
@@ -45,7 +45,7 @@
                     <div class="tz-about-item">
                         <i class="fa fa-thumb-tack color-darkorange"></i>
                         <div class="tz-about-bk">
-                            <img src="${assetPath(src : 'demos/about-bk.jpg') }" alt="friendly">
+                            <img data-original="${assetPath(src : 'demos/about-bk.jpg') }" alt="friendly">
                             <div class="tz-about-overlay">
                                 <div class="tz-about-overlay-bk"></div>
                             </div>
@@ -66,63 +66,63 @@
         </h3>
         <div class="tz-portfolio-content">
             <figure class="element tz-landscape">
-                <img src="${assetPath(src: 'demos/portfolio/p1.jpg') }" alt="Vivamus in lorem nisl">
+                <img data-original="${assetPath(src: 'demos/portfolio/p1.jpg') }" alt="Vivamus in lorem nisl">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Vivamus in lorem nisl.</a></h6>
                     <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>
                 </figcaption>
             </figure>
             <figure class="element">
-                <img src="${assetPath(src: 'demos/portfolio/p2.jpg') }" alt="Aenean risus nisi">
+                <img data-original="${assetPath(src: 'demos/portfolio/p2.jpg') }" alt="Aenean risus nisi">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Aenean risus nisi</a></h6>
                     <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>
                 </figcaption>
             </figure>
             <figure class="element tz-portrait">
-                <img src="${assetPath(src: 'demos/portfolio/p3.jpg') }" alt="Quisque porttitor enim">
+                <img data-original="${assetPath(src: 'demos/portfolio/p3.jpg') }" alt="Quisque porttitor enim">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Quisque porttitor enim</a></h6>
                     <a class="tz-cat" href="#">Accessories</a>
                 </figcaption>
             </figure>
             <figure class="element tz-portrait">
-                <img src="${assetPath(src: 'demos/portfolio/p4.jpg') }" alt="Aenean fermentum interdum">
+                <img data-original="${assetPath(src: 'demos/portfolio/p4.jpg') }" alt="Aenean fermentum interdum">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Aenean fermentum interdum</a></h6>
                     <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>
                 </figcaption>
             </figure>
             <figure class="element">
-                <img src="${assetPath(src: 'demos/portfolio/p5.jpg') }" alt="Nam et aliquam eros">
+                <img data-original="${assetPath(src: 'demos/portfolio/p5.jpg') }" alt="Nam et aliquam eros">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Nam et aliquam eros</a></h6>
                     <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>
                 </figcaption>
             </figure>
             <figure class="element">
-                <img src="${assetPath(src: 'demos/portfolio/p6.jpg') }" alt="Praesent semper">
+                <img data-original="${assetPath(src: 'demos/portfolio/p6.jpg') }" alt="Praesent semper">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Praesent semper</a></h6>
                     <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>
                 </figcaption>
             </figure>
             <figure class="element">
-                <img src="${assetPath(src: 'demos/portfolio/p7.jpg') }" alt="Donec mauris ligula">
+                <img data-original="${assetPath(src: 'demos/portfolio/p7.jpg') }" alt="Donec mauris ligula">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Donec mauris ligula</a></h6>
                     <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>
                 </figcaption>
             </figure>
             <figure class="element">
-                <img src="${assetPath(src: 'demos/portfolio/p2.jpg') }" alt="Ut non ex viverra">
+                <img data-original="${assetPath(src: 'demos/portfolio/p2.jpg') }" alt="Ut non ex viverra">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Ut non ex viverra</a></h6>
                     <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>
                 </figcaption>
             </figure>
             <figure class="element">
-                <img src="${assetPath(src: 'demos/portfolio/p5.jpg') }" alt="Sed quis arcu luctus">
+                <img data-original="${assetPath(src: 'demos/portfolio/p5.jpg') }" alt="Sed quis arcu luctus">
                 <figcaption>
                     <h6><a href="single-portfolio-gallery.html">Sed quis arcu luctus</a></h6>
                     <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>
@@ -141,7 +141,7 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="${assetPath(src: 'demos/team1.jpg') }" alt="Jordan Henrion">
+                                <img data-original="${assetPath(src: 'demos/team1.jpg') }" alt="Jordan Henrion">
                                 <img class="img-hover" src="${assetPath(src: 'demos/team1.jpg') }" alt="Jordan Henrion">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
@@ -156,7 +156,7 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="${assetPath(src: 'demos/team2.jpg') }" alt="Catherine Doe">
+                                <img data-original="${assetPath(src: 'demos/team2.jpg') }" alt="Catherine Doe">
                                 <img class="img-hover" src="${assetPath(src: 'demos/team2.jpg') }" alt="Catherine Doe">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
@@ -171,7 +171,7 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="${assetPath(src: 'demos/team3.jpg') }" alt="Marion Doe">
+                                <img data-original="${assetPath(src: 'demos/team3.jpg') }" alt="Marion Doe">
                                 <img class="img-hover" src="${assetPath(src: 'demos/team3.jpg') }" alt="Marion Doe">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
@@ -186,7 +186,7 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="${assetPath(src: 'demos/team4.jpg') }" alt="Mary Jane Doe">
+                                <img data-original="${assetPath(src: 'demos/team4.jpg') }" alt="Mary Jane Doe">
                                 <img class="img-hover" src="${assetPath(src: 'demos/team4.jpg') }" alt="Mary Jane Doe">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
@@ -201,7 +201,7 @@
                     <div class="tz-team-item">
                         <div class="tz-team-overlay">
                             <div class="tz-team-img">
-                                <img src="${assetPath(src: 'demos/team5.jpg') }" alt="Jordan Henrion">
+                                <img data-original="${assetPath(src: 'demos/team5.jpg') }" alt="Jordan Henrion">
                                 <img class="img-hover" src="${assetPath(src: 'demos/team5.jpg') }" alt="Jordan Henrion">
                                 <div class="tz-team-overlay-bk"></div>
                             </div>
@@ -245,7 +245,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 laster-shop-item">
                     <div class="laster-thumb">
-                        <img src="${assetPath(src: 'demos/shop1.jpg') }" alt="Linen Shirt With Mao Color">
+                        <img data-original="${assetPath(src: 'demos/shop1.jpg') }" alt="Linen Shirt With Mao Color">
                         <span class="tz-shop-meta">
                             <a href="#" class="tzshopping">
                                 <i class="fa fa-shopping-cart"></i>
@@ -263,7 +263,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 laster-shop-item">
                     <div class="laster-thumb">
-                        <img src="${assetPath(src: 'demos/shop2.jpg') }" alt="Superdry Shirt With Wash">
+                        <img data-original="${assetPath(src: 'demos/shop2.jpg') }" alt="Superdry Shirt With Wash">
                         <span class="tz-shop-meta">
                             <a href="#" class="tzshopping">
                                 <i class="fa fa-shopping-cart"></i>
@@ -281,7 +281,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 laster-shop-item">
                     <div class="laster-thumb">
-                        <img src="${assetPath(src: 'demos/shop3.jpg') }" alt="Arvust Shirt In Washed Blue">
+                        <img data-original="${assetPath(src: 'demos/shop3.jpg') }" alt="Arvust Shirt In Washed Blue">
                         <span class="tz-shop-meta">
                             <a href="#" class="tzshopping">
                                 <i class="fa fa-shopping-cart"></i>
@@ -299,7 +299,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 laster-shop-item">
                     <div class="laster-thumb">
-                        <img src="${assetPath(src: 'demos/shop4.jpg') }" alt="Selected Premium Formal Shirt">
+                        <img data-original="${assetPath(src: 'demos/shop4.jpg') }" alt="Selected Premium Formal Shirt">
                         <span class="tz-shop-meta">
                             <a href="#" class="tzshopping">
                                 <i class="fa fa-shopping-cart"></i>
@@ -323,52 +323,52 @@
         <div class="container">
             <ul class="partner-slider">
                 <li>
-                    <img src="${assetPath(src: 'demos/partler1.png') }" alt="partler4">
+                    <img data-original="${assetPath(src: 'demos/partler1.png') }" alt="partler4">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler2.png') }" alt="partler3">
+                    <img data-original="${assetPath(src: 'demos/partler2.png') }" alt="partler3">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler3.png') }" alt="partler1">
+                    <img data-original="${assetPath(src: 'demos/partler3.png') }" alt="partler1">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler4.png') }" alt="partler2">
+                    <img data-original="${assetPath(src: 'demos/partler4.png') }" alt="partler2">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler5.png') }" alt="partler5">
+                    <img data-original="${assetPath(src: 'demos/partler5.png') }" alt="partler5">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler6.png') }" alt="partler6">
+                    <img data-original="${assetPath(src: 'demos/partler6.png') }" alt="partler6">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler1.png') }" alt="partler3">
+                    <img data-original="${assetPath(src: 'demos/partler1.png') }" alt="partler3">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler2.png') }" alt="partler4">
+                    <img data-original="${assetPath(src: 'demos/partler2.png') }" alt="partler4">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler3.png') }" alt="partler4">
+                    <img data-original="${assetPath(src: 'demos/partler3.png') }" alt="partler4">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler4.png') }" alt="partler3">
+                    <img data-original="${assetPath(src: 'demos/partler4.png') }" alt="partler3">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler5.png') }" alt="partler1">
+                    <img data-original="${assetPath(src: 'demos/partler5.png') }" alt="partler1">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler6.png') }" alt="partler2">
+                    <img data-original="${assetPath(src: 'demos/partler6.png') }" alt="partler2">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler1.png') }" alt="partler5">
+                    <img data-original="${assetPath(src: 'demos/partler1.png') }" alt="partler5">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler2.png') }" alt="partler6">
+                    <img data-original="${assetPath(src: 'demos/partler2.png') }" alt="partler6">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler3.png') }" alt="partler3">
+                    <img data-original="${assetPath(src: 'demos/partler3.png') }" alt="partler3">
                 </li>
                 <li>
-                    <img src="${assetPath(src: 'demos/partler4.png') }" alt="partler4">
+                    <img data-original="${assetPath(src: 'demos/partler4.png') }" alt="partler4">
                 </li>
             </ul>
         </div><!--end class container-->

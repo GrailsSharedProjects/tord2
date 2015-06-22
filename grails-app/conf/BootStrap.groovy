@@ -115,10 +115,10 @@ class BootStrap {
 
 	private SliderRevolution createHomeRevSlider() {
 		////// revolution slider
-		def slider1 = new Slider(name: "首页幻灯页一", style: 1, bgImage: new Photo(url: "demos/slider-re1.jpg", alt: "slider1").save(), row1: "现在购买卫浴系列", row2: "享受", row3: "10%的", row4: "额外优惠！")
-		def slider2 = new Slider(name: "首页幻灯页二", style: 2, bgImage: new Photo(url: "demos/slider-re2.jpg", alt: "slider2").save(), row1: "拓德家装O2O平台", row2: "互联网领先的一站式家装解决方案提供商", row3: "了解更多")
-		def slider3 = new Slider(name: "首页幻灯页三", style: 3, bgImage: new Photo(url: "demos/slider-re3.jpg", alt: "slider3").save(), row1: "新品折扣", row2: "专业卫浴瓷砖", row3: "享受额外的10%优惠政策", row4: "立即购买")
-		def slider4 = new Slider(name: "首页幻灯页四", style: 2, bgImage: new Photo(url: "demos/slider-re4.jpg", alt: "slider4").save(), row1: "拓德家装O2O平台", row2: "有你所需要的全部", row3: "随便逛逛")
+		def slider1 = new Slider(name: "首页幻灯页二", style: 2, bgImage: new Photo(url: "demos/slider-re2.jpg", alt: "slider2").save(), row1: "拓德家装O2O平台", row2: "互联网领先的一站式家装解决方案提供商", row3: "了解更多")
+		def slider2 = new Slider(name: "首页幻灯页一", style: 1, bgImage: new Photo(url: "demos/slider-re1.jpg", alt: "slider1").save(), row1: "现在购买卫浴系列", row2: "享受", row3: "10%的", row4: "额外优惠！")
+		def slider3 = new Slider(name: "首页幻灯页四", style: 2, bgImage: new Photo(url: "demos/slider-re4.jpg", alt: "slider4").save(), row1: "拓德家装O2O平台", row2: "有你所需要的全部", row3: "随便逛逛")
+		def slider4 = new Slider(name: "首页幻灯页三", style: 3, bgImage: new Photo(url: "demos/slider-re3.jpg", alt: "slider3").save(), row1: "新品折扣", row2: "专业卫浴瓷砖", row3: "享受额外的10%优惠政策", row4: "立即购买")
 		def revSlider = new SliderRevolution(name: "首页巨幅幻灯片");
 		revSlider.addToSliders(slider1);
 		revSlider.addToSliders(slider2);

@@ -93,7 +93,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://tordchina.com"
+//        grails.serverURL = "http://tordchina.com"
 		//grails.assets.storagePath = "F:\\node_work\\tord2\\web-app\\uploaded"
     }
 }

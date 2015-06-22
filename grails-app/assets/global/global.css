@@ -11482,3 +11482,6 @@ span.required-indicator{
     border: 1px solid #ddd;
     color: #428bca;
 }
+.s2ui_error{
+	color: red;
+}
