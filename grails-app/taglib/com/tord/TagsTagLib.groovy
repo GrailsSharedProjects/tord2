@@ -8,7 +8,6 @@ class TagsTagLib {
 //    static defaultEncodeAs = [taglib:'html']
     //static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
 	
-	
 	def renderLogo = { attrs, body ->
 		out << """
 		<a href="${createLink(controller: 'home')}">
@@ -109,4 +108,49 @@ class TagsTagLib {
 			})
 		}
 	}
+	
+	/*
+	 * @attr photo
+	 * @attr photoId
+	 * @attr url
+	 *
+	 */
+	def photo = {attrs ->
+	def url = attrs.remove('url');
+		def Photo photo = attrs.remove('photo')
+		def id = attrs.remove('photoId');
+		
+		attrs.remove('src');
+		
+		if(url) {
+			if(url.startsWith("/uploaded")) {
+				out << "<img src='${url}' "
+			}else {
+				out << "<img src='${g.assetPath(src: url)}' "
+			}
+		}else {
+			if(!photo) {
+				photo = Photo.findById(id);
+			}
+			if(photo) {
+				if(photo.isUserUploaded()) {
+					out << "<img src='${photo.url}' "
+				}else {
+					out << "<img src='${g.assetPath(src: photo.url)}' "
+				}
+			}else {
+				out << """<img src='${g.assetPath(src: "demos/100x100.png")}' """
+			}
+		}
+		
+		closeTag(attrs, out)
+	}
+	
+	def closeTag(attrs, out) {
+		attrs?.each {
+			out << "${it.key}='${it.value}' "
+		}
+		out << "/>";
+	}
 }
+

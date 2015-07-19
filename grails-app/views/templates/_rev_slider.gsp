@@ -7,7 +7,7 @@
                 	<g:each in="${rev.sliders }" var="slider">
                 		<g:if test="${slider.style == 1 }">
 		                	<li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-saveperformance="off" >
-		                        <img src="${assetPath(src: slider.bgImage.url)}"  alt="${slider.bgImage.alt }"  data-bgposition="center top" data-bgfit="100% 100%" data-bgrepeat="no-repeat">
+		                        <img src="${assetPath(src: slider.bgImage.url)}"  alt="${slider.bgImageAlt }"  data-bgposition="center top" data-bgfit="100% 100%" data-bgrepeat="no-repeat">
 		                        <div class="tp-caption small_light_white sft stt tp-resizeme  tz-title-small"
 		                             data-x="center" data-hoffset="0"
 		                             data-y="center" data-voffset="-110"
@@ -70,7 +70,7 @@
 		                	<!-- SLIDE  -->
 		                    <li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
 		                        <!-- MAIN IMAGE -->
-		                        <img src="${assetPath(src: slider.bgImage.url)}"  alt="${slider.bgImage.alt }"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		                        <img src="${assetPath(src: slider.bgImage.url)}"  alt="${slider.bgImageAlt }"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 		                        <!-- LAYERS -->
 		
 		                        <!-- LAYER NR. 1 -->
@@ -123,7 +123,7 @@
 		                    <!-- SLIDE  -->
 		                    <li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
 		                        <!-- MAIN IMAGE -->
-		                        <img src="${assetPath(src: slider.bgImage.url)}"  alt="${slider.bgImage.alt }"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		                        <img src="${assetPath(src: slider.bgImage.url)}"  alt="${slider.bgImageAlt }"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 		                        <!-- LAYERS -->
 		
 		                        <!-- LAYER NR. 1 -->

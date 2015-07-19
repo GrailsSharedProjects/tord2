@@ -1,5 +1,5 @@
-#drag {
-	position: absolute;
+.uploaderDrag {
+/* 	position: absolute; */
 	top: 20%;
 	left: 20%;
 	right: 20%;
@@ -9,8 +9,8 @@
 	background: #f0f0f0;
 }
 
-#icon {
-	background-image: url(../images/cloud_gray.png);
+.uploaderIcon {
+	background-image: url(cloud_gray.png);
 	background-repeat: no-repeat;
 	background-size: 176px 120px;
 	width: 176px;
@@ -18,8 +18,10 @@
 	z-index: 1;
 }
 
-#iconLoading {
-	background-image: url(../images/cloud.png);
+.uploaderIconLoading {
+	top: -106px;
+	overflow: hidden;
+	background-image: url(cloud.png);
 	background-repeat: no-repeat;
 	background-size: 176px 120px;
 	background-position: 0 bottom;
@@ -35,25 +37,37 @@
 	-ms-transition: height .7s ease;
 }
 
-.wrap {
-	position: absolute;
+.uploaderWrap {
+/* 	position: absolute; */
 	margin: auto;
 	top: 0;
 	left: 0;
 	bottom: -10px;
 	right: 0;
 	width: 176px;
-	height: 120px;
+	height: 100px;
 }
 
-#title {
+.uploaderTitle {
 	position: relative;
 	top: 30px;
 	text-align: center;
 	color: #727272;
 	font-size: 20px;
+	margin-bottom: 50px;
 }
 
-#input {
+.uploaderTitle strong{
+	display: block;
+}
+
+.uploaderInput {
 	visibility: hidden;
+}
+.uploaderImage img {
+max-width: 100%;
+max-height: 100%;
+text-align: center;
+vertical-align: middle;
+position: relative;
 }

@@ -18,15 +18,15 @@
 <%--                <i class="fa fa-angle-right"></i>--%>
 <%--            </button>--%>
 <%--        </div><!--end class tzpagenavi-->--%>
-		<g:if test="${work?.picList }">
+		<g:if test="${work?.galleryPhotoList }">
         <div class="single-slider-small">
             <div class="container">
                 <button class="tz_slider_prev"><i class="fa fa-angle-left"></i></button>
                 <button class="tz_slider_next"><i class="fa fa-angle-right"></i></button>
                 <ul class="tz-slider-full">
-	                <g:each in="${work.picList }" var="pic">
+	                <g:each in="${work.galleryPhotoList }" var="pic">
 	                <li>
-	                    <img src="${assetPath(src: pic.url) }" alt="${pic.alt }">
+	                    <img src="${assetPath(src: pic.url) }" alt="Gallery Photo">
 	                </li>
 	                </g:each>
                 </ul>

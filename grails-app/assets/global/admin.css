@@ -12,5 +12,7 @@
 *= require owl.theme.css
 *= require font-awesome.min.css
 *= require global.css
+*= require uploader.css
+*= require styles/simditor.css
 *= require_self
 */

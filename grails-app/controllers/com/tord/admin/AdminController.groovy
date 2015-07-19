@@ -24,6 +24,9 @@ class AdminController {
 			case "meta":
 			bootstrap.setupMetaData();
 			break;
+			case "photo":
+				bootstrap.setupPhotoData();
+				break;
 		}
 		render "Refreshing $id ...."
 	}

@@ -8,7 +8,8 @@ class SiteSettings implements TDomainOperations {
 	String value
 	
 	static mapping = {
-		value type: 'text'
+		key column: 'data_key'
+		value column: 'data_val', type: 'text'
 	}
 	
 	static void putIt(String key, String value, boolean flush = true) {

@@ -1,0 +1,10 @@
+drop database tord;
+create database tord character set utf8;
+-- create database tord_test;
+create user wicky@'localhost' identified by 'William100';
+create user mclamee@'%' identified by 'William100';
+grant all privileges on tord.* to wicky;
+-- grant all privileges on tord_test.* to wicky;
+grant all privileges on tord.* to mclamee;
+-- grant all privileges on tord_test.* to mclamee;
+use tord;

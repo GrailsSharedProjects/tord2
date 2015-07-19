@@ -42,8 +42,10 @@
 	    <asset:javascript src="respond.min.js"/>
 	    <![endif]-->
 		
-		<g:layoutHead/>
+		<asset:javascript src="jquery.min.js" />
 		
+		<g:layoutHead/>
+		   		
 	</head>
 	<body>
 	
@@ -55,8 +57,11 @@
 				</div>
 			</div>
 		</div>
-		<g:if test="${flash.message}">
-		<div class="alert alert-danger alert-dismissible" role="alert">
+		<!-- Header  -->
+    	<g:render template="header" contextPath="/templates" model="['style':pageData.header.style]" />
+    	<!-- Message -->
+    	<g:if test="${flash.message}">
+		<div id="flash-message" class="alert alert-danger alert-dismissible" role="alert">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-label="Close">
 				<span aria-hidden="true">&times;</span>
@@ -64,8 +69,6 @@
 			<strong>注意！</strong> ${flash.message }
 		</div>
 		</g:if>
-		<!-- Header  -->
-    	<g:render template="header" contextPath="/templates" model="['style':pageData.header.style]" />
     	<!-- Revolution Slider  -->
 		<g:if test="${pageData.sliderRevolution }">
     		<g:render template="rev_slider" contextPath="/templates"/>
@@ -74,7 +77,7 @@
 		<g:layoutBody/>
 		<!-- Footer  -->
     	<g:render template="footer" contextPath="/templates" />
-    	
+    
     	<!-- Global JavaScript -->
     	<asset:javascript src="site.js"/>
     	

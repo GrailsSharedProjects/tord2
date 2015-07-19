@@ -18,12 +18,11 @@ import com.tord.auth.UserRole
 class BootStrap {
 
     def init = { servletContext ->
-		setupUsers();
-		setupSiteSettings();
-		setupMetaData();
-		setupPagesAndSliders();
-		
-		setupTestData();
+//		setupUsers();
+//		setupSiteSettings();
+//		setupMetaData();
+//		setupPagesAndSliders();
+//		setupTestData();
 		
     }
     def destroy = {
@@ -115,10 +114,10 @@ class BootStrap {
 
 	private SliderRevolution createHomeRevSlider() {
 		////// revolution slider
-		def slider1 = new Slider(name: "首页幻灯页二", style: 2, bgImage: new Photo(url: "demos/slider-re2.jpg", alt: "slider2").save(), row1: "拓德家装O2O平台", row2: "互联网领先的一站式家装解决方案提供商", row3: "了解更多")
-		def slider2 = new Slider(name: "首页幻灯页一", style: 1, bgImage: new Photo(url: "demos/slider-re1.jpg", alt: "slider1").save(), row1: "现在购买卫浴系列", row2: "享受", row3: "10%的", row4: "额外优惠！")
-		def slider3 = new Slider(name: "首页幻灯页四", style: 2, bgImage: new Photo(url: "demos/slider-re4.jpg", alt: "slider4").save(), row1: "拓德家装O2O平台", row2: "有你所需要的全部", row3: "随便逛逛")
-		def slider4 = new Slider(name: "首页幻灯页三", style: 3, bgImage: new Photo(url: "demos/slider-re3.jpg", alt: "slider3").save(), row1: "新品折扣", row2: "专业卫浴瓷砖", row3: "享受额外的10%优惠政策", row4: "立即购买")
+		def slider1 = new Slider(name: "首页幻灯页二", style: 2, bgImage: Photo.createPhoto("demos/slider-re2.jpg"), bgImageAlt: "slider2", row1: "拓德家装O2O平台", row2: "互联网领先的一站式家装解决方案提供商", row3: "了解更多")
+		def slider2 = new Slider(name: "首页幻灯页一", style: 1, bgImage: Photo.createPhoto("demos/slider-re1.jpg"), bgImageAlt: "slider1", row1: "现在购买卫浴系列", row2: "享受", row3: "10%的", row4: "额外优惠！")
+		def slider3 = new Slider(name: "首页幻灯页四", style: 2, bgImage: Photo.createPhoto("demos/slider-re4.jpg"), bgImageAlt: "slider4", row1: "拓德家装O2O平台", row2: "有你所需要的全部", row3: "随便逛逛")
+		def slider4 = new Slider(name: "首页幻灯页三", style: 3, bgImage: Photo.createPhoto("demos/slider-re3.jpg"), bgImageAlt: "slider3", row1: "新品折扣", row2: "专业卫浴瓷砖", row3: "享受额外的10%优惠政策", row4: "立即购买")
 		def revSlider = new SliderRevolution(name: "首页巨幅幻灯片");
 		revSlider.addToSliders(slider1);
 		revSlider.addToSliders(slider2);
@@ -189,13 +188,13 @@ class BootStrap {
 		Work.deleteAllRows();
 		
 		WorkCategory portCat = WorkCategory.findByName("portfolio");
-		Work protWork1 = new Work(name: "瓷砖A型", category: portCat, title: "盛夏瓷砖A型", titlePic: new Photo(url: "demos/portfolio/product1.jpg", alt: "盛夏瓷砖A型").save(), );
-		protWork1.addPhoto("demos/p_gallery1.jpg", "gallery pic1")
-		protWork1.addPhoto("demos/p_gallery2.jpg", "gallery pic2")
-		protWork1.addPhoto("demos/p_gallery3.jpg", "gallery pic3")
-		protWork1.addPhoto("demos/p_gallery4.jpg", "gallery pic4")
-		protWork1.addPhoto("demos/p_gallery1.jpg", "gallery pic5")
-		protWork1.addPhoto("demos/p_gallery2.jpg", "gallery pic6")
+		Work protWork1 = new Work(name: "瓷砖A型", category: portCat, title: "盛夏瓷砖A型", titlePhoto: Photo.createPhoto("demos/portfolio/product1.jpg"), titlePhotoAlt: "盛夏瓷砖A型");
+		protWork1.addPhoto("demos/p_gallery1.jpg")
+		protWork1.addPhoto("demos/p_gallery2.jpg")
+		protWork1.addPhoto("demos/p_gallery3.jpg")
+		protWork1.addPhoto("demos/p_gallery4.jpg")
+		protWork1.addPhoto("demos/p_gallery1.jpg")
+		protWork1.addPhoto("demos/p_gallery2.jpg")
 		protWork1.setContentHTML("""
                         <h3 class="p-title">${protWork1.title}</h3>
                         <p>
@@ -221,13 +220,13 @@ class BootStrap {
 		protWork1.save();
 		protWork1.addTag("即将上市")
 		
-		Work protWork2 = new Work(name: "瓷砖X型", category: portCat, title: "拖得瓷砖X型", titlePic: new Photo(url: "demos/portfolio/product2.jpg", alt: "拖得瓷砖X型").save(), );
-		protWork2.addPhoto("demos/p_gallery3.jpg", "gallery pic1")
-		protWork2.addPhoto("demos/p_gallery2.jpg", "gallery pic2")
-		protWork2.addPhoto("demos/p_gallery1.jpg", "gallery pic3")
-		protWork2.addPhoto("demos/p_gallery4.jpg", "gallery pic4")
-		protWork2.addPhoto("demos/p_gallery3.jpg", "gallery pic5")
-		protWork2.addPhoto("demos/p_gallery2.jpg", "gallery pic6")
+		Work protWork2 = new Work(name: "瓷砖X型", category: portCat, title: "拖得瓷砖X型", titlePhoto: Photo.createPhoto("demos/portfolio/product2.jpg"), titlePhotoAlt: "拖得瓷砖X型", );
+		protWork2.addPhoto("demos/p_gallery3.jpg")
+		protWork2.addPhoto("demos/p_gallery2.jpg")
+		protWork2.addPhoto("demos/p_gallery1.jpg")
+		protWork2.addPhoto("demos/p_gallery4.jpg")
+		protWork2.addPhoto("demos/p_gallery3.jpg")
+		protWork2.addPhoto("demos/p_gallery2.jpg")
 		protWork2.setContentHTML("""
                         <h3 class="p-title">${protWork2.title}</h3>
                         <p>
@@ -249,6 +248,51 @@ class BootStrap {
 		""")
 		protWork2.save();
 		protWork2.addTag("四月")
+		
+		WorkCategory projcat = WorkCategory.findByName("project");
+		
+		Work projWork1 = new Work(name: "装修案例1", category: projcat, title: "装修案例1", titlePhoto: Photo.createPhoto("demos/portfolio/product1.jpg"), titlePhotoAlt: "装修案例1");
+		projWork1.addPhoto("demos/p_gallery1.jpg")
+		projWork1.addPhoto("demos/p_gallery2.jpg")
+		projWork1.addPhoto("demos/p_gallery3.jpg")
+		projWork1.addPhoto("demos/p_gallery4.jpg")
+		projWork1.addPhoto("demos/p_gallery1.jpg")
+		projWork1.addPhoto("demos/p_gallery2.jpg")
+		projWork1.setContentHTML("""
+                        <h3 class="p-title">${projWork1.title}</h3>
+                        <p>
+                            Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed. Donec erat magna, aliquam vitae semper vitae, accumsan vel nisl. Vivamus pellentesque orci sit amet odio dictum eget commodo nulla consequat. Proin iaculis tristique nisl ut eleifend. Maecenas lacus purus, malesuada eu scelerisque ac, commodo sed orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur a tortor ut leo mattis cursus. Vestibulum laoreet interdum pellentesque. Suspendisse vitae cursus urna.
+                        </p>
+                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>
+		""")
+		projWork1.save();
+		projWork1.addTag("新项目")
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		def folder = new File("F:/node_work/tord2/grails-app/assets/images");
+		
+	}
+
+	def setupPhotoData() {
+		Photo.createPhoto("");
 	}
 		
 }

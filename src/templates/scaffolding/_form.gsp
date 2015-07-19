@@ -36,14 +36,42 @@ private renderFieldForProperty(p, owningClass, prefix = "") {
 	}
 	%>
 <div class="row fieldcontain \${hasErrors(bean: ${propertyName}, field: '${prefix}${p.name}', 'error')} ${required ? 'required' : ''}">
-	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+	<div 
+		<%if(cp?.widget=="textarea"){%>
+		class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+		<%}else{%>
+		class="col-lg-2 col-md-2 col-sm-12 col-xs-12"
+		<%}%>
+	>
 		<label class="form-label" for="${prefix}${p.name}">
 			<g:message code="${domainClass.propertyName}.${prefix}${p.name}.label" default="${p.naturalName}" />
 			<% if (required) { %><span class="required-indicator">*</span><% } %>
 		</label>
 	</div>
-	<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+	<div 
+		<%if(cp?.widget=="textarea"){%>
+		class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+		<%}else{%>
+		class="col-lg-10 col-md-10 col-sm-12 col-xs-12"
+		<%}%>
+	>
 		${renderEditor(p)}
+	</div>
+	
+</div>
+<%  } %>
+
+
+<% 
+if (domainClass.getClazz() in org.grails.taggable.Taggable) { %>
+<div class="row fieldcontain \${hasErrors(bean: ${propertyName}, field: 'tags', 'error')}">
+	<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+		<label class="form-label" for="tags">
+			<g:message code="${domainClass.propertyName}.tags.label" default="Tags" />
+		</label>
+	</div>
+	<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+		<g:render template="form-tags" contextPath="/templates" model="\${[fieldName:'tags', target: ${propertyName}.tags]}" />
 	</div>
 </div>
 <%  } %>

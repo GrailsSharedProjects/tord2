@@ -8,4 +8,12 @@ class Article implements TDomainOperations, Taggable{
     static constraints = {
 		name unique: true
     }
+	
+	static mapping = {
+	}
+	
+	@Override
+	public String toString() {
+		"${name}"
+	}
 }

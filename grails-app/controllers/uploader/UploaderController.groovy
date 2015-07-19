@@ -1,4 +1,6 @@
 package uploader
+import com.tord.Photo;
+
 import grails.converters.JSON
 
 class UploaderController {
@@ -15,19 +17,33 @@ class UploaderController {
 					if(!f.empty) {
 						def webRootDir = servletContext.getRealPath("/")
 						println webRootDir
-						def userDir = new File(webRootDir, "/uploaded/")
+						def date = new Date().getCalendarDate();
+						def path = "/uploaded/${date.getYear()}/${date.getMonth()}/${date.getDayOfMonth()}/"
+						
+						println "userDIR: " + path
+						
+						def userDir = new File(webRootDir, path)
 						userDir.mkdirs();
-						def localFile = new File( userDir, f.originalFilename);
+						
+						def String fName = f.originalFilename;
+						fName = fName.replaceAll("[\\\\/:\\*\\?\"\\<\\>\\| ]", "_")
+						
+						println "fileName:" + fName;
+						
+						def localFile = new File( userDir, fName);
 						f.transferTo(localFile)
-						def msg = new Msg(key:"success", value:localFile.name);
+						def photo = Photo.createPhoto(path+fName, f.originalFilename);
+						def msg = new Msg(success:true, msg: photo.url+"?id="+photo.id, file_path: photo.url);
 						render msg as JSON
 						return;
 				  }
-				  render new Msg(key:"error", value:"file is empty.") as JSON
+				  render new Msg(success:false, msg:"file is empty.") as JSON
 				  return;
 		}
-		render new Msg(key:"error", value:"no file uploaded.") as JSON
+		render new Msg(success:false, msg:"no file uploaded.") as JSON
 	}
+	
+	def test() {}
 	
     def success(){
 		println "inside controller: " + params
@@ -35,4 +51,30 @@ class UploaderController {
     	println url
     	render view:'success', model:['imageUrl': url]
     }
+	
+	def widget() {
+		def fieldName = params.id
+		render template: 'upload-widget'
+	}
+	
+	def singlePhoto() {
+		
+		def photo = params.photo;
+		if(!photo) {
+			def id = params.id
+			println id
+			photo = Photo.findById(id)
+		}
+		
+		println photo
+		
+		def fieldName = params.fieldName
+		println fieldName
+		
+		if(photo) {
+			render template:'single-photo', model:[fieldName: fieldName, photo: photo, editable: true]			
+		}else {
+			render ""
+		}	
+	}
 }

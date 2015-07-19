@@ -7,6 +7,7 @@ class Slider implements TDomainOperations{
 	String name
 	Integer style
 	Photo bgImage
+	String bgImageAlt
 	String row1
 	String row2
 	String row3

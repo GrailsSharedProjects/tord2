@@ -40,6 +40,8 @@ class ${className}Controller {
 
         ${propertyName}.save flush:true
 
+		saveTags(${propertyName}, params.tags);
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), ${propertyName}.id])
@@ -49,6 +51,22 @@ class ${className}Controller {
         }
     }
 
+	private void saveTags(instance, tags) {
+		if(tags) {
+			
+			def parsed = tags.tokenize(',').collect{tag->
+				tag?.trim();
+			}.unique()
+			
+			if(!parsed) {
+				parsed = []
+			}
+			
+			instance.setTags(parsed)
+			println ">>Tags: "+instance.tags
+		}
+	}
+	
     def edit(${className} ${propertyName}) {
 		def pageData = Page.findByName("ADMIN_PAGE");
         respond ${propertyName}, model:[pageData: pageData]
@@ -69,6 +87,8 @@ class ${className}Controller {
 
         ${propertyName}.save flush:true
 
+		saveTags(${propertyName}, params.tags);
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: '${className}.label', default: '${className}'), ${propertyName}.id])

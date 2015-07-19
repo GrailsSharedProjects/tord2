@@ -505,6 +505,11 @@ jQuery(document).ready(function(){
         itemsScaleUp:false
     });
 
+    initAccordion()
+
+});
+
+function initAccordion(){
     /* Accordion Toggle Items */
     var iconOpen = 'fa-chevron-down',
         iconClose = 'fa-chevron-right';
@@ -515,17 +520,23 @@ jQuery(document).ready(function(){
         jQuery(this).find('h6:first i').addClass(iconOpen).removeClass(iconClose);
     });
     jQuery('.tzaccordion h6').click(function() {
-        var $_this = jQuery(this);
-        $_this.parent().find('.active i').addClass(iconClose).removeClass(iconOpen);
-        $_this.parent().find('.active').removeClass('active');
-        $_this.parent().find('p').slideUp('normal');
-        if(jQuery(this).next('p').is(':hidden') == true) {
-            jQuery(this).find('i').addClass(iconOpen).removeClass(iconClose);
-            jQuery(this).addClass('active');
-            jQuery(this).next('p').slideDown('normal');
+        var $_h6 = jQuery(this);
+        var accordion = $_h6.closest(".tzaccordion");
+        accordion.find('.active i').addClass(iconClose).removeClass(iconOpen);
+        accordion.find('.active').removeClass('active');
+        
+        accordion.find('p').slideUp('normal');
+        if($_h6.next('p').is(':hidden') == true) {
+            $_h6.find('i').addClass(iconOpen).removeClass(iconClose);
+            $_h6.addClass('active');
+            $_h6.next('p').slideDown('normal');
+        }
+        
+        accordion.find('div.pp').slideUp('normal');
+        if($_h6.next('div.pp').is(':hidden') == true) {
+        	$_h6.find('i').addClass(iconOpen).removeClass(iconClose);
+        	$_h6.addClass('active');
+        	$_h6.next('div.pp').slideDown('normal');
         }
     });
-
-
-
-});
+}

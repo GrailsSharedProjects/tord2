@@ -13,19 +13,17 @@
             </h3>
             <div data-option-key="filter" class="tzfilter">
                 <a class="selected" data-option-value="*" href="#show-all">全部</a>
-                <a data-option-value=".chair" href="#">即将上市</a>
-                <a data-option-value=".lounge" href="#">四月</a>
-                <a data-option-value=".sofa" href="#">三月</a>
-                <a data-option-value=".design" href="#">二月</a>
-                <a data-option-value=".accessories" href="#">往期精品</a>
+                <g:each in="${tagMap }" var="entry">
+                	<a data-option-value=".${entry.value }" href="#">${entry.key }</a>
+                </g:each>
             </div>
         </div>
         <div class="tzportfolio-pages">
         	<g:each in="${works }" var="work">
-            <div class="element ${work.tags.join(' ')?.toLowerCase() }">
+            <div class="element ${work.tags.collect{tag-> tagMap[tag]}.join(' ')}">
                 <div class="tz-inner">
                     <div class="tz-image-item">
-                        <img alt="${work.titlePic.alt }" src="${assetPath(src: work.titlePic.url) }">
+                        <img alt="${work.titlePhotoAlt }" src="${assetPath(src: work.titlePhoto.url) }">
                         <a href="${createLink(controller:'portfolio', action:'show', id:work.name)}" class="tzfa-search"><i class="fa fa-search"></i></a>
                         <a href="#" class="tzfa-heart"><i class="fa fa-heart"></i></a>
                     </div>

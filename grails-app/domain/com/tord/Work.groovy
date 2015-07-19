@@ -11,20 +11,22 @@ class Work implements TDomainOperations, Taggable{
 	
 	//Tag tag
 	String title
-	Photo titlePic 
+	Photo titlePhoto
+	String titlePhotoAlt
 	Product product
 	String contentHTML
 	
-	List<Photo> picList
-	static hasMany = [picList: Photo]
-	
+	List<Photo> galleryPhotoList
+	static hasMany = [galleryPhotoList: Photo]
+
     static constraints = {
 		name unique: true
 		category()
 		title()
-		titlePic()
-		product nullable: true
-		picList nullable: true
+		titlePhoto(widget: 'imagebed')
+		titlePhotoAlt nullable: true, blank: true
+		product nullable: true, blank: true
+		galleryPhotoList nullable: true, blank: true, widget: 'multi-imagebed'
 		contentHTML(widget:'textarea')
     }
 	
@@ -37,9 +39,9 @@ class Work implements TDomainOperations, Taggable{
 		name
 	}
 	
-	Photo addPhoto(String url, String alt) {
-		def newPhoto = new Photo(url: url, alt: alt);
-		this.addToPicList(newPhoto);
+	Photo addPhoto(String url) {
+		def newPhoto = Photo.createPhoto(url);
+		this.addToGalleryPhotoList(newPhoto);
 		newPhoto
 	}
 }

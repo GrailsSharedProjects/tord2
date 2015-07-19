@@ -32,6 +32,12 @@
 	    <asset:javascript src="respond.min.js"/>
 	    <![endif]-->
 		
+		<asset:javascript src="jquery.min.js" />
+		<asset:javascript src="scripts/module.js" />
+		<asset:javascript src="scripts/hotkeys.js" />
+		<asset:javascript src="scripts/uploader.js" />
+		<asset:javascript src="scripts/simditor.js" />
+		
 		<g:layoutHead/>
 		
 	</head>
@@ -48,6 +54,16 @@
 		
 		<!-- Header  -->
     	<g:render template="header" contextPath="/templates" model="['style':pageData.header.style]" />
+    	<!-- Message -->
+    	<g:if test="${flash.message}">
+		<div id="flash-message" class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<strong>注意！</strong> ${flash.message }
+		</div>
+		</g:if>
     	<!-- Body  -->
 		<g:layoutBody/>
 		<!-- Footer  -->

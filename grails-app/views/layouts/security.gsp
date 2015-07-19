@@ -39,7 +39,9 @@
 <!--[if lt IE 9]>
 	    <asset:javascript src="respond.min.js"/>
 	    <![endif]-->
-
+	    
+		<asset:javascript src="jquery.min.js" />
+		
 <g:layoutHead />
 
 </head>

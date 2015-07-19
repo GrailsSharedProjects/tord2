@@ -1,6 +1,6 @@
 package com.tord
 
-import com.tord.admin.Page;
+import com.tord.admin.Page
 
 class PortfolioController {
 	def workService
@@ -8,7 +8,15 @@ class PortfolioController {
     def index() { 
 		def pageData = Page.findByName("PORTFOLIO_PAGE");
 		def works = workService.findAllByCategory("portfolio");
-    	render view: "index", model: [pageData: pageData, works: works];
+		
+		def allTags = workService.findAllTagsByCategory("portfolio");
+		def tagMap = [:]
+		int i = 0;
+		allTags.eachWithIndex{tagName, idx->
+			tagMap[tagName] = "tag-"+i++;
+		}
+		
+    	render view: "index", model: [pageData: pageData, works: works, tagMap: tagMap];
 	}
 	
 	def show() {

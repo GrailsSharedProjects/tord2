@@ -1,8 +1,10 @@
 package uploader
 
 class Msg {
-		String key
-		String value
+	
+		Boolean success
+		String msg
+		String file_path
 		
     static constraints = {
     }

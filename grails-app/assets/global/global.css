@@ -8329,7 +8329,7 @@ p{
     background: none repeat scroll 0 0 #eeeeee;
     padding: 79px 0 73px;
 }
-.tzaccordion{
+.tzaccordion .tzaccordion-section{
     margin: 16px 0;
 }
 .tzaccordion h6:first-child{
@@ -8382,7 +8382,20 @@ p{
     background: #fff;
     display: none;
 }
-
+.tzaccordion div.pp{
+    color: #000000;
+    font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";
+    font-weight: 400;
+    line-height: 25.2px;
+    font-size: 14px;
+    margin: 0;
+    padding: 16px 10px 23px 22px;
+    text-decoration: none;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    display: none;
+}
 /*TAB*/
 .tabs-style{
     margin: 16px 0;
@@ -9632,6 +9645,10 @@ body .kfrontstats .kcol-mid{
 .tz-recent-porjects li a{
     display: block;
 }
+.tz-recent-porjects img{
+	    max-width: 70px;
+    max-height: 70px;
+} 
 .tz-copyright{
     text-align: center;
     padding: 39px 0 45px;
@@ -11482,6 +11499,33 @@ span.required-indicator{
     border: 1px solid #ddd;
     color: #428bca;
 }
+
 .s2ui_error{
 	color: red;
+}
+
+.image-picker li {
+	height: 100px;
+	width: 120px;
+	max-height: 100px;
+	max-width: 120px;
+}
+.image-picker li img{
+	max-height: 100px;
+	max-width: 118px;
+}
+.image-picker img.checked {
+	border: 2px solid red;
+}
+.show-photo{
+	padding: 0px;
+}
+#flash-message{
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 99999999999;
+}
+#flash-message button.close{
+	z-index: 99999999999;
 }

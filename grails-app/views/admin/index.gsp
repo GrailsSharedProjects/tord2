@@ -14,6 +14,7 @@
 					<div><g:remoteLink controller="admin" action="refresh" id="page" class="btn" >重置页面数据</g:remoteLink></div>
 					<div><g:remoteLink controller="admin" action="refresh" id="meta" class="btn" >重置基础数据</g:remoteLink></div>
 	            </article>
+	            
 	            <article class="blog-item">
 	                <h2>Application Status</h2>
 					<ul class="tz-collection">

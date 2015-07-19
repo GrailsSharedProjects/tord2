@@ -9,7 +9,15 @@ class ProjectController {
     def index() { 
 		def pageData = Page.findByName("PROJECT_PAGE");
     	def works = workService.findAllByCategory("project");
-		render view: "index", model: [pageData: pageData, works: works];
+		
+		def allTags = workService.findAllTagsByCategory("project");
+		def tagMap = [:]
+		int i = 0;
+		allTags.eachWithIndex{tagName, idx->
+			tagMap[tagName] = "tag-"+i++;
+		}
+		
+		render view: "index", model: [pageData: pageData, works: works, tagMap: tagMap];
 	}
 	
 	def show() {

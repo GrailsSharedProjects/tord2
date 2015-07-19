@@ -51,7 +51,7 @@
             return "<g:textField name=\"${property.name}\" value=\"\${${domainInstance}?.${property.name}}\" />"
         } else {
 			def sb = new StringBuilder("")
-			if("uploader" == cp.widget){
+			if("photo" == cp.widget){
 				sb << "<g:textField name=\"${property.name}\" value=\"\${${domainInstance}?.${property.name}}\" />"
 				sb << "<a>"
 			}else if ("textarea" == cp.widget || (cp.maxSize > 250 && !cp.password && !cp.inList)) {
@@ -60,7 +60,23 @@
 				if (cp.maxSize) sb << ' maxlength="' << cp.maxSize << '"'
 				if (isRequired()) sb << ' required=""'
  				sb << ' value="${' << "${domainInstance}?.${property.name}" << '}"'
+ 				sb << ' placeholder="这里输入内容"'
 				sb << '/>'
+				sb << """
+            	<script type="text/javascript">
+					var editor = new Simditor({
+						textarea : \$('#${property.name}'),
+						toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment'],
+						upload : {
+							url : '\${g.createLink(controller:'uploader', action:'upload')}',
+							params : null,
+							fileKey : 'file',
+							connectionCount : 3,
+							leaveConfirm : '正在上传文件，如果离开上传会自动取消'
+						},
+					});
+				</script>
+				"""
             } else if (cp.inList) {
 				sb << '<g:select name="' << property.name << '"'
 				sb << ' from="${' << "${domainInstance}.constraints.${property.name}.inList" << '}"'
@@ -97,19 +113,23 @@
 
     private renderManyToOne(domainClass,property) {
         if (property.association) {
-			def sb = new StringBuilder()
-            sb << '<g:select'
-			// id is "x" and name is "x.id" as the label will have for="x" and "." in an id will confuse CSS
- 			sb << ' id="' << property.name << '"'
- 			sb << ' name="' << property.name << '.id"'
- 			sb << ' from="${' << property.type.name << '.list()}"'
- 			sb << ' optionKey="id"'
-			if (isRequired()) sb << ' required=""'
- 			sb << ' value="${' << "${domainInstance}?.${property.name}" << '?.id}"'
- 			sb << ' class="many-to-one"'
- 			sb << renderNoSelection(property)
- 			sb << '/>'
-			sb as String
+        	if ("imagebed" == cp.widget) {
+        		return "<g:render template='imagebed' contextPath='/templates' model='[domainName: '${domainInstance}', fieldName: '${property.name}', target:${domainInstance}?.${property.name}, listBox:${property.type.name}.list(), required: ${isRequired()}]'/>"
+        	}else {
+    			def sb = new StringBuilder()
+                sb << '<g:select'
+    			// id is "x" and name is "x.id" as the label will have for="x" and "." in an id will confuse CSS
+     			sb << ' id="' << property.name << '"'
+     			sb << ' name="' << property.name << '.id"'
+     			sb << ' from="${' << property.type.name << '.list()}"'
+     			sb << ' optionKey="id"'
+    			if (isRequired()) sb << ' required=""'
+     			sb << ' value="${' << "${domainInstance}?.${property.name}" << '?.id}"'
+     			sb << ' class="many-to-one"'
+     			sb << renderNoSelection(property)
+     			sb << '/>'
+    			return sb as String
+        	}
         }
     }
 
@@ -122,18 +142,21 @@
         }
 
         if (cls != null) {
-            def sb = new StringBuilder()
-            sb << '<g:select name="' << property.name << '"'
-            sb << ' from="${' << cls.name << '.list()}"'
-            sb << ' multiple="multiple"'
-            sb << ' optionKey="id"'
-            sb << ' size="5"'
-            if (isRequired()) sb << ' required=""'
-            sb << ' value="${' << "${domainInstance}?.${property.name}" << '*.id}"'
-            sb << ' class="many-to-many"'
-            sb << '/>'
-            sb as String
-
+            if ("multi-imagebed" == cp.widget) {
+        		return "<g:render template='multi-imagebed' contextPath='/templates' model='[domainName: '${domainInstance}', fieldName: '${property.name}', target:${domainInstance}?.${property.name}, listBox:${cls.name}.list(), required: ${isRequired()}]' />"
+        	}else {
+        		def sb = new StringBuilder()
+                sb << '<g:select name="' << property.name << '"'
+                sb << ' from="${' << cls.name << '.list()}"'
+                sb << ' multiple="multiple"'
+                sb << ' optionKey="id"'
+                sb << ' size="5"'
+                if (isRequired()) sb << ' required=""'
+                sb << ' value="${' << "${domainInstance}?.${property.name}" << '*.id}"'
+                sb << ' class="many-to-many"'
+                sb << '/>'
+                return sb as String
+        	}
         }
 
     }

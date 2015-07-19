@@ -5,7 +5,6 @@
 // You're free to add application-wide JavaScript to this file, but it's generally better 
 // to create separate JavaScript files as needed.
 //
-//= require jquery.min.js
 //= require bootstrap.js
 //= require jquery.parallax-1.1.3.js
 //= require owl.carousel.js
@@ -14,6 +13,7 @@
 //= require jquery.isotope.min.js
 //= require jquery.easypiechart.min.js
 //= require global.js
+//= require uploader.js
 //= require_self
 
 jQuery.noConflict();
