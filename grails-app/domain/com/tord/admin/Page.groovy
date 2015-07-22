@@ -8,7 +8,6 @@ class Page implements TDomainOperations{
 	String description
 	
 	String layoutName = 'site'
-	Header header
 	SliderRevolution sliderRevolution
 	
 	String customCss
@@ -19,8 +18,7 @@ class Page implements TDomainOperations{
 		title blank: false
 		description nullable: true
 		sliderRevolution nullable: true
-		layoutName blank: false, nullable: true, inList: ['site', 'admin', 'security']
-		header blank: false, nullable: true
+		layoutName blank: false, nullable: true, inList: ['home', 'site', 'admin', 'security'];
 		customCss blank: false, nullable: true
 		customJavaScript blank: false, nullable: true
     }

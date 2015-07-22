@@ -1,5 +1,5 @@
 <%@page import="com.tord.admin.HeaderStyle"%>
-<g:if test="${HeaderStyle.HIDDEN_ON_LEFT == style }">
+<g:if test="${HeaderStyle.HIDDEN_ON_LEFT == header.style }">
 	    <header class="tz-header4 tz-header2">
         <div class="container">
             <div class="row">
@@ -11,7 +11,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <h3 class="tz-logo">
 						<%--<g:renderLogo />--%>
-						<span>${pageData.title }</span>
+						<span>后台管理</span>
                     </h3>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -44,7 +44,7 @@
             </h3>
             <nav class="tz-menu-left">
                 <ul>
-                	<g:each in="${pageData.header.menu}" var="menu">
+                	<g:each in="${header.menu}" var="menu">
                     <li>
                         <a href="${createLink(controller: menu.controller, action: menu.action, url: menu.url)}">
                         <g:if test="menu.icon"><span><i class='fa ${menu.icon}'></i></span></g:if> ${menu.title }</a>
@@ -68,7 +68,7 @@
     </aside>
 </g:if>
 <g:else>
-    <header class="tz-header <g:if test='${style == HeaderStyle.LIGHT }'>tz-header3</g:if><g:elseif test='${style == HeaderStyle.FIXED_DARK }'>tz-header2</g:elseif>">
+    <header class="tz-header <g:if test='${header.style == HeaderStyle.LIGHT }'>tz-header3</g:if><g:elseif test='${header.style == HeaderStyle.FIXED_DARK }'>tz-header2</g:elseif>">
         <div class="container">
             <h3 class="tz-logo pull-left">
                 <g:renderLogo />
@@ -79,7 +79,7 @@
             <button class="pull-right tz-search"> <i class="fa fa-search"></i></button>
             <nav class="pull-right">
                 <ul class="nav-collapse">
-                	<g:each in="${pageData.header.menu}" var="menu">
+                	<g:each in="${header.menu}" var="menu">
                 	<li>
                         <a href="${createLink(controller: menu.controller, action: menu.action, url: menu.url)}">
                         <g:if test="menu.icon"><span><i class='fa ${menu.icon}'></i></span></g:if> ${menu.title }</a>

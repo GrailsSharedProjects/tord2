@@ -13,6 +13,9 @@ class HomeController {
 	@Secured(['permitAll'])
 	def index() {
 		def homePage = Page.findByName("HOME_PAGE");
+		
+		def aboutList = Widget.findAllByCategory("首页关于");
+		
 		model:[pageData:homePage]
 	}
 	

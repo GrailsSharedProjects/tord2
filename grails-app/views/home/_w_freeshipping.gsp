@@ -5,14 +5,16 @@
                         <i class="fa fa-shopping-cart"></i>
                     </span>
                     <div class="tz-shipping-content">
-                    <h6>全场包邮，七天包退</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                    <h6>${widget.title }</h6>
+                    <p>${widget.content }</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <a href="#" class="learn-more pull-right">
-                        <span>了解更多售后保障</span>
-                    </a>
+                    <g:link controller="${widget.refController }" 
+                    action="${widget.refAction }"
+                    class="learn-more pull-right">
+                    	<span>${widget.refText }</span>
+                    </g:link>
                 </div>
             </div><!--end class row-->
         </div><!--end class container-->

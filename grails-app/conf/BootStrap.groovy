@@ -1,6 +1,7 @@
 import org.springframework.context.i18n.LocaleContextHolder
 
 import com.tord.Photo
+import com.tord.Widget
 import com.tord.Work
 import com.tord.WorkCategory
 import com.tord.admin.Header
@@ -17,13 +18,38 @@ import com.tord.auth.UserRole
 
 class BootStrap {
 
+	def getDetail(String title) {
+		"""
+                        <h3 class="p-title">${title}</h3>
+                        <p>
+                            Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed. Donec erat magna, aliquam vitae semper vitae, accumsan vel nisl. Vivamus pellentesque orci sit amet odio dictum eget commodo nulla consequat. Proin iaculis tristique nisl ut eleifend. Maecenas lacus purus, malesuada eu scelerisque ac, commodo sed orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur a tortor ut leo mattis cursus. Vestibulum laoreet interdum pellentesque. Suspendisse vitae cursus urna.
+                        </p>
+                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>                        <p>
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
+产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
+                        </p>
+		"""
+	}
+
     def init = { servletContext ->
-//		setupUsers();
-//		setupSiteSettings();
-//		setupMetaData();
-//		setupPagesAndSliders();
-//		setupTestData();
-		
+		setupUsers();
+		setupSiteSettings();
+		setupMetaData();
+		setupPagesAndSliders();
+		setupTestData();
+		setupHomePage();
     }
     def destroy = {
 		
@@ -66,48 +92,48 @@ class BootStrap {
 	def setupMetaData() {
 		WorkCategory.findOrSaveByName("portfolio");
 		WorkCategory.findOrSaveByName("project");
+		
+		/////// header & menu
+		Menu.deleteAllRows();
+		Header.deleteAllRows();
+		def homeHeader = createHeader("HOME_HEADER", HeaderStyle.FIXED_DARK);
+		def siteHeader = createHeader("PAGE_HEADER", HeaderStyle.LIGHT);
+		def adminHeader = createAdminHeader();
 	}
 	
 	def setupPagesAndSliders() {
 		////// reset values
 		Page.deleteAllRows();
-		Menu.deleteAllRows();
-		Header.deleteAllRows();
 		SliderRevolution.deleteAllRows();
 		Slider.deleteAllRows();
 		
-		/////// header & menu
-		def homeHeader = createHeader("HOME_HEADER", HeaderStyle.FIXED_DARK);
-		def siteHeader = createHeader("PAGE_HEADER", HeaderStyle.LIGHT);
-		def adminHeader = createAdminHeader();
-		
 		////////////////////////////////////
 		def homePage = new Page(name: "HOME_PAGE", title: "成都装修_成都家装公司_拓德_拓德官网_拓德一站式O2O平台_四川拓德进出口贸易有限公司_建材_瓷砖_tord_Tord_TORD", 
-			sliderRevolution: createHomeRevSlider(), header: homeHeader, customJavaScript: 'home.js', );
+			sliderRevolution: createHomeRevSlider(), customJavaScript: 'home.js', layoutName: 'home');
 		homePage.save(flush:true);
 		
 		////////////////////////////////////
-		def adminPage = new Page(name: "ADMIN_PAGE", title: "后台管理", header: adminHeader, layoutName: 'admin', customJavaScript: 'admin.js');
+		def adminPage = new Page(name: "ADMIN_PAGE", title: "后台管理", layoutName: 'admin', customJavaScript: 'admin.js');
 		adminPage.save(flush:true);
 		
 		////////////////////////////////////
-		def portfolioPage = new Page(name: "PORTFOLIO_PAGE", title: "新品发布", header: siteHeader, customJavaScript: 'portfolio.js');
+		def portfolioPage = new Page(name: "PORTFOLIO_PAGE", title: "新品发布", customJavaScript: 'portfolio.js');
 		portfolioPage.save(flush: true);
-		def showPortfolioPage = new Page(name: "SHOW_PORTFOLIO_PAGE", title: "查看商品详情", header: siteHeader, layoutName: 'site');
+		def showPortfolioPage = new Page(name: "SHOW_PORTFOLIO_PAGE", title: "查看商品详情", layoutName: 'site');
 		showPortfolioPage.save(flush: true);
 		
 		////////////////////////////////////
-		def projectPage = new Page(name: "PROJECT_PAGE", title: "成功案例", header: siteHeader, customJavaScript: 'project.js');
+		def projectPage = new Page(name: "PROJECT_PAGE", title: "成功案例", customJavaScript: 'project.js');
 		projectPage.save(flush: true);
-		def showProjectPage = new Page(name: "SHOW_PROJECT_PAGE", title: "查看案例", header: siteHeader, layoutName: 'site');
+		def showProjectPage = new Page(name: "SHOW_PROJECT_PAGE", title: "查看案例", layoutName: 'site');
 		showProjectPage.save(flush: true);
 		
 		////////////////////////////////////
-		def blogPage = new Page(name: "BLOG_PAGE", title: "产品培训", header: siteHeader, customJavaScript: 'blog.js');
+		def blogPage = new Page(name: "BLOG_PAGE", title: "产品培训", customJavaScript: 'blog.js');
 		blogPage.save(flush: true);
 		
 		////////////////////////////////////
-		def shopPage = new Page(name: "SHOP_PAGE", title: "建材超市", header: siteHeader, customJavaScript: 'shop.js');
+		def shopPage = new Page(name: "SHOP_PAGE", title: "建材超市", customJavaScript: 'shop.js');
 		shopPage.save(flush: true);
 		
 	}
@@ -163,6 +189,7 @@ class BootStrap {
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "控制面板", "admin", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "展品管理", "work", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "商品管理", "product", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页面元素管理", "widget", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "文章管理", "article", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "图片管理", "photo", "index");
 		
@@ -188,111 +215,121 @@ class BootStrap {
 		Work.deleteAllRows();
 		
 		WorkCategory portCat = WorkCategory.findByName("portfolio");
-		Work protWork1 = new Work(name: "瓷砖A型", category: portCat, title: "盛夏瓷砖A型", titlePhoto: Photo.createPhoto("demos/portfolio/product1.jpg"), titlePhotoAlt: "盛夏瓷砖A型");
-		protWork1.addPhoto("demos/p_gallery1.jpg")
-		protWork1.addPhoto("demos/p_gallery2.jpg")
-		protWork1.addPhoto("demos/p_gallery3.jpg")
-		protWork1.addPhoto("demos/p_gallery4.jpg")
-		protWork1.addPhoto("demos/p_gallery1.jpg")
-		protWork1.addPhoto("demos/p_gallery2.jpg")
-		protWork1.setContentHTML("""
-                        <h3 class="p-title">${protWork1.title}</h3>
-                        <p>
-                            Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed. Donec erat magna, aliquam vitae semper vitae, accumsan vel nisl. Vivamus pellentesque orci sit amet odio dictum eget commodo nulla consequat. Proin iaculis tristique nisl ut eleifend. Maecenas lacus purus, malesuada eu scelerisque ac, commodo sed orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur a tortor ut leo mattis cursus. Vestibulum laoreet interdum pellentesque. Suspendisse vitae cursus urna.
-                        </p>
-                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>
-		""")
-		protWork1.save();
-		protWork1.addTag("即将上市")
 		
-		Work protWork2 = new Work(name: "瓷砖X型", category: portCat, title: "拖得瓷砖X型", titlePhoto: Photo.createPhoto("demos/portfolio/product2.jpg"), titlePhotoAlt: "拖得瓷砖X型", );
-		protWork2.addPhoto("demos/p_gallery3.jpg")
-		protWork2.addPhoto("demos/p_gallery2.jpg")
-		protWork2.addPhoto("demos/p_gallery1.jpg")
-		protWork2.addPhoto("demos/p_gallery4.jpg")
-		protWork2.addPhoto("demos/p_gallery3.jpg")
-		protWork2.addPhoto("demos/p_gallery2.jpg")
-		protWork2.setContentHTML("""
-                        <h3 class="p-title">${protWork2.title}</h3>
-                        <p>
-                            Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed. Donec erat magna, aliquam vitae semper vitae, accumsan vel nisl. Vivamus pellentesque orci sit amet odio dictum eget commodo nulla consequat. Proin iaculis tristique nisl ut eleifend. Maecenas lacus purus, malesuada eu scelerisque ac, commodo sed orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur a tortor ut leo mattis cursus. Vestibulum laoreet interdum pellentesque. Suspendisse vitae cursus urna.
-                        </p>
-                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>
-		""")
-		protWork2.save();
-		protWork2.addTag("四月")
-		
-		WorkCategory projcat = WorkCategory.findByName("project");
-		
-		Work projWork1 = new Work(name: "装修案例1", category: projcat, title: "装修案例1", titlePhoto: Photo.createPhoto("demos/portfolio/product1.jpg"), titlePhotoAlt: "装修案例1");
-		projWork1.addPhoto("demos/p_gallery1.jpg")
-		projWork1.addPhoto("demos/p_gallery2.jpg")
-		projWork1.addPhoto("demos/p_gallery3.jpg")
-		projWork1.addPhoto("demos/p_gallery4.jpg")
-		projWork1.addPhoto("demos/p_gallery1.jpg")
-		projWork1.addPhoto("demos/p_gallery2.jpg")
-		projWork1.setContentHTML("""
-                        <h3 class="p-title">${projWork1.title}</h3>
-                        <p>
-                            Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed. Donec erat magna, aliquam vitae semper vitae, accumsan vel nisl. Vivamus pellentesque orci sit amet odio dictum eget commodo nulla consequat. Proin iaculis tristique nisl ut eleifend. Maecenas lacus purus, malesuada eu scelerisque ac, commodo sed orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur a tortor ut leo mattis cursus. Vestibulum laoreet interdum pellentesque. Suspendisse vitae cursus urna.
-                        </p>
-                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>                        <p>
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述
-产品描述产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述 产品描述   
-                        </p>
-		""")
-		projWork1.save();
-		projWork1.addTag("新项目")
-		
-	}
-	
-	public static void main(String[] args) {
-		
-		def folder = new File("F:/node_work/tord2/grails-app/assets/images");
-		
-	}
+		for(int i = 0; i < 10; i++) {
+			Work protWork1 = new Work(name: "瓷砖${'A'+i}型", category: portCat, title: "拓德瓷砖${'A'+i}型", titlePhoto: Photo.createPhoto("demos/portfolio/product${i+1}.jpg"), titlePhotoAlt: "盛夏瓷砖${'A'+i}型");
+			protWork1.addPhoto("demos/p_gallery1.jpg")
+			protWork1.addPhoto("demos/p_gallery2.jpg")
+			protWork1.addPhoto("demos/p_gallery3.jpg")
+			protWork1.addPhoto("demos/p_gallery4.jpg")
+			protWork1.addPhoto("demos/p_gallery1.jpg")
+			protWork1.addPhoto("demos/p_gallery2.jpg")
+			protWork1.setContentHTML(getDetail(protWork1.title));
+			protWork1.save();
+			
+			if(i < 3) {
+				protWork1.addTag("即将上市")
+			}else if(i < 6) {
+				protWork1.addTag("七月");
+			}else if(i < 9) {
+				protWork1.addTag("六月")
+			}else {
+				protWork1.addTag("往期")
+			}
+		}
 
-	def setupPhotoData() {
-		Photo.createPhoto("");
+		WorkCategory projcat = WorkCategory.findByName("project");
+		for(int i = 0; i < 10; i++) {
+			Work projWork1 = new Work(name: "装修案例${i+1}", category: projcat, title: "装修案例${i+1}", titlePhoto: Photo.createPhoto("demos/portfolio/product${i+1}.jpg"), titlePhotoAlt: "装修案例${i+1}");
+			
+			projWork1.addPhoto("demos/p_gallery1.jpg")
+			projWork1.addPhoto("demos/p_gallery2.jpg")
+			projWork1.addPhoto("demos/p_gallery3.jpg")
+			projWork1.addPhoto("demos/p_gallery4.jpg")
+			projWork1.addPhoto("demos/p_gallery1.jpg")
+			projWork1.addPhoto("demos/p_gallery2.jpg")
+		
+			projWork1.setContentHTML(getDetail(projWork1.title));
+			
+			projWork1.save();
+			
+			if(i < 3) {
+				projWork1.addTag("新项目")
+			}else if(i < 6) {
+				projWork1.addTag("现代简约");
+			}else if(i < 9) {
+				projWork1.addTag("简欧")
+			}else {
+				projWork1.addTag("精装")
+			}
+		}
+		
+		for(int j = 0; j < 9; j++) {
+			int i = j + 1;
+			if(j == 7)i = 2;
+			if(j == 8)i = 5;
+			
+			Work homeProtWork1 = new Work(name: "首页展示案例${j+1}", category: projcat, title: "首页展示案例${j+1}", titlePhoto: Photo.createPhoto("demos/portfolio/p${i}.jpg"), titlePhotoAlt: "首页展示案例${j+1}");
+			
+			homeProtWork1.addPhoto("demos/portfolio/p${i}.jpg")
+			homeProtWork1.addPhoto("demos/p_gallery1.jpg")
+			homeProtWork1.addPhoto("demos/p_gallery2.jpg")
+			homeProtWork1.addPhoto("demos/p_gallery3.jpg")
+			homeProtWork1.setContentHTML(getDetail(homeProtWork1.title));
+			
+			homeProtWork1.setShowOnHomePage(true);
+			
+			homeProtWork1.save();
+			
+			if(j < 3) {
+				homeProtWork1.addTag("新项目")
+			}else if(j < 6) {
+				homeProtWork1.addTag("现代简约")
+			}else if(j < 9) {
+				homeProtWork1.addTag("简欧")
+			}
+		}
+		
 	}
 		
+	def setupHomePage() {
+		new Widget(name: "首页关于1", category: "首页关于", 
+				photo: Photo.createPhoto("demos/about-bk.jpg"), 
+				title: "我们够专业", content: "老牌建材公司，积累了一流的人才、雄厚的资金和宽广的渠道，为您提供最专业的服务").save();
+		new Widget(name: "首页关于2", category: "首页关于", 
+				photo: Photo.createPhoto("demos/about-bk.jpg"), 
+				title: "我们够专注", content: "多年专注于整体式装修设计，选材，施工，监理和质量保证。").save();
+		new Widget(name: "首页关于3", category: "首页关于", 
+				photo: Photo.createPhoto("demos/about-bk.jpg"), 
+				title: "我们够专心", content: "专心只为做好一件事，为客户考虑，为客户分忧。").save();
+
+		new Widget(name: "首页团队1", category: "首页团队", 
+				photo: Photo.createPhoto("demos/team1.jpg"), 
+				title: "xuepf", content: "总工程师").save();
+		new Widget(name: "首页团队2", category: "首页团队", 
+				photo: Photo.createPhoto("demos/team2.jpg"), 
+				title: "陈某某", content: "总设计师").save();
+		new Widget(name: "首页团队3", category: "首页团队", 
+				photo: Photo.createPhoto("demos/team3.jpg"), 
+				title: "王某", content: "CEO & CFO").save();
+		new Widget(name: "首页团队4", category: "首页团队", 
+				photo: Photo.createPhoto("demos/team4.jpg"), 
+				title: "super man", content: "著名艺术家").save();
+		new Widget(name: "首页团队5", category: "首页团队", 
+				photo: Photo.createPhoto("demos/team5.jpg"), 
+				title: "某美女", content: "前台").save();
+			
+		new Widget(name: "首页售后", category: "首页售后", 
+				title: "全场包邮，七天包退", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				refController: "policy", refAction: "index", refText: "了解跟多售后保障").save();
+	
+		int k = 1;
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 6; j++) {
+				new Widget(name: "首页合作伙伴${k++}", category: "首页合作伙伴",
+					photo: Photo.createPhoto("demos/partler${j + 1}.png"),
+					title: "合作伙伴${k++}", content: "").save();
+			}
+		}
+	}
 }

@@ -16,13 +16,13 @@ class Slider implements TDomainOperations{
 	
     static constraints = {
 		name unique: true
-		style blank: false, inList:[1,2,3]
-		bgImage nullable: true
-		row1 nullable: true
-		row2 nullable: true
-		row3 nullable: true
-		row4 nullable: true
-		row5 nullable: true
+		style blank: false, nullable: false, inList:[1,2,3]
+		bgImage blank: true, nullable: true, widget: 'imagebed'
+		row1 blank: true, nullable: true
+		row2 blank: true, nullable: true
+		row3 blank: true, nullable: true
+		row4 blank: true, nullable: true
+		row5 blank: true, nullable: true
     }
 	
 	static mapping = {

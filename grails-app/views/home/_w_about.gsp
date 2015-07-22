@@ -7,14 +7,14 @@
                     <div class="tz-about-item">
                         <i class="fa fa-flask color-darkturquoise"></i>
                         <div class="tz-about-bk">
-                            <img data-original="${assetPath(src : 'demos/about-bk.jpg') }" alt="Professional">
+                        	<g:photo photo="${widgets[0].photo }"/>
                             <div class="tz-about-overlay">
                                 <div class="tz-about-overlay-bk"></div>
                             </div>
                         </div>
                         <div class="tz-about-ds">
-                            <h6>我们够专业</h6>
-                            <p>老牌建材公司，积累了一流的人才、雄厚的资金和宽广的渠道，为您提供最专业的服务</p>
+                            <h6>${widgets[0].title }</h6>
+                            <p>${widgets[0].content }</p>
                         </div>
                     </div>
                 </div>
@@ -22,14 +22,14 @@
                     <div class="tz-about-item">
                         <i class="fa fa-thumbs-up color-orange"></i>
                         <div class="tz-about-bk">
-                            <img data-original="${assetPath(src : 'demos/about-bk.jpg') }" alt="Passionate">
+                        	<g:photo photo="${widgets[1].photo }"/>
                             <div class="tz-about-overlay">
                                 <div class="tz-about-overlay-bk"></div>
                             </div>
                         </div>
                         <div class="tz-about-ds">
-                            <h6>我们够专注</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac tempus eros, non tempus massa. Vivamus ut nisl mauris. </p>
+                            <h6>${widgets[1].title }</h6>
+                            <p>${widgets[1].content }</p>
                         </div>
                     </div>
                 </div>
@@ -37,14 +37,14 @@
                     <div class="tz-about-item">
                         <i class="fa fa-thumb-tack color-darkorange"></i>
                         <div class="tz-about-bk">
-                            <img data-original="${assetPath(src : 'demos/about-bk.jpg') }" alt="friendly">
+                            <g:photo photo="${widgets[2].photo }"/>
                             <div class="tz-about-overlay">
                                 <div class="tz-about-overlay-bk"></div>
                             </div>
                         </div>
                         <div class="tz-about-ds">
-                            <h6>我们够专心</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac tempus eros, non tempus massa. Vivamus ut nisl mauris. </p>
+                            <h6>${widgets[2].title }</h6>
+                            <p>${widgets[2].content }</p>
                         </div>
                     </div>
                 </div>

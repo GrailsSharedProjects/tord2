@@ -58,7 +58,7 @@
 			</div>
 		</div>
 		<!-- Header  -->
-    	<g:render template="header" contextPath="/templates" model="['style':pageData.header.style]" />
+    	<g:render template="header" contextPath="/layouts" model="['header':com.tord.admin.Header.findByName('PAGE_HEADER')]" />
     	<!-- Message -->
     	<g:if test="${flash.message}">
 		<div id="flash-message" class="alert alert-danger alert-dismissible" role="alert">
@@ -76,7 +76,7 @@
     	<!-- Body  -->
 		<g:layoutBody/>
 		<!-- Footer  -->
-    	<g:render template="footer" contextPath="/templates" />
+    	<g:render template="footer" contextPath="/layouts" />
     
     	<!-- Global JavaScript -->
     	<asset:javascript src="site.js"/>

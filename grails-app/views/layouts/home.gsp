@@ -8,19 +8,29 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		
-		<title><g:layoutTitle default="Title"/></title>
+		<title><g:layoutTitle default="Tord"/></title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-		
-<%--		<meta name="description" content=""/>--%>
-<%--		<meta name="keywords" content=""/>--%>
+		<meta name="description" content="拓德是行业领先的一站式家装O2O平台"/>
+		<meta name="keywords" content="拓德,Tord,tord,装修,成都装修,一站式装修平台,一站式家装O2O平台,家装O2O,拓德装饰,拓德进出口贸易有限公司,家装建材,瓷砖,墙面砖,瓷砖批发"/>
 		
 		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.jpg')}">
 		<link rel="apple-touch-icon" sizes="72x72" href="${assetPath(src: 'apple-touch-icon-72x72.jpg')}"/>
-		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-114x114.jpg')}"/>		
+		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-114x114.jpg')}"/>
 		
-  		<asset:stylesheet src="admin.css"/>
+		<!-- Revolution Slider  -->
+		<g:if test="${pageData.sliderRevolution }">
+  			<asset:stylesheet src="settings.css"/>
+  		</g:if>
+  		
+  		<!-- Global Css -->
+  		<asset:stylesheet src="site.css"/>
+  		
+  		<!-- Custom CSS -->
+    	<g:if test="${pageData.customCss }">
+    		<link type="text/css" href="${resource(dir: 'css', file: pageData.customCss)}" />
+    	</g:if>
   		
 	    <!-- Support for HTML5 -->
 	    <!--[if lt IE 9]>
@@ -33,13 +43,9 @@
 	    <![endif]-->
 		
 		<asset:javascript src="jquery.min.js" />
-		<asset:javascript src="scripts/module.js" />
-		<asset:javascript src="scripts/hotkeys.js" />
-		<asset:javascript src="scripts/uploader.js" />
-		<asset:javascript src="scripts/simditor.js" />
 		
 		<g:layoutHead/>
-		
+		   		
 	</head>
 	<body>
 	
@@ -51,9 +57,8 @@
 				</div>
 			</div>
 		</div>
-		
 		<!-- Header  -->
-    	<g:render template="header" contextPath="/layouts" model="['header':com.tord.admin.Header.findByName('ADMIN_HEADER')]" />
+    	<g:render template="header" contextPath="/layouts" model="['header':com.tord.admin.Header.findByName('HOME_HEADER')]" />
     	<!-- Message -->
     	<g:if test="${flash.message}">
 		<div id="flash-message" class="alert alert-danger alert-dismissible" role="alert">
@@ -64,11 +69,28 @@
 			<strong>注意！</strong> ${flash.message }
 		</div>
 		</g:if>
+    	<!-- Revolution Slider  -->
+		<g:if test="${pageData.sliderRevolution }">
+    		<g:render template="rev_slider" contextPath="/templates"/>
+    	</g:if>
     	<!-- Body  -->
 		<g:layoutBody/>
 		<!-- Footer  -->
-<%--    	<g:render template="footer" contextPath="/templates" />--%>
+    	<g:render template="footer" contextPath="/layouts" />
+    
+    	<!-- Global JavaScript -->
+    	<asset:javascript src="site.js"/>
     	
-    	<asset:javascript src="admin.js"/>
+    	<!-- Custom JavaScript -->
+    	<g:if test="${pageData.customJavaScript }">
+    		<script src="${resource(dir:'js', file:pageData.customJavaScript) }" type="text/javascript"></script>
+    	</g:if>
+    	
+    	<!-- Revolution Slider  -->
+    	<g:if test="${pageData.sliderRevolution }">
+    		<asset:javascript src="jquery.themepunch.revolution.js"/>
+    		<asset:javascript src="jquery.themepunch.tools.min.js"/>
+    	</g:if>
+    	
 	</body>
 </html>
