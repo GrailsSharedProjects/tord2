@@ -1,5 +1,7 @@
 package com.tord
 
+import java.util.Date;
+
 import org.grails.taggable.Taggable
 
 import com.tord.admin.Menu;
@@ -7,7 +9,7 @@ import com.tord.admin.MenuStyle;
 
 class Work implements TDomainOperations, Taggable{
 	String name
-	WorkCategory category
+	String category
 	Boolean showOnHomePage = false;
 	
 	//Tag tag
@@ -20,9 +22,12 @@ class Work implements TDomainOperations, Taggable{
 	List<Photo> galleryPhotoList
 	static hasMany = [galleryPhotoList: Photo]
 	
+	Date dateCreated
+	Date lastUpdated
+	
     static constraints = {
 		name unique: true
-		category()
+		category inList:['portfolio', 'project']
 		showOnHomePage()
 		title()
 		titlePhoto(widget: 'imagebed')

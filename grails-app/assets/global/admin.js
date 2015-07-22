@@ -17,3 +17,11 @@
 //= require_self
 
 jQuery.noConflict();
+
+jQuery(document).ready(function(){
+	showLeftMenu();
+});
+
+function showLeftMenu(){
+	jQuery('.tz-offcavas').click();
+}

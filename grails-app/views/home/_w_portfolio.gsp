@@ -10,9 +10,8 @@
         	">
                 <g:photo photo="${work.titlePhoto }" alt="${work.titlePhotoAlt }"/>
                 <figcaption>
-                    <h6><a href="${createLink(controller:work.category.name, action:'show', id:work.name)}">${work.title }</a></h6>
-<%--                    <a class="tz-cat" href="single-portfolio-gallery.html">Accessories</a>--%>
-					<span class="tz-cat">${work.tags.join(' ')?.toUpperCase() }</span>
+                    <h6><a href="${createLink(controller:work.category, action:'show', id:work.name)}">${work.title }</a></h6>
+					<a href="${createLink(controller:work.category, action:'show', id:work.name)}"><span class="tz-cat">${work.tags.join(' ')?.toUpperCase() }</span></a>
                 </figcaption>
             </figure>
         	</g:each>

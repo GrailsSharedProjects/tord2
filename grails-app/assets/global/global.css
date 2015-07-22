@@ -9531,6 +9531,9 @@ body .kfrontstats .kcol-mid{
     font-weight: 400;
     line-height: 25px;
 }
+.textwidget p{
+	color: #fff;
+}
 .tzwidget-contact address,
 .tzwidget-contact span,
 .tzwidget-contact > a{
@@ -9594,6 +9597,8 @@ body .kfrontstats .kcol-mid{
     max-height: 70px;
     float: left;
     margin-top: 5px;
+    width: 70px;
+    height: 70px;
 }
 .tz-recent-content{
     padding-left: 83px;
@@ -9648,6 +9653,8 @@ body .kfrontstats .kcol-mid{
 .tz-recent-porjects img{
 	    max-width: 70px;
     max-height: 70px;
+    width: 70px;
+    height: 70px;
 } 
 .tz-copyright{
     text-align: center;

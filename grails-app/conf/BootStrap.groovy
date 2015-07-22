@@ -1,9 +1,11 @@
 import org.springframework.context.i18n.LocaleContextHolder
 
+import com.tord.Article
 import com.tord.Photo
 import com.tord.Widget
 import com.tord.Work
-import com.tord.WorkCategory
+import com.tord.admin.Footer
+import com.tord.admin.FooterModule
 import com.tord.admin.Header
 import com.tord.admin.HeaderStyle
 import com.tord.admin.Menu
@@ -50,6 +52,7 @@ class BootStrap {
 		setupPagesAndSliders();
 		setupTestData();
 		setupHomePage();
+		setupArticles();
     }
     def destroy = {
 		
@@ -87,18 +90,25 @@ class BootStrap {
 		def thisYear = Calendar.getInstance().get(Calendar.YEAR);
 		SiteSettings.putIt("CopyRight", "©${thisYear} ${SiteSettings.getIt('SiteEnglishName')} ${SiteSettings.getIt('ICP')} ");
 		
+		SiteSettings.putIt("地址", "成都高新区剑南大道中段保利新座3座11楼7号8号");
+		SiteSettings.putIt("电话", "13980046104");
+		SiteSettings.putIt("邮箱", "434695383@163.com");
+		SiteSettings.putIt("QQ", "434695383");
+		SiteSettings.putIt("微博", "434695383");
+		SiteSettings.putIt("微信", "434695383");
+		
 	}
 	
 	def setupMetaData() {
-		WorkCategory.findOrSaveByName("portfolio");
-		WorkCategory.findOrSaveByName("project");
-		
 		/////// header & menu
 		Menu.deleteAllRows();
 		Header.deleteAllRows();
 		def homeHeader = createHeader("HOME_HEADER", HeaderStyle.FIXED_DARK);
 		def siteHeader = createHeader("PAGE_HEADER", HeaderStyle.LIGHT);
 		def adminHeader = createAdminHeader();
+
+		/////// Footer
+		createFooter("PAGE_FOOTER");
 	}
 	
 	def setupPagesAndSliders() {
@@ -108,7 +118,7 @@ class BootStrap {
 		Slider.deleteAllRows();
 		
 		////////////////////////////////////
-		def homePage = new Page(name: "HOME_PAGE", title: "成都装修_成都家装公司_拓德_拓德官网_拓德一站式O2O平台_四川拓德进出口贸易有限公司_建材_瓷砖_tord_Tord_TORD", 
+		def homePage = new Page(name: "HOME_PAGE", title: "拓德官网_拓德一站式家装O2O平台_拓德家装公司_四川拓德进出口贸易有限公司_建材_瓷砖", 
 			sliderRevolution: createHomeRevSlider(), customJavaScript: 'home.js', layoutName: 'home');
 		homePage.save(flush:true);
 		
@@ -187,19 +197,21 @@ class BootStrap {
 		def homeHeader = new Header(name: "ADMIN_HEADER", style: HeaderStyle.HIDDEN_ON_LEFT);
 		int i = 0;
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "控制面板", "admin", "index");
-		homeHeader.createMenu("ADMIN_HEADER_${++i}", "展品管理", "work", "index");
-		homeHeader.createMenu("ADMIN_HEADER_${++i}", "商品管理", "product", "index");
-		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页面元素管理", "widget", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "新品、案例管理", "work", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "文章管理", "article", "index");
-		homeHeader.createMenu("ADMIN_HEADER_${++i}", "图片管理", "photo", "index");
-		
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "建材超市管理", "product", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "首页元素管理", "widget", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯片管理", "sliderRevolution", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯子页管理", "slider", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "菜单管理", "menu", "index");
+		
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页面管理", "page", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页眉管理", "header", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页脚管理", "footer", "index");
-		homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯片管理", "sliderRevolution", "index");
-		homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯页管理", "slider", "index");
-		homeHeader.createMenu("ADMIN_HEADER_${++i}", "全局设置管理", "siteSettings", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页脚元素管理", "footer", "index");
+		
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "图片管理", "photo", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "全局设置", "siteSettings", "index");
 
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "用户管理", "user", "");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "角色管理", "role", "");
@@ -214,7 +226,7 @@ class BootStrap {
 		// rest
 		Work.deleteAllRows();
 		
-		WorkCategory portCat = WorkCategory.findByName("portfolio");
+		String portCat = "portfolio";
 		
 		for(int i = 0; i < 10; i++) {
 			Work protWork1 = new Work(name: "瓷砖${'A'+i}型", category: portCat, title: "拓德瓷砖${'A'+i}型", titlePhoto: Photo.createPhoto("demos/portfolio/product${i+1}.jpg"), titlePhotoAlt: "盛夏瓷砖${'A'+i}型");
@@ -238,7 +250,7 @@ class BootStrap {
 			}
 		}
 
-		WorkCategory projcat = WorkCategory.findByName("project");
+		String projcat = "project";
 		for(int i = 0; i < 10; i++) {
 			Work projWork1 = new Work(name: "装修案例${i+1}", category: projcat, title: "装修案例${i+1}", titlePhoto: Photo.createPhoto("demos/portfolio/product${i+1}.jpg"), titlePhotoAlt: "装修案例${i+1}");
 			
@@ -295,32 +307,32 @@ class BootStrap {
 	def setupHomePage() {
 		new Widget(name: "首页关于1", category: "首页关于", 
 				photo: Photo.createPhoto("demos/about-bk.jpg"), 
-				title: "我们够专业", content: "老牌建材公司，积累了一流的人才、雄厚的资金和宽广的渠道，为您提供最专业的服务").save();
+				title: "我们够专业", contentHTML: "老牌建材公司，积累了一流的人才、雄厚的资金和宽广的渠道，为您提供最专业的服务").save();
 		new Widget(name: "首页关于2", category: "首页关于", 
 				photo: Photo.createPhoto("demos/about-bk.jpg"), 
-				title: "我们够专注", content: "多年专注于整体式装修设计，选材，施工，监理和质量保证。").save();
+				title: "我们够专注", contentHTML: "多年专注于整体式装修设计，选材，施工，监理和质量保证。").save();
 		new Widget(name: "首页关于3", category: "首页关于", 
 				photo: Photo.createPhoto("demos/about-bk.jpg"), 
-				title: "我们够专心", content: "专心只为做好一件事，为客户考虑，为客户分忧。").save();
+				title: "我们够专心", contentHTML: "专心只为做好一件事，为客户考虑，为客户分忧。").save();
 
 		new Widget(name: "首页团队1", category: "首页团队", 
 				photo: Photo.createPhoto("demos/team1.jpg"), 
-				title: "xuepf", content: "总工程师").save();
+				title: "xuepf", contentHTML: "总工程师").save();
 		new Widget(name: "首页团队2", category: "首页团队", 
 				photo: Photo.createPhoto("demos/team2.jpg"), 
-				title: "陈某某", content: "总设计师").save();
+				title: "陈某某", contentHTML: "总设计师").save();
 		new Widget(name: "首页团队3", category: "首页团队", 
 				photo: Photo.createPhoto("demos/team3.jpg"), 
-				title: "王某", content: "CEO & CFO").save();
+				title: "王某", contentHTML: "CEO & CFO").save();
 		new Widget(name: "首页团队4", category: "首页团队", 
 				photo: Photo.createPhoto("demos/team4.jpg"), 
-				title: "super man", content: "著名艺术家").save();
+				title: "super man", contentHTML: "著名艺术家").save();
 		new Widget(name: "首页团队5", category: "首页团队", 
 				photo: Photo.createPhoto("demos/team5.jpg"), 
-				title: "某美女", content: "前台").save();
+				title: "某美女", contentHTML: "前台").save();
 			
 		new Widget(name: "首页售后", category: "首页售后", 
-				title: "全场包邮，七天包退", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+				title: "全场包邮，七天包退", contentHTML: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 				refController: "policy", refAction: "index", refText: "了解跟多售后保障").save();
 	
 		int k = 1;
@@ -328,8 +340,34 @@ class BootStrap {
 			for(int j = 0; j < 6; j++) {
 				new Widget(name: "首页合作伙伴${k++}", category: "首页合作伙伴",
 					photo: Photo.createPhoto("demos/partler${j + 1}.png"),
-					title: "合作伙伴${k++}", content: "").save();
+					title: "合作伙伴${k++}", contentHTML: "").save();
 			}
 		}
+	}
+	
+	
+	def createFooter(String name) {
+		def footer = new Footer(name: name);
+		
+		def footerModule1 = new FooterModule(name: "页脚元素1", title: "关于", 
+			type: "html", contentHTML: "拓德一站式家装O2O，是业界领先的在线家装平台。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis mollis tellus, et ullamcorper velit.").save();
+		def footerModule2 = new FooterModule(name: "页脚元素2", title: "联系方式", 
+			type: "contact").save();
+		def footerModule3 = new FooterModule(name: "页脚元素3", title: "最新文章", 
+			type: "recent-post").save();
+		def footerModule4 = new FooterModule(name: "页脚元素4", title: "最新展示", 
+			type: "recent-portfolio").save();
+		
+		footer.setModule1(footerModule1);
+		footer.setModule2(footerModule2);
+		footer.setModule3(footerModule3);
+		footer.setModule4(footerModule4);
+		
+		footer.save();
+	}
+	
+	def setupArticles() {
+		def arc = new Article(name: "文章1", title: "文章1", contentHTML: "文章文章文章，文章文章文章，文章文章文章，文章文章文章。", titlePhoto: Photo.createPhoto("demos/last-1.jpg"));
+		arc.save();
 	}
 }

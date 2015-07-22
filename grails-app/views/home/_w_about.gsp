@@ -14,7 +14,7 @@
                         </div>
                         <div class="tz-about-ds">
                             <h6>${widgets[0].title }</h6>
-                            <p>${widgets[0].content }</p>
+                            <p>${widgets[0].contentHTML }</p>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="tz-about-ds">
                             <h6>${widgets[1].title }</h6>
-                            <p>${widgets[1].content }</p>
+                            <p>${widgets[1].contentHTML }</p>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="tz-about-ds">
                             <h6>${widgets[2].title }</h6>
-                            <p>${widgets[2].content }</p>
+                            <p>${widgets[2].contentHTML }</p>
                         </div>
                     </div>
                 </div>

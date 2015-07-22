@@ -76,7 +76,7 @@
     	<!-- Body  -->
 		<g:layoutBody/>
 		<!-- Footer  -->
-    	<g:render template="footer" contextPath="/layouts" />
+    	<g:render template="footer" contextPath="/layouts" model="['footer':com.tord.admin.Footer.findByName('PAGE_FOOTER')]" />
     
     	<!-- Global JavaScript -->
     	<asset:javascript src="site.js"/>

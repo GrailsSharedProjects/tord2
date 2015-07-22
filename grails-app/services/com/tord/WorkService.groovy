@@ -6,35 +6,21 @@ import grails.transaction.Transactional
 class WorkService {
 
     def findAllByCategory(category) {
-		def cate = WorkCategory.findByName(category);
-		if(!cate) {
-			cate = new WorkCategory(name: category).save(flush: true)
-		}
-		Work.findAllByCategory(cate);
+		Work.findAllByCategory(category);
     }
 	
 	def findByNameAndCategory(name, category) {
-		def cate = WorkCategory.findByName(category);
-		if(!cate) {
-			cate = new WorkCategory(name: category).save(flush: true)
-		}
-		Work.findByNameAndCategory(name, cate);
+		Work.findByNameAndCategory(name, category);
 	}
 	
 	def findAllTagsByCategory(category) {
-		def cate = WorkCategory.findByName(category);
-		if(!cate) {
-			cate = new WorkCategory(name: category).save(flush: true)
-		}
-		
 		String findAllTags = """
 		   SELECT distinct tagLinks.tag.name 
 		   FROM Work work, org.grails.taggable.TagLink tagLinks 
 		   WHERE work.id = tagLinks.tagRef 
-		   AND work.category = ${cate.id}
+		   AND work.category = '${category}'
 		   AND tagLinks.type = 'work'
 		"""
-		
 		Work.executeQuery(findAllTags);
 	}
 }

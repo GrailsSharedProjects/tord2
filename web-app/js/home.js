@@ -99,6 +99,9 @@ function TzTemplateResizeImage(obj){
         heightStage = jQuery(this).height();
         widthStage = jQuery (this).width();
         var img_url = jQuery(this).find('img').attr('data-original');
+        if(img_url == undefined){
+        	img_url = jQuery(this).find('img').attr('src');
+        }
         var image = new Image();
         image.src = img_url;
         image.onload = function() {

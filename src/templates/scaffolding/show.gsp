@@ -28,7 +28,9 @@
 										allowedNames = domainClass.persistentProperties*.name << 'dateCreated' << 'lastUpdated'
 										props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) && (domainClass.constrainedProperties[it.name] ? domainClass.constrainedProperties[it.name].display : true) }
 										Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
-										props.each { p -> %>
+										props.each { p -> 
+											def cp = domainClass.constrainedProperties[p.name];
+										%>
 										<g:if test="\${${propertyName}?.${p.name}}">
 										<div class="row fieldcontain">
 											<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
@@ -49,12 +51,10 @@
 											<%  } else if (p.manyToOne || p.oneToOne) { %>
 												<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
 													<span class="property-value" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link></span>
-												<%
-												def cp = domainClass.constrainedProperties[p.name]
-												if ("imagebed" == cp.widget) {%>
+												<% if ("imagebed" == cp.widget) { %>
 													<g:render template="single-photo"
 													contextPath="/uploader" model="\${[fieldName:'${p.name}', photo:${propertyName}?.${p.name}, editable: false]}" />
-												<%}%>
+												<% } %>
 												</div>
 											<%  } else if (p.type == Boolean || p.type == boolean) { %>
 												<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">

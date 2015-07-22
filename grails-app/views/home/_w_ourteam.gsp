@@ -16,7 +16,7 @@
                         </div>
                         <div class="tz-team-ds">
                             <h6>${widget.title }</h6>
-                            <span>${widget.content }</span>
+                            <span>${raw(widget.contentHTML) }</span>
                         </div>
                     </div>
                 </li>

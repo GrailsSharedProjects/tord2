@@ -1,15 +1,13 @@
-package com.tord
+package com.tord.admin
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
-import com.tord.WorkCategory
-
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(WorkCategory)
-class WorkCategorySpec extends Specification {
+@TestFor(FooterModule)
+class FooterModuleSpec extends Specification {
 
     def setup() {
     }

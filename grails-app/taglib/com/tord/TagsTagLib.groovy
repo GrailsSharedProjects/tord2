@@ -8,6 +8,31 @@ class TagsTagLib {
 //    static defaultEncodeAs = [taglib:'html']
     //static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
 	
+
+	def bootstrap
+
+	/**
+	 * Apply Layouts
+	 *
+	 * @attr  pageData
+	 *
+	 */
+	def layout = { attrs, body ->
+		
+		def pageData = attrs.remove('pageData');
+		
+		if(!pageData) {
+			bootstrap.init();
+			out<< """
+				<script>\$(document).ready(function(){window.location.href=window.location.href});</script>
+			"""
+		}
+		
+		out << """
+			<meta name="layout" content="${pageData.layoutName}"/>
+		"""
+	}
+	
 	def renderLogo = { attrs, body ->
 		out << """
 		<a href="${createLink(controller: 'home')}">

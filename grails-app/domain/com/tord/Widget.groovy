@@ -8,7 +8,7 @@ class Widget implements TDomainOperations{
 	String title
 	
 	Photo photo
-	String content
+	String contentHTML
 	String refController
 	String refAction
 	String refText
@@ -18,7 +18,7 @@ class Widget implements TDomainOperations{
 		category()
 		title()
 		photo blank: true, nullable: true, widget: 'imagebed'
-		content blank: true, nullable: true
+		contentHTML blank: true, nullable: true, widget: 'textarea'
 		refController blank: true, nullable: true
 		refAction blank: true, nullable: true
 		refText blank: true, nullable: true

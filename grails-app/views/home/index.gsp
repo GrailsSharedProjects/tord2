@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="layout" content="${pageData.layoutName}"/>
+	<g:layout pageData="${pageData }" />
     <title>${pageData.title }</title>
 </head>
 <body>

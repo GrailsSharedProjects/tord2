@@ -6,7 +6,7 @@
                     </span>
                     <div class="tz-shipping-content">
                     <h6>${widget.title }</h6>
-                    <p>${widget.content }</p>
+                    <p>${raw(widget.contentHTML) }</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
