@@ -8,12 +8,14 @@
 		<section class="tzpage-default">
 	        <div class="container">
 	            <h1 class="tz-title-bold-3">Dashbord</h1>
+	           	<g:if test="${grails.util.Environment.current == grails.util.Environment.DEVELOPMENT}">
 	            <article class="blog-item blog-item-first">
 	            	<h2>Avaliable Functions</h2>
 					<div><g:remoteLink controller="admin" action="refresh" id="site" class="btn" >重置网站环境变量</g:remoteLink></div>
 					<div><g:remoteLink controller="admin" action="refresh" id="page" class="btn" >重置页面数据</g:remoteLink></div>
 					<div><g:remoteLink controller="admin" action="refresh" id="meta" class="btn" >重置基础数据</g:remoteLink></div>
 	            </article>
+				</g:if>
 	            
 	            <article class="blog-item">
 	                <h2>Application Status</h2>

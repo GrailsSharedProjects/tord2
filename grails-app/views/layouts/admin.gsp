@@ -68,7 +68,9 @@
 		<g:layoutBody/>
 		<!-- Footer  -->
 <%--    	<g:render template="footer" contextPath="/layouts"  model="['footer':com.tord.admin.Footer.findByName('PAGE_FOOTER')]" />--%>
-    	
+		<footer>
+		  <section class="tzpage-default"></section>
+		</footer>
     	<asset:javascript src="admin.js"/>
 	</body>
 </html>

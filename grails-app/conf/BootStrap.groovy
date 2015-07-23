@@ -1,3 +1,5 @@
+import grails.util.Environment;
+
 import org.springframework.context.i18n.LocaleContextHolder
 
 import com.tord.Article
@@ -46,14 +48,17 @@ class BootStrap {
 	}
 
     def init = { servletContext ->
-		setupUsers();
-		setupSiteSettings();
-		setupMetaData();
-		setupPagesAndSliders();
-		setupTestData();
-		setupHomePage();
-		setupArticles();
+		if(Environment.current == Environment.DEVELOPMENT) {
+			setupUsers();
+			setupSiteSettings();
+			setupMetaData();
+			setupPagesAndSliders();
+			setupTestData();
+			setupHomePage();
+			setupArticles();
+		}
     }
+	
     def destroy = {
 		
     }
@@ -305,6 +310,8 @@ class BootStrap {
 	}
 		
 	def setupHomePage() {
+		Widget.deleteAllRows();
+		
 		new Widget(name: "首页关于1", category: "首页关于", 
 				photo: Photo.createPhoto("demos/about-bk.jpg"), 
 				title: "我们够专业", contentHTML: "老牌建材公司，积累了一流的人才、雄厚的资金和宽广的渠道，为您提供最专业的服务").save();
@@ -347,6 +354,9 @@ class BootStrap {
 	
 	
 	def createFooter(String name) {
+		Footer.deleteAllRows();
+		FooterModule.deleteAllRows();
+		
 		def footer = new Footer(name: name);
 		
 		def footerModule1 = new FooterModule(name: "页脚元素1", title: "关于", 
@@ -367,6 +377,8 @@ class BootStrap {
 	}
 	
 	def setupArticles() {
+		Article.deleteAllRows();
+		
 		def arc = new Article(name: "文章1", title: "文章1", contentHTML: "文章文章文章，文章文章文章，文章文章文章，文章文章文章。", titlePhoto: Photo.createPhoto("demos/last-1.jpg"));
 		arc.save();
 	}
