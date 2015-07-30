@@ -10,7 +10,6 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <h3 class="tz-logo">
-						<%--<g:renderLogo />--%>
 						<span>后台管理</span>
                     </h3>
                 </div>
@@ -19,7 +18,7 @@
                     <a class="tz-shop-cart pull-right">
                         <i class="fa fa-shopping-cart "></i>
                         $ 2.000
-                    </a>
+                    </a> 	
 				--%>
                     <button class="tz-search pull-right"> <i class="fa fa-search"></i></button>
                 </div>

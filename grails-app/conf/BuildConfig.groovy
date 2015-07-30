@@ -79,5 +79,6 @@ grails.project.dependency.resolution = {
         //compile ":handlebars-asset-pipeline:1.3.0.3"
 		
 		compile ":taggable:1.1.0"
+		compile ":sitemaps:1.0.0"
     }
 }

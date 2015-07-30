@@ -93,7 +93,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-//        grails.serverURL = "http://tordchina.com"
+        grails.serverURL = "http://www.tordchina.com"
 		//grails.assets.storagePath = "F:\\node_work\\tord2\\web-app\\uploaded"
     }
 }
@@ -163,7 +163,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/register/**':                ['permitAll'],
 	'/logout/**':                ['permitAll'],
 	'/login/**':                ['permitAll'],
-	'/**' : ['ROLE_ADMIN'],
+	'/**' : ['permitAll'],
 ]
 grails.plugin.springsecurity.logout.handlerNames = [
 	'rememberMeServices', 'securityContextLogoutHandler' //, 'myLogoutHandler'
