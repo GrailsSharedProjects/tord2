@@ -9,6 +9,7 @@ target
 eclipse-target
 target-eclipse
 work/.slcache
+nohup.out
 
 # web application files
 /web-app/WEB-INF/classes

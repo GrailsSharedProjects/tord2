@@ -2,7 +2,7 @@ dataSource {
     pooled = true
     jmxExport = true
     driverClassName = "com.mysql.jdbc.Driver"
-    username = "wicky"
+    username = "mclamee"
     password = "William100"
 	dialect = org.hibernate.dialect.MySQL5InnoDBDialect
 }
@@ -20,17 +20,19 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost:3306/tord?useUnicode=true&characterEncoding=UTF-8"
+            url = "jdbc:mysql://localhost:3306/tord_dev?useUnicode=true&characterEncoding=UTF-8"
         }
     }
     test {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://localhost:3306/tord?useUnicode=true&characterEncoding=UTF-8"
+            url = "jdbc:mysql://localhost:3306/tord_dev?useUnicode=true&characterEncoding=UTF-8"
         }
     }
     production {
         dataSource {
+            username = "wicky"
+            password = "William100"
             dbCreate = "validate"
             url = "jdbc:mysql://localhost:3306/tord?useUnicode=true&characterEncoding=UTF-8"
             properties {
