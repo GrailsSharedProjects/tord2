@@ -114,7 +114,8 @@
     private renderManyToOne(domainClass,property) {
         if (property.association) {
         	if ("imagebed" == cp.widget) {
-        		return "<g:render template='imagebed' contextPath='/templates' model='[domainName: '${domainInstance}', fieldName: '${property.name}', target:${domainInstance}?.${property.name}, listBox:${property.type.name}.list(), required: ${isRequired()}]'/>"
+        		boolean isReq = isRequired();
+        		return "<g:include action='${cp.widget}' model='\${['${domainInstance}': ${domainInstance}, 'fieldName': '${property.name}', 'required': isReq]}' />";
         	}else {
     			def sb = new StringBuilder()
                 sb << '<g:select'
@@ -143,7 +144,8 @@
 
         if (cls != null) {
             if ("multi-imagebed" == cp.widget) {
-        		return "<g:render template='multi-imagebed' contextPath='/templates' model='[domainName: '${domainInstance}', fieldName: '${property.name}', target:${domainInstance}?.${property.name}, listBox:${cls.name}.list(), required: ${isRequired()}]' />"
+            	boolean isReq = isRequired();
+        		return "<g:include action='${cp.widget}' model='\${['${domainInstance}': ${domainInstance}, 'fieldName': '${property.name}', 'required': isReq]}' />";
         	}else {
         		def sb = new StringBuilder()
                 sb << '<g:select name="' << property.name << '"'

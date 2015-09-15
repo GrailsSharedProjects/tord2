@@ -213,7 +213,7 @@ class BootStrap {
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页面管理", "page", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页眉管理", "header", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页脚管理", "footer", "index");
-		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页脚元素管理", "footer", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "页脚元素管理", "footerModule", "index");
 		
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "图片管理", "photo", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "全局设置", "siteSettings", "index");

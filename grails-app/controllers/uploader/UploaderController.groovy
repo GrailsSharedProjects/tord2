@@ -53,28 +53,23 @@ class UploaderController {
     }
 	
 	def widget() {
-		def fieldName = params.id
-		render template: 'upload-widget'
+		render view: 'widget'
 	}
 	
-	def singlePhoto() {
-		
-		def photo = params.photo;
-		if(!photo) {
-			def id = params.id
-			println id
-			photo = Photo.findById(id)
+	def photo() {
+		def id = params.id;
+		def fieldName = params['fieldName'];
+		def sequence = params['sequence'];
+		def editable = false;
+		if(params['editable'] == "true" || params['editable'] == true){
+			editable = true;
 		}
+		def photo = com.tord.Photo.findById(id);
 		
-		println photo
-		
-		def fieldName = params.fieldName
-		println fieldName
-		
-		if(photo) {
-			render template:'single-photo', model:[fieldName: fieldName, photo: photo, editable: true]			
-		}else {
-			render ""
-		}	
+		render template:'/templates/imagebed/photo', model:[
+			photo: photo,
+			fieldName: fieldName,
+			sequence: sequence
+			]
 	}
 }

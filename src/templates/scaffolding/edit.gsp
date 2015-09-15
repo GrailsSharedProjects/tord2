@@ -35,6 +35,7 @@
 									
 									<div class="row form-button">
 										<g:actionSubmit class="save" action="update" value="\${message(code: 'default.button.update.label', default: 'Update')}" />
+										<g:actionSubmit id="ref-btn" class="refresh" action="refreshEdit" value="Refresh" />
 									</div>
 								</g:form>
 							</div>

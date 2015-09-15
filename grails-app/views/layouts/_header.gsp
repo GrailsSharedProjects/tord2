@@ -35,11 +35,10 @@
         </div><!--end class tz-form-search-->
     </header>
 
-    <aside class="tz-offcavans-menu">
+    <aside class="tz-offcavans-menu" style="width: 12em">
         <button class="tz-offcanvas-close"><i class="fa fa-times"></i></button>
         <div class="tzscrollable">
-            <h3 class="tz-offcavans-logo">
-                <g:renderLogo />
+            <h3 class="tz-offcavans-logo" style="width: 5em">
             </h3>
             <nav class="tz-menu-left">
                 <ul>

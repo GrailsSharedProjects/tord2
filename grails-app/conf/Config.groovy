@@ -120,7 +120,8 @@ log4j.main = {
 		   
 		   warn 'grails.app.services.grails.plugin.springsecurity.ui.SpringSecurityUiService'
 	   
-		   debug 'net.sf.ehcache.hibernate'
+		   debug 'net.sf.ehcache.hibernate',
+		   	     'com.tord'
 }
 
 // assets
@@ -133,24 +134,39 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.tord.auth.
 grails.plugin.springsecurity.authority.className = 'com.tord.auth.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/dbconsole/**':                ['ROLE_ADMIN'],
+
 	'/user/**':                ['ROLE_ADMIN'],
 	'/role/**':                ['ROLE_ADMIN'],
 	'/registrationCode/**':                ['ROLE_ADMIN'],
 	'/securityInfo/**':                ['ROLE_ADMIN'],
+	
 	'/admin/**':                ['ROLE_ADMIN'],
 	'/uploader/**':                ['ROLE_ADMIN'],
+	'/work/**':                ['ROLE_ADMIN'],
+	'/article/**':                ['ROLE_ADMIN'],
+	'/product/**':                ['ROLE_ADMIN'],
+	'/widget/**':                ['ROLE_ADMIN'],
+	'/sliderRevolution/**':                ['ROLE_ADMIN'],
+	'/slider/**':                ['ROLE_ADMIN'],
+	'/menu/**':                ['ROLE_ADMIN'],
+	'/page/**':                ['ROLE_ADMIN'],
+	'/header/**':                ['ROLE_ADMIN'],
+	'/footer/**':                ['ROLE_ADMIN'],
+	'/footerModule/**':                ['ROLE_ADMIN'],
+	'/photo/**':                ['ROLE_ADMIN'],
+	'/siteSettings/**':                ['ROLE_ADMIN'],
 	
-	'/photo/**':                ['ROLE_USER', 'ROLE_ADMIN'],
-	
-	'/product/**':                ['permitAll'],
-	'/shop/**':                ['permitAll'],
-	'/project/**':                ['permitAll'],
-	'/blog/**':                ['permitAll'],
+	'/home/**':                ['permitAll'],
 	'/portfolio/**':                ['permitAll'],
-	
+	'/blog/**':                ['permitAll'],
+	'/project/**':                ['permitAll'],
+	'/shop/**':                ['permitAll'],
+	'/about/**':                ['permitAll'],
+
 	'/uploaded/*.jpg':                ['permitAll'],
 	'/uploaded/*.png':                ['permitAll'],
 	'/uploaded/*.gif':                ['permitAll'],
+	
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
@@ -160,9 +176,9 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll'],
 	
-	'/register/**':                ['permitAll'],
-	'/logout/**':                ['permitAll'],
 	'/login/**':                ['permitAll'],
+	'/logout/**':                ['permitAll'],
+	'/register/**':                ['permitAll'],
 	'/**' : ['permitAll'],
 ]
 grails.plugin.springsecurity.logout.handlerNames = [

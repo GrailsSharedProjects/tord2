@@ -23,7 +23,7 @@
             <ul class="tz-gallery-full">
             	<g:each in="${work.galleryPhotoList }" var="pic">
                 <li>
-                    <img src="${assetPath(src: pic.url) }" alt="Gallery Photo">
+                	<g:photo photo="${pic }" alt="Gallery Photo"/>
                 </li>
                 </g:each>
             </ul>

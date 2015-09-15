@@ -42,18 +42,36 @@
 												</div>
 											<%  } else if (p.oneToMany || p.manyToMany) { %>
 												<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-												<g:each in="\${${propertyName}.${p.name}}" var="${p.name[0]}">
+												<g:each in="\${${propertyName}.${p.name}}" var="${p.name[0]}" status="idx">
+													<g:if test="\${${p.name[0]}}">
+													<% if ("multi-imagebed" == cp.widget) { %>
 													<div>
 													<span class="property-value" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${p.name[0]}.id}">\${${p.name[0]}?.encodeAsHTML()}</g:link></span>
 													</div>
+													<% } else { %>
+													<div>
+													<span class="property-value" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${p.name[0]}.id}">\${${p.name[0]}?.encodeAsHTML()}</g:link></span>
+													</div>
+													<% } %>
+													</g:if>
 												</g:each>
 												</div>
 											<%  } else if (p.manyToOne || p.oneToOne) { %>
 												<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-													<span class="property-value" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link></span>
 												<% if ("imagebed" == cp.widget) { %>
-													<g:render template="single-photo"
-													contextPath="/uploader" model="\${[fieldName:'${p.name}', photo:${propertyName}?.${p.name}, editable: false]}" />
+													<div class="user-photo show-photo">
+														<ul>
+															<li>
+																<span class="property-value" aria-labelledby="${p.name}-label">
+																	<g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">
+																		<g:include controller="uploader" action="photo" id="\${${propertyName}?.${p.name}?.id}" />
+																	</g:link>
+																</span>
+															</li>
+														</ul>
+													</div>
+												<% } else {%>
+													<span class="property-value" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link></span>
 												<% } %>
 												</div>
 											<%  } else if (p.type == Boolean || p.type == boolean) { %>
@@ -88,6 +106,9 @@
 										<g:actionSubmit class="delete" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 									</div>
 								</g:form>
+								<script>
+									jQuery('[data-toggle="popover"]').popover()
+								</script>
 							</div>
 						</div>
 					</div>

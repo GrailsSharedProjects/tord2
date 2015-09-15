@@ -1,6 +1,6 @@
 package com.tord.admin
 
-import com.tord.Article
+import com.tord.Work
 
 
 class AdminController {
@@ -29,5 +29,6 @@ class AdminController {
 				break;
 		}
 		render "Refreshing $id ...."
+		
 	}
 }

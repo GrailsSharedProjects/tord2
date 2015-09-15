@@ -32,12 +32,8 @@
 	    <asset:javascript src="respond.min.js"/>
 	    <![endif]-->
 		
-		<asset:javascript src="jquery.min.js" />
-		<asset:javascript src="scripts/module.js" />
-		<asset:javascript src="scripts/hotkeys.js" />
-		<asset:javascript src="scripts/uploader.js" />
-		<asset:javascript src="scripts/simditor.js" />
-		
+		<asset:javascript src="admin.js"/>
+		  		
 		<g:layoutHead/>
 		
 	</head>
@@ -67,11 +63,31 @@
 		</g:if>
     	<!-- Body  -->
 		<g:layoutBody/>
+		
+<!-- 模态框（Modal） -->
+<div id="image-modal" class="modal fade" role="dialog" style="margin-top: 30px;">
+	<div class="modal-dialog  modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">图片选择器</h4>
+			</div>
+			<div class="modal-body">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary action-btn" data-dismiss="modal">选择</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div>
+</div><!-- /.modal -->
+		
 		<!-- Footer  -->
 <%--    	<g:render template="footer" contextPath="/layouts"  model="['footer':com.tord.admin.Footer.findByName('PAGE_FOOTER')]" />--%>
 		<footer>
 		  <section class="tzpage-default"></section>
 		</footer>
-    	<asset:javascript src="admin.js"/>
 	</body>
 </html>

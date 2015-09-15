@@ -11536,3 +11536,17 @@ span.required-indicator{
 #flash-message button.close{
 	z-index: 99999999999;
 }
+.padding-menu{
+	padding-left: 160px;
+}
+.add-btn-photo span.glyphicon{
+max-height: 100px;
+max-width: 100px;
+width: 100px;
+height: 100px;
+text-align: center;
+vertical-align: middle;
+padding-top: 35%;
+border: 1px solid;
+font-size: 26px;
+}

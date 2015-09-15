@@ -211,6 +211,7 @@ jQuery(document).ready(function(){
             left : '0'
         },300) ;
         jQuery('.tzscrollable').addClass('tz-offcavans-menu-eff');
+        jQuery("section").addClass('padding-menu');
             $true = false;
         }else{
             jQuery('.tz-offcavans-menu').animate({
@@ -218,6 +219,7 @@ jQuery(document).ready(function(){
             },150,function(){
                 jQuery('.tzscrollable').removeClass('tz-offcavans-menu-eff');
             }) ;
+            jQuery("section").removeClass('padding-menu');
             $true = true;
         }
     });
@@ -226,6 +228,7 @@ jQuery(document).ready(function(){
             left : '-20em'
         },150,function(){
             jQuery('.tzscrollable').removeClass('tz-offcavans-menu-eff');
+            jQuery("section").removeClass('padding-menu');
         }) ;
         $true = true;
     });
