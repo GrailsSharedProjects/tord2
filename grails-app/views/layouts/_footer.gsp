@@ -20,9 +20,7 @@
                             <address>
                                 ${SiteSettings.getIt("地址") }
                             </address>
-                            <span>
-                                ${SiteSettings.getIt("电话") }
-                            </span>
+                            <a href="tel:${SiteSettings.getIt("电话") }">${SiteSettings.getIt("电话") }</a>
                             <a href="mailto:${SiteSettings.getIt("邮箱") }">${SiteSettings.getIt("邮箱") }</a>
                             <span class="tzwidget-social">
                                 <a href="#"><i class="fa fa-weixin"></i></a>

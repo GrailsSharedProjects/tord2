@@ -53,7 +53,8 @@
 		</div>
 		
 		<!-- Header  -->
-    	<g:render template="header" contextPath="/layouts" model="['header':com.tord.admin.Header.findByName('ADMIN_HEADER')]" />
+    	<g:render template="header" contextPath="/layouts" 
+    	model="['header':com.tord.admin.Header.findByName('ADMIN_HEADER')]" />
     	<!-- Message -->
     	<g:if test="${flash.message}">
 		<div id="flash-message" class="alert alert-danger alert-dismissible" role="alert">

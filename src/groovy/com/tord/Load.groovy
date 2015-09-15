@@ -4,15 +4,18 @@ import java.util.concurrent.TimeoutException;
 
 public class Load {
 	
+//	static String url = "http://www.tuigirl8.com/tu";
+	static String url = "http://img1.mm131.com/pic";
+	
 	public static void main(String[] args) {
-		def folder = new File("F:/pic2")
+		def folder = new File("F:/pic3")
 		folder.mkdir();
-		for(def i in 001..500) {
+		for(def i in 2147..2000) {
 			try {
 				println sprintf('%03d', i)
-				def file = new File(folder, "${sprintf('%d', i)}-01.jpg");54
+				def file = new File(folder, "${sprintf('%d', i)}-01.jpg");
 				if(!file.exists()) {
-					def bytes = "http://www.tuigirl8.com/tu/${sprintf('%d', i)}/01.jpg".toURL().getBytes();
+					def bytes = (url + "/${sprintf('%d', i)}/1.jpg").toURL().getBytes();
 					file.setBytes(bytes);
 				}
 			} catch (FileNotFoundException e) {
@@ -40,7 +43,7 @@ public class Load {
 							println "${parent}-${sprintf('%02d', i)}"
 							def file = new File(folder, "${parent}-${sprintf('%02d', i)}.jpg");
 							if(!file.exists()) {
-								def bytes = "http://www.tuigirl8.com/tu/${parent}/${sprintf('%02d', i)}.jpg".toURL().getBytes();
+								def bytes = (url + "/${parent}/${sprintf('%d', i)}.jpg").toURL().getBytes();
 								file.setBytes(bytes);
 							}
 						}
