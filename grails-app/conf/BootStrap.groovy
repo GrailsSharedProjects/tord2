@@ -398,7 +398,7 @@ class BootStrap {
 		def infoPolicy = new Info(name: "POLICY_INFO", title: "售后服务政策", contentHTML: "<h2>售后服务政策<h2><p>内容内容内容，内容内容</p><p><ol><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li></ol></p>")
 		infoPolicy.save();
 		
-		def infoAbout = new Info(name: "ABOUT_INFO", title: "关于我们", contentHTML: """<h2>企业简介h2>
+		def infoAbout = new Info(name: "ABOUT_INFO", title: "关于我们", contentHTML: """<h2>企业简介</h2>
 <p>拓德贸易有限公司成立于2011年，公司主要业务是钛矿石的进口，陶瓷、石材、木地板、马赛克、墙纸等建筑装饰材料的出口，产品远销五大洲几十个国家和地区。</p>
 <p>公司在全国现有几十家定点生产厂家，上百条专业的生产流水线。以国际化高标准缔造出最专业的铺装建材。</p>
 <p>今年来，公司业务发展迅猛，成绩斐然。同时，公司在完善硬件设施，不断加强制度与形象方面的建设，强调创新、自主和以人为本的管理，以团队创更高成就，以高质量的产品和贴心细致的服务拓展市场，向未来迈进。</p>
