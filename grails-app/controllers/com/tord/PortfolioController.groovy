@@ -21,7 +21,6 @@ class PortfolioController {
 	}
 	
 	def show() {
-		println "ID: " + params.id
 		def pageData = Page.findByName("SHOW_PORTFOLIO_PAGE");
 		def work = workService.findByNameAndCategory(params.id, "portfolio");
 		if(!work) {

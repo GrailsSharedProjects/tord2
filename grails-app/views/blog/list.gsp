@@ -64,9 +64,9 @@
                         <button class="tzpause"><i class="fa fa-pause"></i></button>
                         <div class="bg-video"></div>
                         <video class="videoID">
-                            <source type="video/mp4" src="${assetPath(src: 'video.mp4') }" />
-                            <source type="video/mp4" src="${assetPath(src: 'video.ogv') }" />
-                            <source type="video/mp4" src="${assetPath(src: 'video.webm') }" />
+                            <source type="video/mp4" src="/video/video.mp4" />
+                            <source type="video/mp4" src="/video/video.ogv" />
+                            <source type="video/mp4" src="/video/video.webm" />
                         </video>
                     </div>
                 </div>

@@ -349,7 +349,7 @@ class BootStrap {
 			
 		new Widget(name: "首页售后", category: "首页售后", 
 				title: "全场包邮，七天包退", contentHTML: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				refController: "info", refAction: "policy", refText: "了解跟多售后保障").save();
+				refController: "info", refAction: "policy", refText: "了解更多售后保障").save();
 	
 		int k = 1;
 		for(int i = 0; i < 2; i++) {
@@ -398,7 +398,17 @@ class BootStrap {
 		def infoPolicy = new Info(name: "POLICY_INFO", title: "售后服务政策", contentHTML: "<h2>售后服务政策<h2><p>内容内容内容，内容内容</p><p><ol><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li></ol></p>")
 		infoPolicy.save();
 		
-		def infoAbout = new Info(name: "ABOUT_INFO", title: "关于我们", contentHTML: "<h2>拓德一站式家装O2O平台<h2><p>内容内容内容，内容内容</p><p><ol><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li></ol></p>")
+		def infoAbout = new Info(name: "ABOUT_INFO", title: "关于我们", contentHTML: """<h2>企业简介h2>
+<p>拓德贸易有限公司成立于2011年，公司主要业务是钛矿石的进口，陶瓷、石材、木地板、马赛克、墙纸等建筑装饰材料的出口，产品远销五大洲几十个国家和地区。</p>
+<p>公司在全国现有几十家定点生产厂家，上百条专业的生产流水线。以国际化高标准缔造出最专业的铺装建材。</p>
+<p>今年来，公司业务发展迅猛，成绩斐然。同时，公司在完善硬件设施，不断加强制度与形象方面的建设，强调创新、自主和以人为本的管理，以团队创更高成就，以高质量的产品和贴心细致的服务拓展市场，向未来迈进。</p>
+<br/>
+<p>拓德强化木地板生产基地位于地板之都江苏横林，拓德陶瓷和马赛克生产基地坐落在生产工艺最先进的广东佛山，拓德石材生产加工基地位于中国石都云浮，拓德墙纸来自于“海上丝绸之路”的起点广州。拓德自成立就以高要求、高水准，打造一流的产品生产基地为标准，引进国内外最先进的生产设备，最专业的生产流水线，旨在为国内外的消费者提供最优质的建材产品。</p>
+<br/>
+<p>拓德以产品质量为生命，以服务客户为灵魂，从一而终为客户提供优质的服务，以完美和诚信确立拓德建材的永久品牌和美好形象。</p>
+<p>拓德在产品出口海外的同时，致力于为国内消费者打造一流的铺装建材超市。</p>
+<p>拓德在提供优质产品的同时，致力于为消费者提供最专业的、顾问式的信息服务。</p>
+<p>拓德在服务消费者的同时，致力于为设计公司和设计师提供专业的建材产品培训课程。</p>""")
 		infoAbout.save();
 	}
 }

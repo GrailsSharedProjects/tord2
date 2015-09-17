@@ -21,7 +21,6 @@ class ProjectController {
 	}
 	
 	def show() {
-		println "ID: " + params.id
 		def pageData = Page.findByName("SHOW_PROJECT_PAGE");
 		def work = workService.findByNameAndCategory(params.id, "project");
 		if(!work) {
