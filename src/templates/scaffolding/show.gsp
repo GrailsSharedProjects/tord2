@@ -64,7 +64,7 @@
 															<li>
 																<span class="property-value" aria-labelledby="${p.name}-label">
 																	<g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">
-																		<g:include controller="uploader" action="photo" id="\${${propertyName}?.${p.name}?.id}" />
+																		<g:include controller="imagebed" action="photo" id="\${${propertyName}?.${p.name}?.id}" />
 																	</g:link>
 																</span>
 															</li>
@@ -106,9 +106,6 @@
 										<g:actionSubmit class="delete" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 									</div>
 								</g:form>
-								<script>
-									jQuery('[data-toggle="popover"]').popover()
-								</script>
 							</div>
 						</div>
 					</div>

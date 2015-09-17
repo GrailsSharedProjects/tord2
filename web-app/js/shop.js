@@ -2,6 +2,7 @@
 //= require_self
 
 // jQuery for flexslider------------------
+/*
 jQuery(window).load(function() {
     // The slider being synced must be initialized first
     jQuery('#carousel').flexslider({
@@ -27,3 +28,4 @@ jQuery(window).load(function() {
     });
 
 });
+*/

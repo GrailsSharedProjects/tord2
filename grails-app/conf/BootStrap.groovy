@@ -3,6 +3,7 @@ import grails.util.Environment;
 import org.springframework.context.i18n.LocaleContextHolder
 
 import com.tord.Article
+import com.tord.Info
 import com.tord.Photo
 import com.tord.Widget
 import com.tord.Work
@@ -56,6 +57,9 @@ class BootStrap {
 			setupTestData();
 			setupHomePage();
 			setupArticles();
+			setupInfomation();
+		}else{
+			
 		}
     }
 	
@@ -151,6 +155,10 @@ class BootStrap {
 		def shopPage = new Page(name: "SHOP_PAGE", title: "建材超市", customJavaScript: 'shop.js');
 		shopPage.save(flush: true);
 		
+		////////////////////////////////////
+		def infoPage = new Page(name: "INFO_PAGE", title: "信息公告");
+		infoPage.save(flush: true);
+		
 	}
 
 	private SliderRevolution createHomeRevSlider() {
@@ -206,6 +214,7 @@ class BootStrap {
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "文章管理", "article", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "建材超市管理", "product", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "首页元素管理", "widget", "index");
+		homeHeader.createMenu("ADMIN_HEADER_${++i}", "信息公告管理", "infoadmin", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯片管理", "sliderRevolution", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "幻灯子页管理", "slider", "index");
 		homeHeader.createMenu("ADMIN_HEADER_${++i}", "菜单管理", "menu", "index");
@@ -340,7 +349,7 @@ class BootStrap {
 			
 		new Widget(name: "首页售后", category: "首页售后", 
 				title: "全场包邮，七天包退", contentHTML: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				refController: "policy", refAction: "index", refText: "了解跟多售后保障").save();
+				refController: "info", refAction: "policy", refText: "了解跟多售后保障").save();
 	
 		int k = 1;
 		for(int i = 0; i < 2; i++) {
@@ -381,5 +390,15 @@ class BootStrap {
 		
 		def arc = new Article(name: "文章1", title: "文章1", contentHTML: "文章文章文章，文章文章文章，文章文章文章，文章文章文章。", titlePhoto: Photo.createPhoto("demos/last-1.jpg"));
 		arc.save();
+	}
+	
+	def setupInfomation(){
+		Info.deleteAllRows();
+
+		def infoPolicy = new Info(name: "POLICY_INFO", title: "售后服务政策", contentHTML: "<h2>售后服务政策<h2><p>内容内容内容，内容内容</p><p><ol><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li></ol></p>")
+		infoPolicy.save();
+		
+		def infoAbout = new Info(name: "ABOUT_INFO", title: "关于我们", contentHTML: "<h2>拓德一站式家装O2O平台<h2><p>内容内容内容，内容内容</p><p><ol><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li><li>内容内容内容，内容内容</li></ol></p>")
+		infoAbout.save();
 	}
 }

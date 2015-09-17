@@ -141,7 +141,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/securityInfo/**':                ['ROLE_ADMIN'],
 	
 	'/admin/**':                ['ROLE_ADMIN'],
-	'/uploader/**':                ['ROLE_ADMIN'],
+	'/imagebed/**':                ['ROLE_ADMIN'],
 	'/work/**':                ['ROLE_ADMIN'],
 	'/article/**':                ['ROLE_ADMIN'],
 	'/product/**':                ['ROLE_ADMIN'],
@@ -161,7 +161,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/blog/**':                ['permitAll'],
 	'/project/**':                ['permitAll'],
 	'/shop/**':                ['permitAll'],
-	'/about/**':                ['permitAll'],
+	'/info/**':                ['permitAll'],
 
 	'/uploaded/*.jpg':                ['permitAll'],
 	'/uploaded/*.png':                ['permitAll'],

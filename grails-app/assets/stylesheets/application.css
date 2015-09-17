@@ -1,0 +1,82 @@
+/*
+*= require style.css
+*= require_self
+*/
+span.required-indicator{
+	color: red;
+}
+
+.pagination > a, .pagination > span {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #428bca;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.pagination > a.active, .currentStep, .pagination > span, .pagination a:hover, .pagination span:hover, .pagination a:focus, .pagination span:focus {
+    background-color: #428bca;
+    border-color: #428bca;
+    color: #fff;
+    cursor: default;
+    z-index: 2;
+}
+
+.pagination > a:hover {
+    cursor: pointer;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    color: #428bca;
+}
+
+.s2ui_error{
+	color: red;
+}
+
+.image-picker li {
+	height: 100px;
+	width: 120px;
+	max-height: 100px;
+	max-width: 120px;
+}
+.image-picker li img{
+	max-height: 100px;
+	max-width: 118px;
+}
+.image-picker img.checked {
+	border: 2px solid red;
+}
+.show-photo{
+	padding: 0px;
+}
+#flash-message{
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 99999999999;
+}
+#flash-message button.close{
+	z-index: 99999999999;
+}
+.padding-menu{
+	padding-left: 160px;
+}
+.add-btn-photo span.glyphicon{
+max-height: 100px;
+max-width: 100px;
+width: 100px;
+height: 100px;
+text-align: center;
+vertical-align: middle;
+padding-top: 35%;
+border: 1px solid;
+font-size: 26px;
+}
+
+.trigger{
+    cursor: pointer;
+}

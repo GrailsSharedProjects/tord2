@@ -1,7 +1,14 @@
-@artifact.package@class @artifact.name@ {
+@artifact.package@
+import com.tord.admin.Page
 
-    def index() { 
-		def pageData = Page.findByName("ADMIN_PAGE");
-		model:[pageData: pageData]
+class @artifact.name@ {
+
+	def afterInterceptor = [action: this.&applyPageData] 
+	
+	private applyPageData(model){
+		model.pageData = Page.findByName("ADMIN_PAGE");
+	}
+	
+    def index() {
 	}
 }

@@ -11,9 +11,9 @@
 	           	<g:if test="${grails.util.Environment.current == grails.util.Environment.DEVELOPMENT}">
 	            <article class="blog-item blog-item-first">
 	            	<h2>Avaliable Functions</h2>
-					<div><g:remoteLink controller="admin" action="refresh" id="site" class="btn" >重置网站环境变量</g:remoteLink></div>
-					<div><g:remoteLink controller="admin" action="refresh" id="page" class="btn" >重置页面数据</g:remoteLink></div>
-					<div><g:remoteLink controller="admin" action="refresh" id="meta" class="btn" >重置基础数据</g:remoteLink></div>
+	            	
+	            	<div><label>网站变量：<g:select name="siteVar" from="${list}" noSelection="${['null':'- 选择 -']}" /></label>
+	            	<input type="button" class="btn" value="重置" onclick="var $that=$(this);$that.attr('disabled',true);$.get('${g.createLink(controller:"admin", action: "refresh")}' + '/' + $('#siteVar').val(), function(r){alert(r);$that.attr('disabled',false);})"/></div>
 	            </article>
 				</g:if>
 	            

@@ -12,7 +12,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <title><g:layoutTitle default="Title" /></title>
-	<g:javascript library='jquery' plugin='jquery' />
+
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
@@ -29,6 +29,7 @@
 	href="${assetPath(src: 'apple-touch-icon-114x114.jpg')}" />
 
 <asset:stylesheet src="site.css" />
+<asset:javascript src="site.js"/>
 
 <!-- Support for HTML5 -->
 <!--[if lt IE 9]>
@@ -40,8 +41,6 @@
 	    <asset:javascript src="respond.min.js"/>
 	    <![endif]-->
 	    
-		<asset:javascript src="jquery.min.js" />
-		
 <g:layoutHead />
 
 </head>

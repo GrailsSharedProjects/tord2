@@ -4,31 +4,39 @@ import com.tord.Work
 
 
 class AdminController {
+	def afterInterceptor = [action: this.&applyPageData] 
+	
+	private applyPageData(model){
+		model.pageData = Page.findByName("ADMIN_PAGE");
+	}
 	
 	def bootstrap
 	
     def index() {
-		def pageData = Page.findByName("ADMIN_PAGE");
-		model: [pageData: pageData]
+    	render view: "index", model:[list: ["全站公共变量", "页面和幻灯片", "菜单、页眉、页脚", "公告"]]
 	}
 	
 	def refresh() {
 		def id = params.id
 		switch(id) {
-			case "site":
-			bootstrap.setupSiteSettings();
+			case "全站公共变量":
+				bootstrap.setupSiteSettings();
 			break;
-			case "page":
-			bootstrap.setupPagesAndSliders()
+			case "页面和幻灯片":
+				bootstrap.setupPagesAndSliders()
 			break;
-			case "meta":
-			bootstrap.setupMetaData();
+			case "菜单、页眉、页脚":
+				bootstrap.setupMetaData();
 			break;
-			case "photo":
-				bootstrap.setupPhotoData();
-				break;
+			case "公告":
+				bootstrap.setupInfomation();
+			break;
 		}
-		render "Refreshing $id ...."
-		
+		render "完成 $id 重置"
+	}
+	
+	def reload(){
+		org.codehaus.groovy.grails.scaffolding.view.ScaffoldingViewResolver.scaffoldedViews.clear();
+		render "success"
 	}
 }

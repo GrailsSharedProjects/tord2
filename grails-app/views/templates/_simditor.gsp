@@ -4,7 +4,7 @@ var editor = new Simditor({
 	textarea : $('.editor'),
 	toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment'],
 	upload : {
-		url : '${g.createLink(controller:'uploader', action:'upload')}',
+		url : '${g.createLink(controller:'imagebed', action:'upload')}',
 		params : null,
 		fileKey : 'file',
 		connectionCount : 3,

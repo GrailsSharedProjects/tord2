@@ -760,7 +760,7 @@ InputManager = (function(superClass) {
     this.editor.el.removeClass('focus');
     this.editor.sync();
     this.focused = false;
-    this.lastCaretPosition = (ref = this.editor.undoManager.currentState()) != null ? ref.caret : void 0;
+    this.lastCaretPosition = (ref = this.editor.undoManager.currentState()) != null ? ref.caret : void(0);
     return this.editor.triggerHandler('blur');
   };
 
@@ -783,7 +783,7 @@ InputManager = (function(superClass) {
       return;
     }
     if (e.which in this._keystrokeHandlers) {
-      result = typeof (base = this._keystrokeHandlers[e.which])['*'] === "function" ? base['*'](e) : void 0;
+      result = typeof (base = this._keystrokeHandlers[e.which])['*'] === "function" ? base['*'](e) : void(0);
       if (result) {
         this.editor.trigger('valuechanged');
         return false;
@@ -794,8 +794,8 @@ InputManager = (function(superClass) {
           if (node.nodeType !== document.ELEMENT_NODE) {
             return;
           }
-          handler = (ref = _this._keystrokeHandlers[e.which]) != null ? ref[node.tagName.toLowerCase()] : void 0;
-          result = typeof handler === "function" ? handler(e, $(node)) : void 0;
+          handler = (ref = _this._keystrokeHandlers[e.which]) != null ? ref[node.tagName.toLowerCase()] : void(0);
+          result = typeof handler === "function" ? handler(e, $(node)) : void(0);
           if (result === true || result === false) {
             return false;
           }
@@ -1574,25 +1574,25 @@ Util = (function(superClass) {
     if (ie) {
       return {
         msie: true,
-        version: ((ref = ua.match(/(msie |rv:)(\d+(\.\d+)?)/i)) != null ? ref[2] : void 0) * 1
+        version: ((ref = ua.match(/(msie |rv:)(\d+(\.\d+)?)/i)) != null ? ref[2] : void(0)) * 1
       };
     } else if (chrome) {
       return {
         webkit: true,
         chrome: true,
-        version: ((ref1 = ua.match(/(?:chrome|crios)\/(\d+(\.\d+)?)/i)) != null ? ref1[1] : void 0) * 1
+        version: ((ref1 = ua.match(/(?:chrome|crios)\/(\d+(\.\d+)?)/i)) != null ? ref1[1] : void(0)) * 1
       };
     } else if (safari) {
       return {
         webkit: true,
         safari: true,
-        version: ((ref2 = ua.match(/version\/(\d+(\.\d+)?)/i)) != null ? ref2[1] : void 0) * 1
+        version: ((ref2 = ua.match(/version\/(\d+(\.\d+)?)/i)) != null ? ref2[1] : void(0)) * 1
       };
     } else if (firefox) {
       return {
         mozilla: true,
         firefox: true,
-        version: ((ref3 = ua.match(/firefox\/(\d+(\.\d+)?)/i)) != null ? ref3[1] : void 0) * 1
+        version: ((ref3 = ua.match(/firefox\/(\d+(\.\d+)?)/i)) != null ? ref3[1] : void(0)) * 1
       };
     } else {
       return {};
@@ -1604,7 +1604,7 @@ Util = (function(superClass) {
       onselectionchange: (function() {
         var e, onselectionchange;
         onselectionchange = document.onselectionchange;
-        if (onselectionchange !== void 0) {
+        if (onselectionchange !== void(0)) {
           try {
             document.onselectionchange = 0;
             return document.onselectionchange === null;
@@ -1659,7 +1659,7 @@ Util = (function(superClass) {
     var $node, blockEl, range;
     if (node == null) {
       range = this.editor.selection.getRange();
-      node = range != null ? range.commonAncestorContainer : void 0;
+      node = range != null ? range.commonAncestorContainer : void(0);
     }
     $node = $(node);
     if (!$node.length) {
@@ -1682,7 +1682,7 @@ Util = (function(superClass) {
     var $node, blockEl, range;
     if (node == null) {
       range = this.editor.selection.getRange();
-      node = range != null ? range.commonAncestorContainer : void 0;
+      node = range != null ? range.commonAncestorContainer : void(0);
     }
     $node = $(node);
     if (!$node.length) {
@@ -1726,7 +1726,7 @@ Util = (function(superClass) {
     var j, len, n, nodes, range, result, results1;
     if (node == null) {
       range = this.editor.selection.getRange();
-      node = range != null ? range.commonAncestorContainer : void 0;
+      node = range != null ? range.commonAncestorContainer : void(0);
     }
     if ((node == null) || !$.contains(this.editor.body[0], node)) {
       return false;
@@ -1740,7 +1740,7 @@ Util = (function(superClass) {
       if (result === false) {
         break;
       } else {
-        results1.push(void 0);
+        results1.push(void(0));
       }
     }
     return results1;
@@ -2604,7 +2604,7 @@ Button = (function(superClass) {
       if (tag && $.inArray(tag, this.editor.formatter._allowedTags) < 0) {
         results1.push(this.editor.formatter._allowedTags.push(tag));
       } else {
-        results1.push(void 0);
+        results1.push(void(0));
       }
     }
     return results1;
@@ -2903,7 +2903,7 @@ TitleButton = (function(superClass) {
       return true;
     }
     if ($node != null) {
-      param = (ref = $node[0].tagName) != null ? ref.toLowerCase() : void 0;
+      param = (ref = $node[0].tagName) != null ? ref.toLowerCase() : void(0);
       this.setActive($node.is(this.htmlTag), param);
     }
     return this.active;
@@ -3541,7 +3541,7 @@ CodeButton = (function(superClass) {
     var $code, lang, ref, ref1;
     $code = $pre.find('> code');
     if ($code.length > 0) {
-      lang = (ref = $code.attr('class')) != null ? (ref1 = ref.match(/lang-(\S+)/)) != null ? ref1[1] : void 0 : void 0;
+      lang = (ref = $code.attr('class')) != null ? (ref1 = ref.match(/lang-(\S+)/)) != null ? ref1[1] : void(0) : void(0);
       $code.contents().unwrap();
       if (lang) {
         return $pre.attr('data-lang', lang);
@@ -4504,7 +4504,7 @@ ImagePopover = (function(superClass) {
 
   ImagePopover.prototype._restoreImg = function() {
     var ref, size;
-    size = ((ref = this.target.data('image-size')) != null ? ref.split(",") : void 0) || [this.width, this.height];
+    size = ((ref = this.target.data('image-size')) != null ? ref.split(",") : void(0)) || [this.width, this.height];
     this.target.attr({
       width: size[0] * 1,
       height: size[1] * 1
@@ -4831,13 +4831,13 @@ TableButton = (function(superClass) {
           $resizeHandle.hide();
           return;
         }
-        if ((ref = $resizeHandle.data('td')) != null ? ref.is($td) : void 0) {
+        if ((ref = $resizeHandle.data('td')) != null ? ref.is($td) : void(0)) {
           $resizeHandle.show();
           return;
         }
         index = $td.parent().find('td, th').index($td);
         $col = $colgroup.find('col').eq(index);
-        if ((ref1 = $resizeHandle.data('col')) != null ? ref1.is($col) : void 0) {
+        if ((ref1 = $resizeHandle.data('col')) != null ? ref1.is($col) : void(0)) {
           $resizeHandle.show();
           return;
         }

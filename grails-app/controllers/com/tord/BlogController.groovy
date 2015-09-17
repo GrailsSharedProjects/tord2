@@ -3,14 +3,17 @@ package com.tord
 import com.tord.admin.Page;
 
 class BlogController {
-
+	def afterInterceptor = [action: this.&applyPageData] 
+	
+	private applyPageData(model){
+		model.pageData = Page.findByName("BLOG_PAGE");
+	}
+	
     def index() { 
-		def pageData = Page.findByName("BLOG_PAGE");
-		render view: 'list', model:[pageData: pageData]
+		render view: 'list'
 	}
 	
 	def show() {
-		def pageData = Page.findByName("BLOG_PAGE");
-		render view: 'show', model:[pageData: pageData, articleType: params.id]
+		render view: 'show', model:[articleType: params.id]
 	}
 }

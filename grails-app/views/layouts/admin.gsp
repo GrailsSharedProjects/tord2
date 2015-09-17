@@ -21,6 +21,7 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-114x114.jpg')}"/>		
 		
   		<asset:stylesheet src="admin.css"/>
+  		<asset:javascript src="admin.js"/>
   		
 	    <!-- Support for HTML5 -->
 	    <!--[if lt IE 9]>
@@ -31,8 +32,6 @@
 	    <!--[if lt IE 9]>
 	    <asset:javascript src="respond.min.js"/>
 	    <![endif]-->
-		
-		<asset:javascript src="admin.js"/>
 		  		
 		<g:layoutHead/>
 		

@@ -176,7 +176,7 @@ Hotkeys = (function(superClass) {
     return $(this._delegate).on("keydown.simple-hotkeys-" + this.id, this.opts.el, (function(_this) {
       return function(e) {
         var ref;
-        return (ref = _this._getHander(e)) != null ? ref.call(_this, e) : void 0;
+        return (ref = _this._getHander(e)) != null ? ref.call(_this, e) : void(0);
       };
     })(this));
   };

@@ -19,20 +19,30 @@
 		<link rel="apple-touch-icon" sizes="72x72" href="${assetPath(src: 'apple-touch-icon-72x72.jpg')}"/>
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-114x114.jpg')}"/>
 		
-		<!-- Revolution Slider  -->
 		<g:if test="${pageData.sliderRevolution }">
-  			<asset:stylesheet src="settings.css"/>
+  		<!-- Global Css With Revolution Slider-->
+  		<asset:stylesheet src="site-rs.css"/>
   		</g:if>
-  		
+  		<g:else>
   		<!-- Global Css -->
   		<asset:stylesheet src="site.css"/>
+  		</g:else>
   		
-  		<!-- Custom CSS -->
     	<g:if test="${pageData.customCss }">
-    		<link type="text/css" href="${resource(dir: 'css', file: pageData.customCss)}" />
+  		<!-- Custom CSS -->
+    	<link type="text/css" href="${resource(dir: 'css', file: pageData.customCss)}" />
     	</g:if>
   		
-	    <!-- Support for HTML5 -->
+    	<g:if test="${pageData.sliderRevolution }">
+		<!-- Global JavaScript with Revolution Slider  -->
+		<asset:javascript src="site-rs.js"/>
+    	</g:if>
+    	<g:else>
+    	<!-- Global JavaScript -->
+		<asset:javascript src="site.js"/>
+    	</g:else>
+    	
+    	<!-- Support for HTML5 -->
 	    <!--[if lt IE 9]>
 	    <asset:javascript src="html5.js"/>
 	    <![endif]-->
@@ -41,8 +51,11 @@
 	    <!--[if lt IE 9]>
 	    <asset:javascript src="respond.min.js"/>
 	    <![endif]-->
-		
-		<asset:javascript src="jquery.min.js" />
+    	
+    	<g:if test="${pageData.customJavaScript }">
+    	<!-- Custom JavaScript -->
+    	<script src="${resource(dir:'js', file:pageData.customJavaScript) }" type="text/javascript"></script>
+    	</g:if>
 		
 		<g:layoutHead/>
 		   		
@@ -77,20 +90,6 @@
 		<g:layoutBody/>
 		<!-- Footer  -->
     	<g:render template="footer" contextPath="/layouts" model="['footer':com.tord.admin.Footer.findByName('PAGE_FOOTER')]" />
-    
-    	<!-- Global JavaScript -->
-    	<asset:javascript src="site.js"/>
-    	
-    	<!-- Custom JavaScript -->
-    	<g:if test="${pageData.customJavaScript }">
-    		<script src="${resource(dir:'js', file:pageData.customJavaScript) }" type="text/javascript"></script>
-    	</g:if>
-    	
-    	<!-- Revolution Slider  -->
-    	<g:if test="${pageData.sliderRevolution }">
-    		<asset:javascript src="jquery.themepunch.revolution.js"/>
-    		<asset:javascript src="jquery.themepunch.tools.min.js"/>
-    	</g:if>
     	
 	</body>
 </html>

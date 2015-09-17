@@ -29,7 +29,7 @@ Module = (function() {
         this[key] = val;
       }
     }
-    return (_ref = obj.extended) != null ? _ref.call(this) : void 0;
+    return (_ref = obj.extended) != null ? _ref.call(this) : void(0);
   };
 
   Module.include = function(obj) {
@@ -43,7 +43,7 @@ Module = (function() {
         this.prototype[key] = val;
       }
     }
-    return (_ref = obj.included) != null ? _ref.call(this) : void 0;
+    return (_ref = obj.included) != null ? _ref.call(this) : void(0);
   };
 
   Module.connect = function(cls) {
@@ -143,7 +143,7 @@ Module = (function() {
   Module._t = function() {
     var args, key, result, _ref;
     key = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
-    result = ((_ref = this.i18n[this.locale]) != null ? _ref[key] : void 0) || '';
+    result = ((_ref = this.i18n[this.locale]) != null ? _ref[key] : void(0)) || '';
     if (!(args.length > 0)) {
       return result;
     }

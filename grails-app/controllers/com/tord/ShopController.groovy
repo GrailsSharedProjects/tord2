@@ -3,19 +3,21 @@ package com.tord
 import com.tord.admin.Page;
 
 class ShopController {
-
+	def afterInterceptor = [action: this.&applyPageData] 
+	
+	private applyPageData(model){
+		model.pageData = Page.findByName("SHOP_PAGE");
+	}
+	
     def index() { 
-		def pageData = Page.findByName("SHOP_PAGE");
-		render view: 'list', model:[pageData: pageData]
+		render view: 'list'
 	}
 	
     def show() { 
-    	def pageData = Page.findByName("SHOP_PAGE");
-    	render view: 'show', model:[pageData: pageData]
+    	render view: 'show'
     }
 	
     def checkout() { 
-    	def pageData = Page.findByName("SHOP_PAGE");
-    	render view: 'checkout', model:[pageData: pageData]
+    	render view: 'checkout'
     }
 }

@@ -163,7 +163,7 @@ class ${className}Controller {
 		log.debug("fieldValue: " + ${propertyName}[fieldName]);
 		log.debug("required: " + required);
 		
-		render template:'/templates/imagebed/single', model:[instanceId: ${propertyName}.id, instanceName: '${propertyName}', fieldName: fieldName, target:${propertyName}[fieldName], required: required]
+		render view:'/imagebed/single', model:[instanceId: ${propertyName}.id, instanceName: '${propertyName}', fieldName: fieldName, target:${propertyName}[fieldName], required: required]
 	}
 	
 	def ibed(${className} ${propertyName}){
@@ -185,7 +185,7 @@ class ${className}Controller {
 		log.debug("fieldValue: " + ${propertyName}[fieldName]);
 		log.debug("required: " + required);
 		
-		render template:'/templates/imagebed/multi', model:[
+		render view:'/imagebed/multi', model:[
 			instanceId: ${propertyName}.id,
 			instanceName: '${propertyName}', 
 			fieldName: fieldName, 

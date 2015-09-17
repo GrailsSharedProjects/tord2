@@ -1,6 +1,3 @@
-//= require jquery.parallax-1.1.3.js
-//= require_self
-
 jQuery(document).ready(function() {
     jQuery('#rev_slider_2_1').show().revolution(
             {
@@ -86,32 +83,6 @@ jQuery(window).load(function(){
     jQuery('div.slotholder').prepend('<div class="bk-responsive-slide"></div>');
 });
 
-/*
- * Method resize image
- */
-function TzTemplateResizeImage(obj){
-
-    var widthStage;
-    var heightStage ;
-    var widthImage;
-    var heightImage;
-    obj.each(function (i,el){
-        heightStage = jQuery(this).height();
-        widthStage = jQuery (this).width();
-        var img_url = jQuery(this).find('img').attr('data-original');
-        if(img_url == undefined){
-        	img_url = jQuery(this).find('img').attr('src');
-        }
-        var image = new Image();
-        image.src = img_url;
-        image.onload = function() {
-        }
-        widthImage = image.naturalWidth;
-        heightImage = image.naturalHeight;
-        var tzimg	=	new resizeImage(widthImage, heightImage, widthStage, heightStage);
-        jQuery(this).find('img').css ({ top: tzimg.top, left: tzimg.left, width: tzimg.width, height: tzimg.height });
-    });
-}
 
 /*
  * Method portfolio column
@@ -210,5 +181,4 @@ function loadPortfolio(){
 }
 jQuery(document).ready(function() {
     loadPortfolio();
-
 }) ;

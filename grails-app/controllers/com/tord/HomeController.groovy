@@ -10,13 +10,14 @@ import grails.plugin.springsecurity.annotation.Secured
  */
 class HomeController {
 	
+	def afterInterceptor = [action: this.&applyPageData] 
+	
+	private applyPageData(model){
+		model.pageData = Page.findByName("HOME_PAGE");
+	}
+	
 	@Secured(['permitAll'])
 	def index() {
-		def homePage = Page.findByName("HOME_PAGE");
-		
-		def aboutList = Widget.findAllByCategory("首页关于");
-		
-		model:[pageData:homePage]
 	}
 	
 }
