@@ -5,6 +5,6 @@
     <title>${(info?.title)?(info.title):(pageData.title) }</title>
 </head>
 <body>
-    raw(${info?.contentHTML})
+    ${raw(info?.contentHTML) }
 </body>
 </html>

@@ -37,7 +37,7 @@
                                 "terminal": {
                                     "id": "devel_496",
                                     "cwd": "",
-                                    "width": 440,
+                                    "width": 395,
                                     "height": 422
                                 }
                             },
@@ -75,7 +75,7 @@
                                 "terminal": {
                                     "id": "devel_76",
                                     "cwd": "",
-                                    "width": 1071,
+                                    "width": 1116,
                                     "height": 422
                                 }
                             },
@@ -106,7 +106,7 @@
                             "active": false
                         }
                     ],
-                    "width": "70.83333333333334%",
+                    "width": "73.80952380952381%",
                     "skin": "editor_tab",
                     "skinset": "default",
                     "meta": {
@@ -127,7 +127,7 @@
             "@acestatus": 2,
             "@datagrid": 1,
             "@divider": 7,
-            "@document": 36,
+            "@document": 38,
             "@form": 4,
             "@imgeditor": 1,
             "@immediate": 1,
@@ -137,10 +137,10 @@
             "@postmessage": 2,
             "@preferences": 1,
             "@preview": 1,
-            "@session": 36,
-            "@tab": 32,
+            "@session": 38,
+            "@tab": 35,
             "@tree": 2,
-            "@undoManager": 36,
+            "@undoManager": 38,
             "@welcome": 1
         }
     },
@@ -162,7 +162,7 @@
     "panecycle": {
         "json()": [
             "tab3",
-            "tab31",
+            "tab34",
             "tab32"
         ]
     },
@@ -217,12 +217,14 @@
                 "/grails-app/controllers/com/tord",
                 "/test/unit/com/tord",
                 "/test/unit/com/tord/auth",
-                "/grails-app/views/blog",
                 "/",
                 "/grails-app",
                 "/web-app",
                 "/web-app/uploaded/2015/9/15",
-                "/web-app/META-INF"
+                "/web-app/META-INF",
+                "/grails-app/views",
+                "/grails-app/views/blog/template",
+                "/grails-app/views/info"
             ]
         }
     },
@@ -265,6 +267,7 @@
         },
         "searchfiles": {
             "json()": [
+                "raw",
                 "widget:'textarea'",
                 "widget: 'textarea'",
                 "'textarea'",
@@ -311,6 +314,8 @@
             "focus": "tab3",
             "meta": {
                 "accessList": [
+                    "tab34",
+                    "tab33",
                     "tab31",
                     "tab30",
                     "tab29",
@@ -418,6 +423,46 @@
                         "ace": {}
                     },
                     "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab33",
+                    "path": "/grails-app/views/home/_w_freeshipping.gsp",
+                    "className": [
+                        "tab33"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1437580403852
+                        },
+                        "filter": true,
+                        "title": "_w_freeshipping.gsp",
+                        "tooltip": "/grails-app/views/home/_w_freeshipping.gsp",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab34",
+                    "path": "/grails-app/views/info/info.gsp",
+                    "className": [
+                        "tab34"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1442519907435
+                        },
+                        "filter": true,
+                        "title": "info.gsp",
+                        "tooltip": "/grails-app/views/info/info.gsp",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
                     "active": true
                 }
             ],
@@ -428,7 +473,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/grails-app/assets"
+            "/grails-app/views/info/info.gsp"
         ]
     }
 }
