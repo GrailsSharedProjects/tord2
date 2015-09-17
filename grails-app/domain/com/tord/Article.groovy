@@ -17,10 +17,11 @@ class Article implements TDomainOperations, Taggable{
 		name unique: true
 		title()
 		titlePhoto nullable: true, blank: true 
-		contentHTML widget:'textarea'
+		contentHTML widget: 'textarea'
     }
 	
 	static mapping = {
+		contentHTML type: 'text'
 	}
 	
 	@Override

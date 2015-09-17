@@ -14,6 +14,7 @@ class Info implements TDomainOperations{
 	}
 
 	static mapping = {
+		contentHTML type: 'text'
 	}
 
 	@Override

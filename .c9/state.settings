@@ -92,37 +92,15 @@
                             ],
                             "document": {
                                 "changed": true,
-                                "filter": true,
-                                "title": "searchresults",
-                                "tooltip": "/.c9/searchresults",
-                                "ace": {
-                                    "folds": [],
-                                    "scrolltop": 0,
-                                    "scrollleft": 0,
-                                    "selection": {
-                                        "start": {
-                                            "row": 0,
-                                            "column": 0
-                                        },
-                                        "end": {
-                                            "row": 0,
-                                            "column": 0
-                                        },
-                                        "isBackwards": false
-                                    },
-                                    "options": {
-                                        "guessTabSize": true,
-                                        "useWrapMode": false,
-                                        "wrapToView": true
-                                    },
-                                    "firstLineState": 0
-                                },
                                 "meta": {
                                     "searchResults": true,
                                     "ignoreSave": true,
-                                    "newfile": true,
-                                    "timestamp": 1442512842438
-                                }
+                                    "newfile": true
+                                },
+                                "filter": true,
+                                "title": "Search Results",
+                                "tooltip": "/.c9/searchresults",
+                                "ace": {}
                             },
                             "editorType": "ace",
                             "active": false
@@ -144,25 +122,25 @@
     },
     "ext": {
         "counters": {
-            "@ace": 1,
+            "@ace": 2,
             "@ace.repl": 1,
-            "@acestatus": 1,
+            "@acestatus": 2,
             "@datagrid": 1,
-            "@divider": 4,
-            "@document": 24,
+            "@divider": 7,
+            "@document": 36,
             "@form": 4,
             "@imgeditor": 1,
             "@immediate": 1,
-            "@menu": 8,
-            "@menuitem": 19,
+            "@menu": 10,
+            "@menuitem": 33,
             "@pane": 5,
-            "@postmessage": 1,
+            "@postmessage": 2,
             "@preferences": 1,
             "@preview": 1,
-            "@session": 23,
-            "@tab": 21,
+            "@session": 36,
+            "@tab": 32,
             "@tree": 2,
-            "@undoManager": 24,
+            "@undoManager": 36,
             "@welcome": 1
         }
     },
@@ -184,11 +162,12 @@
     "panecycle": {
         "json()": [
             "tab3",
+            "tab31",
             "tab32"
         ]
     },
     "panels": {
-        "@active-left": "scm",
+        "@active-left": "tree",
         "@active-right": "none",
         "@width-left": 274,
         "commands.panel": {
@@ -217,7 +196,7 @@
         }
     },
     "projecttree": {
-        "@scrollpos": 310,
+        "@scrollpos": -10,
         "@showfs": true,
         "expanded": {
             "json()": [
@@ -238,11 +217,9 @@
                 "/grails-app/controllers/com/tord",
                 "/test/unit/com/tord",
                 "/test/unit/com/tord/auth",
-                "/grails-app/views",
                 "/grails-app/views/blog",
                 "/",
                 "/grails-app",
-                "/grails-app/assets",
                 "/web-app",
                 "/web-app/uploaded/2015/9/15",
                 "/web-app/META-INF"
@@ -288,6 +265,12 @@
         },
         "searchfiles": {
             "json()": [
+                "widget:'textarea'",
+                "widget: 'textarea'",
+                "'textarea'",
+                "'text'",
+                "widget: 'textarea'",
+                "textarea",
                 "video.mp4",
                 "video",
                 "g:resource",
@@ -325,12 +308,119 @@
     },
     "tabs": {
         "json()": {
-            "focus": "tab32",
+            "focus": "tab3",
             "meta": {
-                "accessList": []
+                "accessList": [
+                    "tab31",
+                    "tab30",
+                    "tab29",
+                    "tab28",
+                    "tab27"
+                ]
             },
             "name": "pane0",
-            "nodes": [],
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab27",
+                    "path": "/grails-app/domain/com/tord/Info.groovy",
+                    "className": [
+                        "tab27"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1442519132532
+                        },
+                        "filter": true,
+                        "title": "Info.groovy",
+                        "tooltip": "/grails-app/domain/com/tord/Info.groovy",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab28",
+                    "path": "/grails-app/domain/com/tord/Widget.groovy",
+                    "className": [
+                        "tab28"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1442519132541
+                        },
+                        "filter": true,
+                        "title": "Widget.groovy",
+                        "tooltip": "/grails-app/domain/com/tord/Widget.groovy",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab29",
+                    "path": "/grails-app/domain/com/tord/admin/FooterModule.groovy",
+                    "className": [
+                        "tab29"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1442519132540
+                        },
+                        "filter": true,
+                        "title": "FooterModule.groovy",
+                        "tooltip": "/grails-app/domain/com/tord/admin/FooterModule.groovy",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab30",
+                    "path": "/grails-app/domain/com/tord/Article.groovy",
+                    "className": [
+                        "tab30"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1442519132539
+                        },
+                        "filter": true,
+                        "title": "Article.groovy",
+                        "tooltip": "/grails-app/domain/com/tord/Article.groovy",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab31",
+                    "path": "/grails-app/domain/com/tord/Work.groovy",
+                    "className": [
+                        "tab31"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1442519132536
+                        },
+                        "filter": true,
+                        "title": "Work.groovy",
+                        "tooltip": "/grails-app/domain/com/tord/Work.groovy",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": true
+                }
+            ],
             "skin": "editor_tab",
             "skinset": "default",
             "type": "pane"
@@ -338,7 +428,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/web-app/css"
+            "/grails-app/assets"
         ]
     }
 }

@@ -30,11 +30,11 @@ class Work implements TDomainOperations, Taggable{
 		category inList:['portfolio', 'project']
 		showOnHomePage()
 		title()
-		titlePhoto(widget: 'imagebed')
+		titlePhoto widget: 'imagebed'
 		titlePhotoAlt nullable: true, blank: true
 		product nullable: true, blank: true
 		galleryPhotoList nullable: true, blank: true, widget: 'multi-imagebed'
-		contentHTML(widget:'textarea')
+		contentHTML widget:'textarea'
     }
 	
 	static mapping = {

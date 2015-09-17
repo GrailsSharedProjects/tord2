@@ -21,6 +21,7 @@ class FooterModule implements TDomainOperations{
 	}
 
 	static mapping = {
+		contentHTML type: 'text'
 	}
 
 	@Override
