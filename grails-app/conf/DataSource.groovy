@@ -33,7 +33,7 @@ environments {
         dataSource {
             username = "wicky"
             password = "William100"
-            dbCreate = "validate"
+            dbCreate = "update"
             url = "jdbc:mysql://localhost:3306/tord?useUnicode=true&characterEncoding=UTF-8"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation

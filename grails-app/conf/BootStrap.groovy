@@ -50,6 +50,18 @@ class BootStrap {
 
     def init = { servletContext ->
 		if(Environment.current == Environment.DEVELOPMENT) {
+			setup();
+			SiteSettings.putIt("部署", "测试环境");
+		}else{
+			def deployed = SiteSettings.getIt("部署");
+			if("生产环境" != deployed){
+				setup();
+				SiteSettings.putIt("部署", "生产环境");
+			}
+		}
+    }
+	
+	def setup(){
 			setupUsers();
 			setupSiteSettings();
 			setupMetaData();
@@ -58,13 +70,10 @@ class BootStrap {
 			setupHomePage();
 			setupArticles();
 			setupInfomation();
-		}else{
-			
-		}
-    }
+	}
 	
     def destroy = {
-		
+
     }
 	
 	def setupUsers() {
